@@ -42,7 +42,6 @@ video {
 
 .playlist {
     display: flex;
-    justify-content: center;
     width: 100%;
     margin: auto;
     margin-top: 7%;
@@ -76,10 +75,16 @@ video {
 
 .btn {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    padding: 10px;
     height: 35px;
     background-color: rgb(39, 39, 46);
     color: white;
     font-size: 18px;
     margin: 3%;
+}
+
+.iconspacing {
+    margin-right: 10px;
+    background-color: rgb(39, 39, 46);
 }
