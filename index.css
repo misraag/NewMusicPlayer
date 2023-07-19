@@ -2,6 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 18px;
 }
 
 .home {
@@ -34,22 +39,27 @@ video {
     border-radius: 10px;
 }
 
-.liked {
-    display: flex;
-    justify-content: center;
-    margin: 5%;
-    height: 100vh;
-    background: rgba(252, 252, 252, 0.795);
-    border-radius: 3%;
-}
+
 .playlist {
     display: flex;
     justify-content: center;
-    margin: 5%;
+    width: 100%;
+    margin: auto;
+    margin-top: 7%;
     height: 100vh;
-    background-color: green;
-    background: rgba(252, 252, 252, 0.795);
-    border-radius: 3%;
+    /* background: rgba(252, 252, 252, 0.795); */
+    background-color: rgb(39, 39, 46);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px auto;
+    width: 100%;
+    margin: auto;
+    color: white;
+    background-color: rgb(39, 39, 46);
 }
 
 .subheader {
@@ -57,9 +67,19 @@ video {
     justify-content: center;
     padding-top: 5px;
     margin: 2%;
-    background-color: green;
+    /* background-color: rgb(39, 39, 46); */
     color: white;
     height: 4vh;
     width: 100vh;
-    border-radius: 5%;
+    border-radius: 7px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    background-color: rgb(39, 39, 46);
+    color: white;
+    font-size: 18px;
+    margin: 3%;
 }
