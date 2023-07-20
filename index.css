@@ -107,3 +107,46 @@ video {
 .likedSongs {
     background-color: rgb(67, 67, 170);
 }
+
+
+/* ******************************* */
+
+.songs {
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+    height: 90%;
+    position: relative;
+    margin: auto 0.6rem;
+    margin-bottom: auto;
+    background-color: grey;
+    z-index: 3;
+    border-radius: 10px;
+    
+}
+
+.carousel {
+    height: 40vh;
+    margin-top: 10%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: white;
+    border: 3px solid rgb(67, 67, 170);
+}
+
+/* ******************************* */
+
+.playsection {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 28%;
+    height: 90%;
+    position: relative;
+    margin-right: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: rgb(39, 39, 46);
+    z-index: 3;
+    border-radius: 10px;
+}
