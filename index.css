@@ -167,9 +167,10 @@ video {
 }
 
 .photo {
-    height: 60vh;
-    width: 70%;
+    height: 55vh;
+    width: 90%;
     margin: 1%;
+    margin-top: 5%;
     background-color: white;
     border: 3px solid black;
 }
