@@ -147,7 +147,7 @@ video {
     height: 5.1vh;
     border-radius: 20px;
     width: 65%;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 /* ******************************* */
