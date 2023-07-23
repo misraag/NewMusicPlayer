@@ -152,6 +152,7 @@ video {
 
 .songssection {
     display: flex;
+    
     height: 30%;
     width: 95%;
     background-color: rgb(67, 67, 170);
