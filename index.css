@@ -116,7 +116,8 @@ video {
     flex-direction: column;
     align-items: center;
     width: 72%;
-    height: 90%;
+    /* height: 100vh; */
+        height: 90vh;
     position: relative;
     margin: auto 0.6rem;
     margin-bottom: auto;
@@ -127,7 +128,7 @@ video {
 }
 
 .carousel {
-    height: 55%;
+    height: 35%;
     width: 80%;
     margin: 1%;
     background-color: white;
@@ -151,12 +152,49 @@ video {
 }
 
 .songssection {
+    /* display: flex; */
+    border: 2px solid #000;
+    padding: 15px;
+    height: 60%;
+    width: 100%;
+    background-color: rgb(67, 67, 170);
+    overflow-y: auto;
+}
+
+.cardcontent {
+    margin-bottom: 40px;
+}
+
+.song-info {
+    background-color: rgb(67, 67, 170);
+    border: 3px solid white;
+    text-align: center;
+    margin: 1px;
+    color: white;
+    height: 60px;
+}
+
+.music-name {
+    height: 35px;
     display: flex;
-    
-    height: 30%;
-    width: 95%;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+p {
+    font-size: 13px;
     background-color: rgb(67, 67, 170);
 }
+
+.card-img-top {
+    /* border: 5px solid white; */
+    padding: 20px;
+    background-color: rgb(67, 67, 170);
+
+}
+
+
 
 /* ******************************* */
 
