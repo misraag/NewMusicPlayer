@@ -11,7 +11,7 @@
 }
 
 .home {
-    height: 89vh;
+    height: 100vh;
     background-color: black;
     position: relative;
     display:flex;
@@ -35,12 +35,15 @@ video {
     width: 28%;
     height: 92%;
     position: relative;
-    margin-left: 1rem;
+    /* margin-left: 1rem;
     margin-top: auto;
-    margin-bottom: 17px;
+    margin-bottom: 17px; */
+    margin: auto 1rem;
     /* background: rgba(252, 252, 252, 0.795); */
     z-index: 3;
     border-radius: 10px;
+    border: 3px solid white;
+    border-bottom: 3px solid rgb(67, 67, 170);
 }
 
 .navbar {
@@ -124,10 +127,13 @@ video {
         height: 92%;
     position: relative;
     margin: auto 0.6rem;
-    margin-bottom: 17px;
-    background-color: rgb(39, 39, 46);
+    /* margin-bottom: 17px; */
+    /* background-color: rgb(39, 39, 46); */
+    /* background-color: rgb(67, 67, 170); */
     z-index: 3;
     border-radius: 10px;
+    border: 3px solid white;
+    border-bottom: 3px solid rgb(67, 67, 170);
     
 }
 
@@ -152,12 +158,13 @@ video {
     border: 2px solid black;
 }
 
-.search {
-    margin: 1%;
-    height: 5.1vh;
-    border-radius: 20px;
-    width: 65%;
-    visibility: hidden;
+.playpause {
+    height: 20vh;
+    border-radius: 10px;
+    width: 100%;
+    /* background-color: blueviolet; */
+    background-color: rgb(67, 67, 170);
+    /* visibility: hidden; */
 }
 
 .songssection {
@@ -218,10 +225,12 @@ p {
     height: 92%;
     position: relative;
     margin: auto 0.6rem;
-    margin-bottom: 17px;
+    /* margin-bottom: 17px; */
     background-color: grey;
     z-index: 3;
     border-radius: 10px;
+    border: 3px solid white;
+    border-bottom: 3px solid rgb(67, 67, 170);
 }
 
 .photo {
@@ -245,9 +254,9 @@ p {
 
 /* **************** */
 
-.playpause {
+/* .playpause {
     margin: 0;
     padding: 0;
     height: 11vh;
     background-color: rgb(24, 22, 64);
-}
+} */
