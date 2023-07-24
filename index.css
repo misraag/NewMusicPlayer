@@ -132,12 +132,17 @@ video {
 }
 
 .carousel {
-    height: 35%;
+    height: 41%;
     width: 80%;
     margin: 1%;
     background-color: white;
     border: 1px solid black;
 }
+
+.carousel-item img {
+    height: 200px;
+}
+
 
 .search input{
     width: 100%;
@@ -159,7 +164,7 @@ video {
     /* display: flex; */
     border: 2px solid #000;
     padding: 15px;
-    height: 60%;
+    height: 100%;
     width: 100%;
     /* background-color: rgb(67, 67, 170); */
     overflow-y: auto;
