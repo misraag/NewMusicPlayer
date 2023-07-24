@@ -206,12 +206,136 @@ video {
 
 .playpause {
     height: 25%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     width: 100%;
     /* background-color: blueviolet; */
-    background-color: rgb(67, 67, 170);
+    /* background-color: rgb(67, 67, 170); */
+    /* background-color: rgb(26, 26, 186); */
+
+    color: white;
+    text-align: center;
     border-bottom: 3px solid grey;
     /* visibility: hidden; */
+}
+
+.name {
+    /* background-color: white; */
+    /* background-color: rgb(67, 67, 170); */
+    /* color: white; */
+    /* color: #000; */
+    height: 20%;
+}
+
+.bottom {
+    position: sticky;
+    bottom: 0;
+    /* border: 3px solid white;
+    border-radius: 5px; */
+    /* height: 130px; */
+    /* background-color: rgb(67, 67, 170); */
+    background-color: rgb(12, 12, 55);
+
+    /* background-color: blue; */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    height: 80%;
+}
+
+.progressBar {
+    accent-color: white;
+    height: 1px;
+}
+
+.timebar {
+    display: flex;
+    flex-direction: row;
+    /* background-color: aqua; */
+    align-items: center;
+    /* background-color: rgb(67, 67, 170); */
+    background-color: rgb(12, 12, 55);
+    width: 95%;
+    height: 20px;
+    border-radius: 4px;
+    bottom: 0;
+    position: absolute;
+    margin: 4px;
+}
+
+.icons {
+    width: 95%;
+    /* background-color: aqua; */
+    /* background-color: rgb(67, 67, 170); */
+    background-color: rgb(12, 12, 55);
+    /* margin-bottom: 1px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    /* background-color: white; */
+}
+
+.icons .fas {
+    /* background-color: aqua; */
+    /* background-color: rgb(67, 67, 170); */
+    background-color: rgb(12, 12, 55);
+    margin: auto 9px;
+    /* color: #000; */
+    color: rgb(246, 231, 231);
+    font-size: 30px;
+    
+    /* color: rgb(67, 67, 170); */
+    
+}
+
+#timer {
+    font-size: 12px;
+    /* background-color: aqua; */
+    background-color: rgb(12, 12, 55);
+    margin: 3px;
+    /* color: black; */
+    color: rgb(246, 231, 231);
+    border-end-end-radius: 4px;
+    border-start-end-radius: 4px;
+}
+
+#myProgressBar{
+    display: flex;
+    width: 100%;
+    background-color: grey; 
+    cursor: pointer;
+}
+
+.volumebar {
+    position: absolute;
+    right: 0;
+    width: 30%;
+    display: flex;
+    margin-right: 2%;
+    /* justify-content: center; */
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(12, 12, 55)
+}
+
+#myVolumeBar{
+    /* display: flex; */
+    width: 40%;
+    background-color: grey; 
+    cursor: pointer;
+    right: 0;
+    position: absolute;
+    margin: 3%;
+}
+
+.volumeicon {
+    /* background-color: white; */
+    margin-right: 5px;
+    background-color: rgb(12, 12, 55)
 }
 
 .songssection {

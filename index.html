@@ -58,7 +58,24 @@
             </div>
             <div class="songs">
                 <div class="playpause">
-                    
+                  <div class="name">
+                    THE MUSIC PLAYER
+                  </div>
+                    <div class="bottom">
+                      <div class="icons">
+                      <i class="fas fa-2x fa-step-backward" id="previous"></i>
+                      <i class="fas fa-2x fa-play-circle" id="masterPlay"></i>
+                      <i class="fas fa-2x fa-step-forward" id="next"></i>
+                      <div class="volumebar">
+                        <i class="fa-solid fa-volume-low volumeicon"></i>
+                        <input id="myVolumeBar" type="range" class="progressBar" min="0" value="0" max="100">
+                      </div>
+                      </div>
+                      <div class="timebar">
+                        <input id="myProgressBar" type="range" class="progressBar" min="0" value="0" max="100">
+                        <div id="timer" >00:00</div>
+                        </div>
+                  </div>
                 </div>
                 <div class="songssection">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
