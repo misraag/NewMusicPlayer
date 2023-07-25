@@ -1,218 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kalam&family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
-<!-- FONT AWESOME -->
-<link rel="stylesheet" href="/index.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Custom CSS -->
-   
-    
-    <title>Document</title>
-</head>
-<body>
-    <div id="complete">
-        <div class="home">
-            <video autoplay muted loop id="myVideo">
-                <source src="background.mp4" type="video/mp4">
-            </video>
-            <div class="content">
-                <div class="navbartop">
-                    <div class="btnbar"><i class="fa-solid fa-house iconspacing"></i>Home</div>
-                    <div class="btnbar"><i class="fa-solid fa-magnifying-glass iconspacing"></i>Search</div>
-                </div>
-                <div class="playlist">
-                    <div class="subheader">
-                        <div class="btnsub btnhead"><i class="fa-solid fa-book-open iconspacing"></i>Playlist
-                            <div class="create"><i class="fa-solid fa-plus iconspacing iconright"></i></div>
-                        </div>
-                    </div>
-                    <div class="btnbar btnhead liked">
-                        Liked Songs
-                    </div>
-                    <div class="btnbar btnhead liked">
-                      Liked Songs
-                  </div>
-                  <div class="btnbar btnhead liked">
-                    Liked Songs
-                </div>
-                <div class="btnbar btnhead liked">
-                  Liked Songs
-              </div>
-              <div class="btnbar btnhead liked">
-                Liked Songs
-            </div>
-            <div class="btnbar btnhead liked">
-              Liked Songs
-          </div>
-<div class="btnbar btnhead liked">
-  Liked Songs
-</div>
-                    <div class="playlists">
-                        Playlist1
-                    </div>
-                </div>
-            </div>
-            <div class="songs">
-                <div class="playpause">
-                  <div class="name">
-                    THE MUSIC PLAYER
-                  </div>
-                    <div class="bottom">
-                      <div class="icons">
-                      <i class="fas fa-2x fa-step-backward" id="previous"></i>
-                      <i class="fas fa-2x fa-play-circle" id="masterPlay"></i>
-                      <i class="fas fa-2x fa-step-forward" id="next"></i>
-                      <div class="volumebar">
-                        <i class="fa-solid fa-volume-low volumeicon"></i>
-                        <input id="myVolumeBar" type="range" class="progressBar" min="0" value="0" max="100">
-                      </div>
-                      </div>
-                      <div class="timebar">
-                        <div id="timerstart" >00:00</div>
-                        <input id="myProgressBar" type="range" class="progressBar" min="0" value="0" max="100">
-                        <div id="timerend" >00:00</div>
-                        </div>
-                  </div>
-                </div>
-                <div class="songssection">
-                    <div class="row row-cols-1 row-cols-md-3 g-4 helo">
-                        <div class="col col-md-3 col-sm-12  cardcontent">
-                          <div class="h-100">
-                            <img src="/covers/1.jpg" class="card-img-top" alt="...">
-                            <div class="song-info">
-                                <h6 class="music-name">Song 1</h6>
-                                <p class="duration">03:54</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-3 col-sm-12  cardcontent">
-                          <div class="h-100">
-                            <div>
-                            <img src="/covers/2.jpg" class="card-img-top" alt="...">
-                            <div class="song-info">
-                                <h6 class="music-name">Song 2</h6>
-                                <p class="duration">03:54</p>
-                            </div>
-                        </div>
-                          </div>
-                        </div>
-                        <div class="col-md-3 col-sm-12  cardcontent">
-                          <div class="h-100">
-                            <div>
-                            <img src="/covers/3.jpg" class="card-img-top" alt="...">
-                            <div class="song-info">
-                                <h6 class="music-name">Song 3</h6>
-                                <p class="duration">03:54</p>
-                            </div>
-                        </div>
-                          </div>
-                        </div>
-                        <div class="col-md-3 col-sm-12  cardcontent">
-                          <div class="h-100">
-                            <div>
-                            <img src="/covers/4.jpg" class="card-img-top" alt="...">
-                            <div class="song-info">
-                                <h6 class="music-name">Song 4</h6>
-                                <p class="duration">03:54</p>
-                            </div>
-                        </div>
-                          </div>
-                        </div>
-                        <div class="col-md-3 col-sm-12  cardcontent">
-                            <div class="h-100">
-                                <div>
-                              <img src="/covers/5.jpg" class="card-img-top" alt="...">
-                              <div class="song-info">
-                                <h6 class="music-name">Song 5</h6>
-                                <p class="duration">03:54</p>
-                            </div>
-                        </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3 col-sm-12  cardcontent">
-                            <div class="h-100">
-                                <div>
-                              <img src="/covers/6.jpg" class="card-img-top" alt="...">
-                              <div class="song-info">
-                                <h6 class="music-name">Song 6</h6>
-                                <p class="duration">03:54</p>
-                            </div>
-                        </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3 col-sm-12  cardcontent">
-                            <div class="h-100">
-                                <div>
-                              <img src="/covers/7.jpg" class="card-img-top" alt="...">
-                              <div class="song-info">
-                                <h6 class="music-name">Song 7</h6>
-                                <p class="duration">03:54</p>
-                            </div>
-                        </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3 col-sm-12  cardcontent">
-                            <div class="h-100">
-                                <div>
-                              <img src="/covers/8.jpg" class="card-img-top" alt="...">
-                              <div class="song-info">
-                                <h6 class="music-name">Song 8</h6>
-                                <p class="duration">03:54</p>
-                            </div>
-                        </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3 col-sm-12  cardcontent">
-                            <div class="h-100">
-                                <div>
-                              <img src="/covers/9.jpg" class="card-img-top" alt="...">
-                              <div class="song-info">
-                                <h6 class="music-name">Song 9</h6>
-                                <p class="duration">03:54</p>
-                            </div>
-                        </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3 col-sm-12  cardcontent">
-                            <div class="h-100">
-                                <div>
-                              <img src="/covers/10.jpg" class="card-img-top" alt="...">
-                              <div class="song-info">
-                                <h6 class="music-name">Song 10</h6>
-                                <p class="duration">03:54</p>
-                            </div>
-                        </div>
-                            </div>
-                          </div>
-                      </div>
-                </div>
-            </div>
-            <div class="playsection">
-              <div class="playsectiontop">
-                  Welcome to my Project!
-              </div>
-              <div class="photo">
-                <img src="/covers/8.jpg" class="card-img-top" alt="...">
-              </div>
-            </div>
-        </div>
-        
-  </div>
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/bfe7c45ec2.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kalam&family=Lobster&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <div id="complete">
+      <div class="blackbar"></div>
+      <div class="home">
+        <video autoplay muted loop id="myVideo">
+          <source src="background.mp4" type="video/mp4" />
+        </video>
+        <div class="content">
+          <div class="navbartop">
+            <div class="btnbar">
+              <i class="fa-solid fa-house iconspacing"></i>Home
+            </div>
+            <div class="btnbar">
+              <i class="fa-solid fa-magnifying-glass iconspacing"></i>Search
+            </div>
+          </div>
+          <div class="playlist">
+            <div class="subheader">
+              <div class="btnsub btnhead">
+                <i class="fa-solid fa-book-open iconspacing"></i>Playlist
+                <div class="create">
+                  <i class="fa-solid fa-plus iconspacing iconright"></i>
+                </div>
+              </div>
+            </div>
+            <div class="btnbar btnhead liked">Liked Songs</div>
+            <div class="btnbar btnhead liked">Liked Songs</div>
+            <div class="btnbar btnhead liked">Liked Songs</div>
+            <div class="btnbar btnhead liked">Liked Songs</div>
+            <div class="btnbar btnhead liked">Liked Songs</div>
+            <div class="btnbar btnhead liked">Liked Songs</div>
+            <div class="btnbar btnhead liked">Liked Songs</div>
+            <div class="playlists">Playlist1</div>
+          </div>
+        </div>
+        <div class="songs">
+          <div class="playpause">
+            <div class="name">THE MUSIC PLAYER</div>
+            <div class="bottom">
+              <div class="icons">
+                <i class="fas fa-2x fa-step-backward" id="previous"></i>
+                <i class="fas fa-2x fa-play-circle" id="masterPlay"></i>
+                <i class="fas fa-2x fa-step-forward" id="next"></i>
+                <div class="volumebar">
+                  <i class="fa-solid fa-volume-low volumeicon"></i>
+                  <input
+                    id="myVolumeBar"
+                    type="range"
+                    class="progressBar"
+                    min="0"
+                    value="0"
+                    max="100"
+                  />
+                </div>
+              </div>
+              <div class="timebar">
+                <div id="timerstart">00:00</div>
+                <input
+                  id="myProgressBar"
+                  type="range"
+                  class="progressBar"
+                  min="0"
+                  value="0"
+                  max="100"
+                />
+                <div id="timerend">00:00</div>
+              </div>
+            </div>
+          </div>
+          <div class="songssection">
+            <div class="row row-cols-1 row-cols-md-3 g-4 helo">
+              <div class="col-md-4 col-sm-12 cardcontent">
+                <div class="h-100">
+                  <img src="/covers/1.jpg" class="card-img-top" alt="..." />
+                  <div class="song-info">
+                    <h6 class="music-name">Song 1</h6>
+                    <p class="duration">03:54</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 cardcontent">
+                <div class="h-100">
+                    <img src="/covers/2.jpg" class="card-img-top" alt="..." />
+                    <div class="song-info">
+                      <h6 class="music-name">Song 2</h6>
+                      <p class="duration">03:54</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 cardcontent">
+                <div class="h-100">
+                    <img src="/covers/3.jpg" class="card-img-top" alt="..." />
+                    <div class="song-info">
+                      <h6 class="music-name">Song 3</h6>
+                      <p class="duration">03:54</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 cardcontent">
+                <div class="h-100">
+                    <img src="/covers/4.jpg" class="card-img-top" alt="..." />
+                    <div class="song-info">
+                      <h6 class="music-name">Song 4</h6>
+                      <p class="duration">03:54</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 cardcontent">
+                <div class="h-100">
+                    <img src="/covers/5.jpg" class="card-img-top" alt="..." />
+                    <div class="song-info">
+                      <h6 class="music-name">Song 5</h6>
+                      <p class="duration">03:54</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 cardcontent">
+                <div class="h-100">
+                    <img src="/covers/6.jpg" class="card-img-top" alt="..." />
+                    <div class="song-info">
+                      <h6 class="music-name">Song 6</h6>
+                      <p class="duration">03:54</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 cardcontent">
+                <div class="h-100">
+                    <img src="/covers/7.jpg" class="card-img-top" alt="..." />
+                    <div class="song-info">
+                      <h6 class="music-name">Song 7</h6>
+                      <p class="duration">03:54</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 cardcontent">
+                <div class="h-100">
+                    <img src="/covers/8.jpg" class="card-img-top" alt="..." />
+                    <div class="song-info">
+                      <h6 class="music-name">Song 8</h6>
+                      <p class="duration">03:54</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 cardcontent">
+                <div class="h-100">
+                    <img src="/covers/9.jpg" class="card-img-top" alt="..." />
+                    <div class="song-info">
+                      <h6 class="music-name">Song 9</h6>
+                      <p class="duration">03:54</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 cardcontent">
+                <div class="h-100">
+                    <img src="/covers/10.jpg" class="card-img-top" alt="..." />
+                    <div class="song-info">
+                      <h6 class="music-name">Song 10</h6>
+                      <p class="duration">03:54</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="playsection">
+          <div class="playsectiontop">
+            Welcome to my Project!
+          </div>
+          <div class="photo">
+            <img src="/covers/8.jpg" class="card-img-top" alt="..." />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/bfe7c45ec2.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="/index.js"></script>
-</body>
+  </body>
 </html>
 
 <!-- <i class="fa-solid fa-play"></i>
