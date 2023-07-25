@@ -31,9 +31,9 @@
     <div id="complete">
       <div class="blackbar"></div>
       <div class="home">
-        <video autoplay muted loop id="myVideo">
+        <!-- <video autoplay muted loop id="myVideo">
           <source src="background.mp4" type="video/mp4" />
-        </video>
+        </video> -->
         <div class="content">
           <div class="navbartop">
             <div class="btnbar">
@@ -59,11 +59,15 @@
             <div class="btnbar btnhead liked">Liked Songs</div>
             <div class="btnbar btnhead liked">Liked Songs</div>
             <div class="btnbar btnhead liked">Liked Songs</div>
-            <div class="playlists">Playlist1</div>
+            <!-- <div class="playlists">Playlist1</div> -->
           </div>
         </div>
         <div class="songs">
-          <div class="playpause">
+          <div class="name">
+            THE MUSIC PLAYER
+          </div>
+          
+          <!-- <div class="playpause">
             <div class="name">THE MUSIC PLAYER</div>
             <div class="bottom">
               <div class="icons">
@@ -95,10 +99,10 @@
                 <div id="timerend">00:00</div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="songssection">
             <div class="row row-cols-1 row-cols-md-3 g-4 helo">
-              <div class="col-md-4 col-sm-12 cardcontent">
+              <div class="col-md-3 col-sm-12 cardcontent">
                 <div class="h-100">
                   <img src="/covers/1.jpg" class="card-img-top" alt="..." />
                   <div class="song-info">
@@ -107,7 +111,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 cardcontent">
+              <div class="col-md-3 col-sm-12 cardcontent">
                 <div class="h-100">
                     <img src="/covers/2.jpg" class="card-img-top" alt="..." />
                     <div class="song-info">
@@ -116,7 +120,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 cardcontent">
+              <div class="col-md-3 col-sm-12 cardcontent">
                 <div class="h-100">
                     <img src="/covers/3.jpg" class="card-img-top" alt="..." />
                     <div class="song-info">
@@ -125,7 +129,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 cardcontent">
+              <div class="col-md-3 col-sm-12 cardcontent">
                 <div class="h-100">
                     <img src="/covers/4.jpg" class="card-img-top" alt="..." />
                     <div class="song-info">
@@ -134,7 +138,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 cardcontent">
+              <div class="col-md-3 col-sm-12 cardcontent">
                 <div class="h-100">
                     <img src="/covers/5.jpg" class="card-img-top" alt="..." />
                     <div class="song-info">
@@ -143,7 +147,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 cardcontent">
+              <div class="col-md-3 col-sm-12 cardcontent">
                 <div class="h-100">
                     <img src="/covers/6.jpg" class="card-img-top" alt="..." />
                     <div class="song-info">
@@ -152,7 +156,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 cardcontent">
+              <div class="col-md-3 col-sm-12 cardcontent">
                 <div class="h-100">
                     <img src="/covers/7.jpg" class="card-img-top" alt="..." />
                     <div class="song-info">
@@ -161,7 +165,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 cardcontent">
+              <div class="col-md-3 col-sm-12 cardcontent">
                 <div class="h-100">
                     <img src="/covers/8.jpg" class="card-img-top" alt="..." />
                     <div class="song-info">
@@ -170,7 +174,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 cardcontent">
+              <div class="col-md-3 col-sm-12 cardcontent">
                 <div class="h-100">
                     <img src="/covers/9.jpg" class="card-img-top" alt="..." />
                     <div class="song-info">
@@ -179,7 +183,7 @@
                     </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 cardcontent">
+              <div class="col-md-3 col-sm-12 cardcontent">
                 <div class="h-100">
                     <img src="/covers/10.jpg" class="card-img-top" alt="..." />
                     <div class="song-info">
@@ -193,10 +197,44 @@
         </div>
         <div class="playsection">
           <div class="playsectiontop">
-            Welcome to my Project!
+            Now Playing...
           </div>
           <div class="photo">
             <img src="/covers/8.jpg" class="card-img-top" alt="..." />
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="playpause">
+          <div class="bottom">
+            <div class="icons">
+              <i class="fas fa-2x fa-step-backward" id="previous"></i>
+              <i class="fas fa-2x fa-play-circle" id="masterPlay"></i>
+              <i class="fas fa-2x fa-step-forward" id="next"></i>
+              <div class="volumebar">
+                <i class="fa-solid fa-volume-low volumeicon"></i>
+                <input
+                  id="myVolumeBar"
+                  type="range"
+                  class="progressBar"
+                  min="0"
+                  value="0"
+                  max="100"
+                />
+              </div>
+            </div>
+            <div class="timebar">
+              <div id="timerstart">00:00</div>
+              <input
+                id="myProgressBar"
+                type="range"
+                class="progressBar"
+                min="0"
+                value="0"
+                max="100"
+              />
+              <div id="timerend">00:00</div>
+            </div>
           </div>
         </div>
       </div>

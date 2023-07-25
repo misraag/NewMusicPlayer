@@ -26,8 +26,8 @@
     }
 
 .home {
-    height: 90vh;
-    background-color: black;
+    height: 81vh;
+    /* background-color: aqua; */
     position: relative;
     display:flex;
     margin: auto;
@@ -49,17 +49,21 @@ video {
     justify-content: center;
     flex-direction: column;
     width: 23%;
-    height: 100%;
-    position: relative;
+    height: auto;
+    /* height: 100%; */
+    /* position: relative; */
     /* margin-left: 1rem;
     margin-top: auto;
     margin-bottom: 17px; */
-    margin: auto 3px;
+    margin-right: 1px;
     /* background: rgba(252, 252, 252, 0.795); */
+    /* background-color: aqua; */
     z-index: 3;
-    border-radius: 10px;
+    /* border-radius: 5px; */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     /* border: 3px solid white; */
-    /* background-color: grey; */
+    /* background-color: aqua; */
     border-bottom: 3px solid rgb(67, 67, 170);
 }
 
@@ -67,30 +71,32 @@ video {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 5px auto;
+    padding: 0px auto;
     width: 100%;
-    margin: auto;
+    /* margin: auto; */
     color: white;
     /* background-color: rgb(39, 39, 46); */
     /* background-color: grey; */
     /* background-color: rgb(67, 67, 170); */
     /* background-color: rgb(12, 12, 55); */
-    background-color: rgb(67, 67, 170);
+    /* background-color: rgb(67, 67, 170); */
+    background-color: rgb(17, 16, 16);
     /* border-bottom: 3px solid grey; */
     /* border: 3px solid black; */
     /* border: 1px solid white; */
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    height: 26%;
+    height: 18%;
 }
 
 .playlist {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: auto;
+    /* margin: auto; */
     /* margin-top: 7%; */
-    height: 100vh;
+    /* height: 85%; */
+    height: 100%;
     overflow-y: auto;
     /* border: 3px solid white; */
     /* margin-top: 20px; */
@@ -119,14 +125,15 @@ video {
 .btnbar {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     /* height: 100%; */
     cursor: pointer;
     /* background-color: rgb(39, 39, 46); */
     /* background-color: grey; */
     /* background-color: rgb(67, 67, 170); */
     /* background-color: rgb(12, 12, 55); */
-    background-color: rgb(67, 67, 170);
+    /* background-color: rgb(67, 67, 170); */
+    background-color: rgb(17, 16, 16);
     border-radius: 3px; 
     color: white;
     font-size: 17px;
@@ -167,7 +174,8 @@ video {
     /* background-color: rgb(39, 39, 46); */
     /* background-color: rgb(67, 67, 170); */
     /* background-color: rgb(12, 12, 55); */
-    background-color: rgb(67, 67, 170);
+    /* background-color: rgb(67, 67, 170); */
+    background-color: rgb(17, 16, 16);
 }
 
 .iconright {
@@ -186,10 +194,14 @@ video {
 .liked {
     /* background-color: rgb(67, 67, 170); */
     margin: 2px auto;
+    /* margin-left: 10px; */
+    padding-left: 10px;
     background-color: grey;
     font-size: 13px;
     border-radius: 5px;
     height: 50px;
+    text-align: center;
+    font-size: 15px;
 }
 
 
@@ -203,14 +215,15 @@ video {
     /* height: 100vh; */
         height: 100%;
     position: relative;
-    margin: auto 1px;
+    margin: auto 0px;
     /* margin-bottom: 17px; */
     /* background-color: rgb(39, 39, 46); */
     /* background-color: rgb(67, 67, 170); */
     z-index: 3;
     /* background: transparent; */
     /* opacity: 0.9; */
-    border-radius: 5px;
+    /* border-radius: 20px; */
+    /* margin-top: 0.4%; */
     /* border: 3px solid white; */
     border-bottom: 3px solid rgb(67, 67, 170);
     /* background-color: rgb(29, 28, 28); */
@@ -240,7 +253,7 @@ video {
 }
 
 .playpause {
-    height: 25%;
+    height: 100%;
     /* border-radius: 10px; */
     width: 100%;
     /* background-color: blueviolet; */
@@ -250,25 +263,32 @@ video {
     color: white;
     text-align: center;
     /* border-bottom: 3px solid grey; */
-    border: 2px solid rgb(67, 67, 170);
+    /* border: 2px solid rgb(67, 67, 170); */
     border-radius: 5px;
     /* visibility: hidden; */
 }
 
 .name {
     /* background-color: white; */
-    /* background-color: rgb(67, 67, 170); */
+    background-color: rgb(67, 67, 170);
     /* color: white; */
     /* color: #000; */
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25%;
+    height: 10%;
     /* font-family: 'Great Vibes', cursive; */
-    font-family: 'Kalam', cursive;
+    /* font-family: 'Kalam', cursive; */
     font-size: 100%;
+    /* border-radius: 3px; */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+    /* border: 1px solid white; */
     /* font-family: 'Lobster', cursive; */
     /* font-family: 'Pacifico', cursive; */
+    /* font-family: 'Ubuntu', sans-serif; */
 }
 
 .bottom {
@@ -279,7 +299,8 @@ video {
     /* height: 130px; */
     /* background-color: rgb(67, 67, 170); */
     /* background-color: rgb(12, 12, 55); */
-    background-color: rgb(17, 16, 16);
+    /* background-color: rgb(17, 16, 16); */
+    /* background-color: #000; */
         /* background: rgba(252, 252, 252, .795); */
         /* background: transparent; */
 
@@ -290,13 +311,14 @@ video {
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    height: 75%;
+    height: 100%;
+    /* background-color: green; */
 }
 
 .progressBar {
     /* accent-color: white; */
     accent-color: rgb(67, 67, 170);
-    height: 1.5px;
+    height: 2px;
 }
 
 .timebar {
@@ -306,13 +328,14 @@ video {
     align-items: center;
     /* background-color: rgb(67, 67, 170); */
     /* background-color: rgb(12, 12, 55); */
-    background-color: rgb(17, 16, 16);
-    width: 95%;
-    height: 20px;
+    /* background-color: rgb(17, 16, 16); */
+    width: 44vw;
+    /* height: 50%; */
     border-radius: 4px;
     bottom: 0;
     position: absolute;
-    margin: 11px;
+    margin: 0.01%;
+    /* background-color: aqua; */
 }
 
 .icons {
@@ -320,7 +343,7 @@ video {
     /* background-color: aqua; */
     /* background-color: rgb(67, 67, 170); */
     /* background-color: rgb(12, 12, 55); */
-    background-color: rgb(17, 16, 16);
+    /* background-color: rgb(17, 16, 16); */
     /* margin-bottom: 1px; */
     display: flex;
     flex-direction: row;
@@ -335,14 +358,14 @@ video {
     /* background-color: aqua; */
     /* background-color: rgb(67, 67, 170); */
     /* background-color: rgb(12, 12, 55); */
-    background-color: rgb(17, 16, 16);
+    /* background-color: rgb(17, 16, 16); */
     cursor: pointer;
     margin: auto 9px;
     /* color: #000; */
     /* color: rgb(246, 231, 231); */
-    color: rgb(67, 67, 170);;
-    font-size: 30px;
-    
+    /* color: rgb(67, 67, 170); */
+    font-size: 35px;
+    color: rgb(190, 186, 207);
     /* color: rgb(67, 67, 170); */
     
 }
@@ -374,14 +397,14 @@ video {
 #myProgressBar{
     display: flex;
     width: 100%;
-    background-color: grey; 
+    /* background-color: red;  */
     cursor: pointer;
 }
 
 .volumebar {
     position: absolute;
     right: 0;
-    width: 30%;
+    width: 20%;
     display: flex;
     margin-right: 2%;
     /* justify-content: center; */
@@ -389,7 +412,7 @@ video {
     flex-direction: row;
     align-items: center;
     /* background-color: rgb(12, 12, 55) */
-    background-color: rgb(17, 16, 16);
+    /* background-color: rgb(17, 16, 16); */
 
 }
 
@@ -410,7 +433,7 @@ video {
     /* background-color: white; */
     margin-right: 5px;
     /* background-color: rgb(12, 12, 55) */
-    background-color: rgb(17, 16, 16);
+    /* background-color: rgb(17, 16, 16); */
     color: rgb(67, 67, 170);
     cursor: pointer;
 
@@ -418,18 +441,19 @@ video {
 
 .songssection {
     /* display: flex; */
-    /* border: 2px solid #000; */
+    border-top: 5px solid rgb(8, 8, 8);
     /* background-color: rgb(29, 28, 28); */
     background-color: rgb(17, 16, 16);
-
+    border-radius: 10px;
     padding: 15px;
     height: 100%;
     width: 100%;
+    margin-left: 5px;
     /* background-color: rgb(67, 67, 170); */
     overflow-y: auto;
     /* background-color: grey; */
     /* background-color: whitesmoke; */
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .helo {
@@ -513,32 +537,38 @@ video {
     /* margin-bottom: 17px; */
     background-color: black;
     z-index: 3;
-    border-radius: 10px;
+    /* border-radius: 5px; */
     /* border: 3px solid white; */
     border-bottom: 3px solid rgb(67, 67, 170);
 }
 
 .playsectiontop {
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    height: 19%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 18%;
     width: 100%;
     /* border: 3px solid grey; */
     /* background-color: grey; */
     /* background-color: rgb(67, 67, 170); */
     /* background-color: rgb(12, 12, 55) */
-    background-color: rgb(67, 67, 170);
+    /* background-color: rgb(67, 67, 170); */
+    background-color: rgb(17, 16, 16);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 /* font-family: 'Great Vibes', cursive; */
-/* font-family: 'Kalam', cursive; */
-font-family: 'Lobster', cursive;
+font-family: 'Kalam', cursive;
+/* font-family: 'Lobster', cursive; */
 /* font-family: 'Pacifico', cursive;  */
 font-size: 30px;
 
+}
+
+.blackb {
+    height: 8%;
+    background-color: black;
 }
 
 .photo {
@@ -547,6 +577,7 @@ font-size: 30px;
     /* height: 55vh; */
     width: 100%;
     height: 80%;
+    /* margin-top: 20%; */
     /* margin: 1%; */
     /* margin-top: 5%; */
     /* background-color: green; */
@@ -562,7 +593,17 @@ font-size: 30px;
 
 .blackbar {
     /* background-color: black; */
-    height: 5vh;
+    height: 4vh;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(17, 16, 16);
+    /* background-color: rgb(67, 67, 170); */
+    font-family: 'Kalam', cursive;
+    /* background-color: rgb(0, 0, 0); */
+    font-size: 100%;
 }
 
 
@@ -576,3 +617,8 @@ font-size: 30px;
     height: 11vh;
     background-color: rgb(24, 22, 64);
 } */
+
+.footer {
+    height: 14vh;
+    background-color: #aaa;
+}
