@@ -26,7 +26,7 @@
     }
 
 .home {
-    height: 81vh;
+    height: 83vh;
     /* background-color: aqua; */
     position: relative;
     display:flex;
@@ -310,6 +310,7 @@ font-family: 'Marcellus', serif;
 
 
     /* background-color: blue; */
+    /* background-color: rgb(67, 67, 170); */
     color: white;
     display: flex;
     justify-content: center;
@@ -337,8 +338,9 @@ font-family: 'Marcellus', serif;
     /* height: 50%; */
     border-radius: 4px;
     bottom: 0;
-    position: absolute;
-    margin: 0.01%;
+    /* position: absolute; */
+    /* margin: 0.01%; */
+    /* margin-bottom: 0.1%; */
     /* background-color: aqua; */
 }
 
@@ -353,6 +355,7 @@ font-family: 'Marcellus', serif;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 1.5%;
     margin-bottom: 0;
     /* cursor: pointer; */
     /* background-color: white; */
@@ -369,16 +372,22 @@ font-family: 'Marcellus', serif;
     /* color: rgb(246, 231, 231); */
     /* color: rgb(67, 67, 170); */
     font-size: 35px;
-    color: rgb(190, 186, 207);
+    /* color: rgb(190, 186, 207); */
     /* color: rgb(67, 67, 170); */
     
+}
+
+.icons .smallicon {
+    font-size: 20px;
+    /* background-color: aqua; */
+    margin: auto 1%;
 }
 
 #timerstart {
     font-size: 12px;
     /* background-color: aqua; */
     /* background-color: rgb(12, 12, 55); */
-    background-color: rgb(17, 16, 16);
+    /* background-color: rgb(17, 16, 16); */
     margin: 5px;
     /* color: black; */
     color: rgb(246, 231, 231);
@@ -390,7 +399,7 @@ font-family: 'Marcellus', serif;
     font-size: 12px;
     /* background-color: aqua; */
     /* background-color: rgb(12, 12, 55); */
-    background-color: rgb(17, 16, 16);
+    /* background-color: rgb(17, 16, 16); */
     margin: 5px;
     /* color: black; */
     color: rgb(246, 231, 231);
@@ -410,7 +419,7 @@ font-family: 'Marcellus', serif;
     right: 0;
     width: 20%;
     display: flex;
-    margin-right: 2%;
+    margin-right: 6%;
     /* justify-content: center; */
     justify-content: center;
     flex-direction: row;
@@ -435,10 +444,10 @@ font-family: 'Marcellus', serif;
 
 .volumeicon {
     /* background-color: white; */
-    margin-right: 5px;
+    margin-right: 1px;
     /* background-color: rgb(12, 12, 55) */
     /* background-color: rgb(17, 16, 16); */
-    color: rgb(67, 67, 170);
+    /* color: rgb(67, 67, 170); */
     cursor: pointer;
 
 }
@@ -504,6 +513,7 @@ font-family: 'Marcellus', serif;
     height: 35px;
     display: flex;
     justify-content: center;
+    font-size: 15px;
     align-items: center;
     margin: 0;
     background-color: rgb(13,13,13);
@@ -514,7 +524,7 @@ font-family: 'Marcellus', serif;
     justify-content: center;
     align-items: center;
     margin-top: 3px;
-    font-size: 13px;
+    font-size: 12px;
     background-color: rgb(67, 67, 170);
 }
 
@@ -539,7 +549,8 @@ font-family: 'Marcellus', serif;
     position: relative;
     margin: auto 1px;
     /* margin-bottom: 17px; */
-    background-color: black;
+    /* background-color: black; */
+    background-color: rgb(17, 16, 16);
     z-index: 3;
     /* border-radius: 5px; */
     /* border: 3px solid white; */
@@ -578,6 +589,7 @@ font-size: 25px;
 
 .photo {
     display: flex;
+    flex-direction: column;
     /* align-items: center; */
     /* height: 55vh; */
     width: 100%;
@@ -593,12 +605,59 @@ font-size: 25px;
 .photo img {
     align-items: center;
     height: 70%
+
 }
 
+.songdetails {
+    /* padding: 5%; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    align-items: center;
+    height: 30%;
+    color: white;
+    /* padding: ; */
+    /* background-color: rgb(17, 16, 16); */
+    /* background-color: aqua; */
+    background-color: rgb(17, 16, 16);
+}
+
+.covermusicinfo {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* height: 80%; */
+    align-items: center;
+    width: 100%;
+    padding: 5%;
+    background-color: rgb(17, 16, 16);
+    /* background-color: antiquewhite; */
+}
+
+.covermusicname {
+    font-size: 20px;
+    background-color: rgb(17, 16, 16);
+}
+
+.covericon{
+    display: flex;
+
+    /* margin: 5% ; */
+    position: absolute;
+    right: 0;
+    margin: auto 5%;
+    background-color: rgb(17, 16, 16);
+}
+
+.covericon  .covericonone{
+    background-color: rgb(17, 16, 16);
+    margin: 7px;
+    cursor: pointer;
+}
 
 .blackbar {
     /* background-color: black; */
-    height: 4vh;
+    height: 2vh;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -610,7 +669,6 @@ font-size: 25px;
     /* background-color: rgb(0, 0, 0); */
     font-size: 100%;
 }
-
 
 
 
