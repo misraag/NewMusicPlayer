@@ -706,6 +706,7 @@ font-size: 25px;
 .footcovericon {
     margin: 5px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .footersongname {
