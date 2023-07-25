@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kalam&family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
 <!-- FONT AWESOME -->
 <link rel="stylesheet" href="/index.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,9 +19,9 @@
 <body>
     <div id="complete">
         <div class="home">
-            <!-- <video autoplay muted loop id="myVideo">
+            <video autoplay muted loop id="myVideo">
                 <source src="background.mp4" type="video/mp4">
-            </video> -->
+            </video>
             <div class="content">
                 <div class="navbartop">
                     <div class="btnbar"><i class="fa-solid fa-house iconspacing"></i>Home</div>
@@ -72,26 +75,25 @@
                       </div>
                       </div>
                       <div class="timebar">
+                        <div id="timerstart" >00:00</div>
                         <input id="myProgressBar" type="range" class="progressBar" min="0" value="0" max="100">
-                        <div id="timer" >00:00</div>
+                        <div id="timerend" >00:00</div>
                         </div>
                   </div>
                 </div>
                 <div class="songssection">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col-md-4 col-sm-12  cardcontent">
-                          <div class="card h-100">
-                            <div>
+                    <div class="row row-cols-1 row-cols-md-3 g-4 helo">
+                        <div class="col col-md-3 col-sm-12  cardcontent">
+                          <div class="h-100">
                             <img src="/covers/1.jpg" class="card-img-top" alt="...">
                             <div class="song-info">
                                 <h6 class="music-name">Song 1</h6>
                                 <p class="duration">03:54</p>
                             </div>
-                        </div>
                           </div>
                         </div>
-                        <div class="col-md-4 col-sm-12  cardcontent">
-                          <div class="card h-100">
+                        <div class="col-md-3 col-sm-12  cardcontent">
+                          <div class="h-100">
                             <div>
                             <img src="/covers/2.jpg" class="card-img-top" alt="...">
                             <div class="song-info">
@@ -101,8 +103,8 @@
                         </div>
                           </div>
                         </div>
-                        <div class="col-md-4 col-sm-12  cardcontent">
-                          <div class="card h-100">
+                        <div class="col-md-3 col-sm-12  cardcontent">
+                          <div class="h-100">
                             <div>
                             <img src="/covers/3.jpg" class="card-img-top" alt="...">
                             <div class="song-info">
@@ -112,8 +114,8 @@
                         </div>
                           </div>
                         </div>
-                        <div class="col-md-4 col-sm-12  cardcontent">
-                          <div class="card h-100">
+                        <div class="col-md-3 col-sm-12  cardcontent">
+                          <div class="h-100">
                             <div>
                             <img src="/covers/4.jpg" class="card-img-top" alt="...">
                             <div class="song-info">
@@ -123,8 +125,8 @@
                         </div>
                           </div>
                         </div>
-                        <div class="col-md-4 col-sm-12  cardcontent">
-                            <div class="card h-100">
+                        <div class="col-md-3 col-sm-12  cardcontent">
+                            <div class="h-100">
                                 <div>
                               <img src="/covers/5.jpg" class="card-img-top" alt="...">
                               <div class="song-info">
@@ -134,8 +136,8 @@
                         </div>
                             </div>
                           </div>
-                          <div class="col-md-4 col-sm-12  cardcontent">
-                            <div class="card h-100">
+                          <div class="col-md-3 col-sm-12  cardcontent">
+                            <div class="h-100">
                                 <div>
                               <img src="/covers/6.jpg" class="card-img-top" alt="...">
                               <div class="song-info">
@@ -145,8 +147,8 @@
                         </div>
                             </div>
                           </div>
-                          <div class="col-md-4 col-sm-12  cardcontent">
-                            <div class="card h-100">
+                          <div class="col-md-3 col-sm-12  cardcontent">
+                            <div class="h-100">
                                 <div>
                               <img src="/covers/7.jpg" class="card-img-top" alt="...">
                               <div class="song-info">
@@ -156,8 +158,8 @@
                         </div>
                             </div>
                           </div>
-                          <div class="col-md-4 col-sm-12  cardcontent">
-                            <div class="card h-100">
+                          <div class="col-md-3 col-sm-12  cardcontent">
+                            <div class="h-100">
                                 <div>
                               <img src="/covers/8.jpg" class="card-img-top" alt="...">
                               <div class="song-info">
@@ -167,8 +169,8 @@
                         </div>
                             </div>
                           </div>
-                          <div class="col-md-4 col-sm-12  cardcontent">
-                            <div class="card h-100">
+                          <div class="col-md-3 col-sm-12  cardcontent">
+                            <div class="h-100">
                                 <div>
                               <img src="/covers/9.jpg" class="card-img-top" alt="...">
                               <div class="song-info">
@@ -178,8 +180,8 @@
                         </div>
                             </div>
                           </div>
-                          <div class="col-md-4 col-sm-12  cardcontent">
-                            <div class="card h-100">
+                          <div class="col-md-3 col-sm-12  cardcontent">
+                            <div class="h-100">
                                 <div>
                               <img src="/covers/10.jpg" class="card-img-top" alt="...">
                               <div class="song-info">
@@ -194,7 +196,7 @@
             </div>
             <div class="playsection">
               <div class="playsectiontop">
-                  Hello
+                  Welcome to my Project!
               </div>
               <div class="photo">
                 <img src="/covers/8.jpg" class="card-img-top" alt="...">
@@ -219,3 +221,8 @@
 <i class="fa-solid fa-backward"></i>
 <i class="fa-solid fa-heart"></i>
 <i class="fa-solid fa-ellipsis"></i> -->
+
+<!-- font-family: 'Great Vibes', cursive;
+font-family: 'Kalam', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Pacifico', cursive; -->

@@ -5,6 +5,8 @@
     /* font-family: 'Ubuntu', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     background-color: black;
+    /* background-color: rgb(189, 230, 233); */
+
     /* background-color: rgb(67, 67, 170); */
     /* border-radius: 5px; */
     font-size: 18px;
@@ -32,17 +34,17 @@ video {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 28%;
-    height: 92%;
+    width: 23%;
+    height: 100%;
     position: relative;
     /* margin-left: 1rem;
     margin-top: auto;
     margin-bottom: 17px; */
-    margin: auto 1rem;
+    margin: auto 3px;
     /* background: rgba(252, 252, 252, 0.795); */
     z-index: 3;
     border-radius: 10px;
-    border: 3px solid white;
+    /* border: 3px solid white; */
     /* background-color: grey; */
     border-bottom: 3px solid rgb(67, 67, 170);
 }
@@ -57,8 +59,12 @@ video {
     color: white;
     /* background-color: rgb(39, 39, 46); */
     /* background-color: grey; */
+    /* background-color: rgb(67, 67, 170); */
+    /* background-color: rgb(12, 12, 55); */
     background-color: rgb(67, 67, 170);
-    border-bottom: 3px solid grey;
+    /* border-bottom: 3px solid grey; */
+    /* border: 3px solid black; */
+    border: 3px solid grey;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
     height: 26%;
@@ -72,9 +78,13 @@ video {
     /* margin-top: 7%; */
     height: 100vh;
     overflow-y: auto;
-    
+    /* border: 3px solid white; */
+    /* margin-top: 20px; */
+    border-radius: 5px;
     /* background: rgba(252, 252, 252, 0.795); */
     /* background-color: rgb(39, 39, 46); */
+    background-color: rgb(17, 16, 16);
+
 }
 
 .subheader {
@@ -87,7 +97,9 @@ video {
     /* border-top: 3ps solid black; */
     /* border-radius: 0px; */
     /* margin-bottom: 10px; */
-    border: 10px solid black;
+    /* border: 10px solid black; */
+    background-color: rgb(17, 16, 16);
+
 }
 
 .btnbar {
@@ -98,8 +110,10 @@ video {
     
     /* background-color: rgb(39, 39, 46); */
     /* background-color: grey; */
+    /* background-color: rgb(67, 67, 170); */
+    /* background-color: rgb(12, 12, 55); */
     background-color: rgb(67, 67, 170);
-    border-radius: 3px;
+    border-radius: 3px; 
     color: white;
     font-size: 17px;
 }
@@ -135,8 +149,10 @@ video {
 }
 
 .iconspacing {
-    margin-right: 10px;
+    margin: 10px;
     /* background-color: rgb(39, 39, 46); */
+    /* background-color: rgb(67, 67, 170); */
+    /* background-color: rgb(12, 12, 55); */
     background-color: rgb(67, 67, 170);
 }
 
@@ -168,18 +184,22 @@ video {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 44%;
+    width: 54%;
     /* height: 100vh; */
-        height: 92%;
+        height: 100%;
     position: relative;
-    margin: auto 0.6rem;
+    margin: auto 1px;
     /* margin-bottom: 17px; */
     /* background-color: rgb(39, 39, 46); */
     /* background-color: rgb(67, 67, 170); */
     z-index: 3;
-    border-radius: 10px;
+    /* background: transparent; */
+    /* opacity: 0.9; */
+    border-radius: 5px;
     border: 3px solid white;
     border-bottom: 3px solid rgb(67, 67, 170);
+    /* background-color: rgb(29, 28, 28); */
+
     
 }
 
@@ -211,7 +231,7 @@ video {
     /* background-color: blueviolet; */
     /* background-color: rgb(67, 67, 170); */
     /* background-color: rgb(26, 26, 186); */
-
+    background: transparent;
     color: white;
     text-align: center;
     border-bottom: 3px solid grey;
@@ -223,7 +243,15 @@ video {
     /* background-color: rgb(67, 67, 170); */
     /* color: white; */
     /* color: #000; */
-    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+    /* font-family: 'Great Vibes', cursive; */
+    font-family: 'Kalam', cursive;
+    font-size: 100%;
+    /* font-family: 'Lobster', cursive; */
+    /* font-family: 'Pacifico', cursive; */
 }
 
 .bottom {
@@ -233,7 +261,11 @@ video {
     border-radius: 5px; */
     /* height: 130px; */
     /* background-color: rgb(67, 67, 170); */
-    background-color: rgb(12, 12, 55);
+    /* background-color: rgb(12, 12, 55); */
+    background-color: rgb(17, 16, 16);
+        /* background: rgba(252, 252, 252, .795); */
+        /* background: transparent; */
+
 
     /* background-color: blue; */
     color: white;
@@ -241,12 +273,13 @@ video {
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    height: 80%;
+    height: 75%;
 }
 
 .progressBar {
-    accent-color: white;
-    height: 1px;
+    /* accent-color: white; */
+    accent-color: rgb(67, 67, 170);
+    height: 1.5px;
 }
 
 .timebar {
@@ -255,20 +288,22 @@ video {
     /* background-color: aqua; */
     align-items: center;
     /* background-color: rgb(67, 67, 170); */
-    background-color: rgb(12, 12, 55);
+    /* background-color: rgb(12, 12, 55); */
+    background-color: rgb(17, 16, 16);
     width: 95%;
     height: 20px;
     border-radius: 4px;
     bottom: 0;
     position: absolute;
-    margin: 4px;
+    margin: 11px;
 }
 
 .icons {
     width: 95%;
     /* background-color: aqua; */
     /* background-color: rgb(67, 67, 170); */
-    background-color: rgb(12, 12, 55);
+    /* background-color: rgb(12, 12, 55); */
+    background-color: rgb(17, 16, 16);
     /* margin-bottom: 1px; */
     display: flex;
     flex-direction: row;
@@ -281,21 +316,37 @@ video {
 .icons .fas {
     /* background-color: aqua; */
     /* background-color: rgb(67, 67, 170); */
-    background-color: rgb(12, 12, 55);
+    /* background-color: rgb(12, 12, 55); */
+    background-color: rgb(17, 16, 16);
+
     margin: auto 9px;
     /* color: #000; */
-    color: rgb(246, 231, 231);
+    /* color: rgb(246, 231, 231); */
+    color: rgb(67, 67, 170);;
     font-size: 30px;
     
     /* color: rgb(67, 67, 170); */
     
 }
 
-#timer {
+#timerstart {
     font-size: 12px;
     /* background-color: aqua; */
-    background-color: rgb(12, 12, 55);
-    margin: 3px;
+    /* background-color: rgb(12, 12, 55); */
+    background-color: rgb(17, 16, 16);
+    margin: 5px;
+    /* color: black; */
+    color: rgb(246, 231, 231);
+    border-end-end-radius: 4px;
+    border-start-end-radius: 4px;
+}
+
+#timerend {
+    font-size: 12px;
+    /* background-color: aqua; */
+    /* background-color: rgb(12, 12, 55); */
+    background-color: rgb(17, 16, 16);
+    margin: 5px;
     /* color: black; */
     color: rgb(246, 231, 231);
     border-end-end-radius: 4px;
@@ -319,40 +370,73 @@ video {
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(12, 12, 55)
+    /* background-color: rgb(12, 12, 55) */
+    background-color: rgb(17, 16, 16);
+
 }
 
 #myVolumeBar{
     /* display: flex; */
     width: 40%;
-    background-color: grey; 
+    background-color: white; 
+    /* accent-color: white; */
+    accent-color: rgb(67, 67, 170);
+    height: 2px;
     cursor: pointer;
     right: 0;
     position: absolute;
-    margin: 3%;
+    margin: 4%;
 }
 
 .volumeicon {
     /* background-color: white; */
     margin-right: 5px;
-    background-color: rgb(12, 12, 55)
+    /* background-color: rgb(12, 12, 55) */
+    background-color: rgb(17, 16, 16);
+    color: rgb(67, 67, 170);;
+
 }
 
 .songssection {
     /* display: flex; */
     border: 2px solid #000;
+    /* background-color: rgb(29, 28, 28); */
+    background-color: rgb(17, 16, 16);
+
     padding: 15px;
     height: 100%;
     width: 100%;
     /* background-color: rgb(67, 67, 170); */
     overflow-y: auto;
     /* background-color: grey; */
+    /* background-color: whitesmoke; */
 }
 
-.cardcontent {
-    margin-bottom: 40px;
-    /* background-color: grey; */
+.helo {
+    /* background-color: rgb(29, 28, 28); */
+    background-color: rgb(17, 16, 16);
+
+
 }
+
+.h-100 {
+    background-color: rgb(10,10,10);
+    /* background-color: aqua; */
+    /* border-radius: 4px; */
+    /* border: px solid white; */
+    /* border-radius: 20px; */
+}
+
+
+.cardcontent {
+    margin-bottom: 20px;
+    /* background-color: rgb(29, 28, 28); */
+    /* background-color: rgb(32, 32, 66) */
+    background-color: rgb(17, 16, 16);
+    /* background-color: white; */
+}
+
+
 
 /* .rowcontent {
     background-color: grey;
@@ -361,6 +445,7 @@ video {
 .song-info {
     background-color: rgb(67, 67, 170);
     border: 0px solid white;
+    border-radius: 5px;
     text-align: center;
     margin: 1px;
     color: white;
@@ -373,12 +458,14 @@ video {
     justify-content: center;
     align-items: center;
     margin: 0;
+    background-color: rgb(13,13,13);
 }
 
-p {
+.duration {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 3px;
     font-size: 13px;
     background-color: rgb(67, 67, 170);
 }
@@ -387,7 +474,8 @@ p {
     /* border: 2px solid white; */
     padding: 10px;
     /* background-color: rgb(67, 67, 170); */
-    border-radius: 30px;
+    /* border-radius: 10px; */
+    background-color: rgb(13, 13, 13);
 }
 
 
@@ -398,15 +486,15 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 28%;
-    height: 92%;
+    width: 23%;
+    height: 100%;
     position: relative;
-    margin: auto 0.6rem;
+    margin: auto 1px;
     /* margin-bottom: 17px; */
     background-color: black;
-    /* z-index: 3; */
+    z-index: 3;
     border-radius: 10px;
-    border: 3px solid white;
+    /* border: 3px solid white; */
     border-bottom: 3px solid rgb(67, 67, 170);
 }
 
@@ -415,24 +503,39 @@ p {
     border-top-right-radius: 7px;
     height: 20%;
     width: 100%;
-    border-bottom: 3px solid grey;
+    border: 3px solid grey;
     /* background-color: grey; */
+    /* background-color: rgb(67, 67, 170); */
+    /* background-color: rgb(12, 12, 55) */
     background-color: rgb(67, 67, 170);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+/* font-family: 'Great Vibes', cursive; */
+/* font-family: 'Kalam', cursive; */
+font-family: 'Lobster', cursive;
+/* font-family: 'Pacifico', cursive;  */
+font-size: 30px;
+
 }
 
 .photo {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     /* height: 55vh; */
-    width: 90%;
+    width: 100%;
+    height: 80%;
     /* margin: 1%; */
     /* margin-top: 5%; */
-    background-color: green;
-    border: 1px solid black;
+    /* background-color: green; */
+    /* border: 3px solid white; */
+    
 } 
 
 .photo img {
     align-items: center;
+    height: 70%
 }
 
 
