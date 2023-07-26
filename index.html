@@ -8,9 +8,12 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Ubuntu&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Acme&family=Alice&family=Great+Vibes&family=Kalam&family=Lobster&family=Marcellus&family=Pacifico&family=Philosopher:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Alice&family=Great+Vibes&family=Kalam&family=Lobster&family=Marcellus&family=Pacifico&family=Philosopher:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,232 +33,182 @@
     <title>Document</title>
   </head>
   <body>
-    
-    <div id="complete">
-      <div class="blackbar"></div>
-      <div class="home">
-        <!-- <video autoplay muted loop id="myVideo">
-          <source src="background.mp4" type="video/mp4" />
-        </video> -->
-        <div class="content">
-          <div class="navbartop">
-            <div class="btnbar">
-              <i class="fa-solid fa-house iconspacing"></i>Home
-            </div>
-            <div class="btnbar">
-              <i class="fa-solid fa-magnifying-glass iconspacing"></i>Search
-            </div>
+    <div class="header"></div>
+    <div class="body">
+      <div class="first-section">
+        <div class="nav-bar">
+          <div class="navbar-button">
+            <i class="fa-solid fa-house iconspacing"></i>Home
           </div>
-          <div class="playlist">
-            <div class="subheader">
-              <div class="btnsub btnhead">
-                <i class="fa-solid fa-book-open iconspacing"></i>Playlist
-                <div class="create">
-                  <i class="fa-solid fa-plus iconspacing iconright"></i>
-                </div>
-              </div>
-            </div>
-            <div class="btnbar btnhead liked">Liked Songs</div>
-            <div class="btnbar btnhead liked">Liked Songs</div>
-            <div class="btnbar btnhead liked">Liked Songs</div>
-            <div class="btnbar btnhead liked">Liked Songs</div>
-            <div class="btnbar btnhead liked">Liked Songs</div>
-            <div class="btnbar btnhead liked">Liked Songs</div>
-            <div class="btnbar btnhead liked">Liked Songs</div>
-            <!-- <div class="playlists">Playlist1</div> -->
+          <div class="navbar-button">
+            <i class="fa-solid fa-magnifying-glass iconspacing"></i>Search
           </div>
         </div>
-        <div class="songs">
-          <div class="name">
-            THE MUSIC PLAYER
-          </div>
-          
-          <!-- <div class="playpause">
-            <div class="name">THE MUSIC PLAYER</div>
-            <div class="bottom">
-              <div class="icons">
-                <i class="fas fa-2x fa-step-backward" id="previous"></i>
-                <i class="fas fa-2x fa-play-circle" id="masterPlay"></i>
-                <i class="fas fa-2x fa-step-forward" id="next"></i>
-                <div class="volumebar">
-                  <i class="fa-solid fa-volume-low volumeicon"></i>
-                  <input
-                    id="myVolumeBar"
-                    type="range"
-                    class="progressBar"
-                    min="0"
-                    value="0"
-                    max="100"
-                  />
-                </div>
-              </div>
-              <div class="timebar">
-                <div id="timerstart">00:00</div>
-                <input
-                  id="myProgressBar"
-                  type="range"
-                  class="progressBar"
-                  min="0"
-                  value="0"
-                  max="100"
-                />
-                <div id="timerend">00:00</div>
-              </div>
+        <div class="playlist">
+          <div class="subheader">
+            <!-- <div class="btnsub btnhead"> -->
+            <i class="fa-solid fa-book-open iconspacing"></i>Playlists
+            <div class="create">
+              <i class="fa-solid fa-plus iconspacing iconright"></i>
             </div>
-          </div> -->
-          <div class="songssection">
-            <div class="row row-cols-1 row-cols-md-3 g-4 helo">
-              <div class="col-md-3 col-sm-12 cardcontent">
-                <div class="h-100">
-                  <img src="/covers/1.jpg" class="card-img-top" alt="..." />
-                  <div class="song-info">
-                    <h6 class="music-name">Song 1</h6>
-                    <p class="duration">03:54</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 cardcontent">
-                <div class="h-100">
-                    <img src="/covers/2.jpg" class="card-img-top" alt="..." />
-                    <div class="song-info">
-                      <h6 class="music-name">Song 2</h6>
-                      <p class="duration">03:54</p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 cardcontent">
-                <div class="h-100">
-                    <img src="/covers/3.jpg" class="card-img-top" alt="..." />
-                    <div class="song-info">
-                      <h6 class="music-name">Song 3</h6>
-                      <p class="duration">03:54</p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 cardcontent">
-                <div class="h-100">
-                    <img src="/covers/4.jpg" class="card-img-top" alt="..." />
-                    <div class="song-info">
-                      <h6 class="music-name">Song 4</h6>
-                      <p class="duration">03:54</p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 cardcontent">
-                <div class="h-100">
-                    <img src="/covers/5.jpg" class="card-img-top" alt="..." />
-                    <div class="song-info">
-                      <h6 class="music-name">Song 5</h6>
-                      <p class="duration">03:54</p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 cardcontent">
-                <div class="h-100">
-                    <img src="/covers/6.jpg" class="card-img-top" alt="..." />
-                    <div class="song-info">
-                      <h6 class="music-name">Song 6</h6>
-                      <p class="duration">03:54</p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 cardcontent">
-                <div class="h-100">
-                    <img src="/covers/7.jpg" class="card-img-top" alt="..." />
-                    <div class="song-info">
-                      <h6 class="music-name">Song 7</h6>
-                      <p class="duration">03:54</p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 cardcontent">
-                <div class="h-100">
-                    <img src="/covers/8.jpg" class="card-img-top" alt="..." />
-                    <div class="song-info">
-                      <h6 class="music-name">Song 8</h6>
-                      <p class="duration">03:54</p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 cardcontent">
-                <div class="h-100">
-                    <img src="/covers/9.jpg" class="card-img-top" alt="..." />
-                    <div class="song-info">
-                      <h6 class="music-name">Song 9</h6>
-                      <p class="duration">03:54</p>
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-12 cardcontent">
-                <div class="h-100">
-                    <img src="/covers/10.jpg" class="card-img-top" alt="..." />
-                    <div class="song-info">
-                      <h6 class="music-name">Song 10</h6>
-                      <p class="duration">03:54</p>
-                    </div>
-                </div>
-              </div>
-            </div>
+            <!-- </div> -->
           </div>
+          <div class="subheader liked">Liked Songs</div>
+          <div class="subheader liked"><span class="playlist-name"></span></div>
         </div>
-        <div class="playsection">
-          <div class="playsectiontop">
-            Now Playing...
-          </div>
-          <div class="photo">
-            <img src="/covers/8.jpg" class="card-img-top" alt="..." />
-            <div class="songdetails">
-              <div class="covermusicinfo">
-                <div class="covermusicname">
-                    Song 9
+      </div>
+      <div class="songs">
+        <div class="name">THE MUSIC PLAYER</div>
+        <div class="songs-section">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col-md-3 col-sm-12 cards">
+              <div class="h-100">
+                <img src="/covers/1.jpg" class="card-img-top" alt="..." />
+                <div class="song-info">
+                  <div class="music-name">Song 1</div>
+                  <div class="duration">03:54</div>
                 </div>
-                <div class="covericon">
-                  <i class="fa-solid fa-plus smallicon covericonone"></i>
-                  <i class="fas fa-solid fa-heart smallicon covericonone"></i>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 cards">
+              <div class="h-100">
+                <img src="/covers/2.jpg" class="card-img-top" alt="..." />
+                <div class="song-info">
+                  <div class="music-name">Song 2</div>
+                  <div class="duration">03:54</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 cards">
+              <div class="h-100">
+                <img src="/covers/3.jpg" class="card-img-top" alt="..." />
+                <div class="song-info">
+                  <h6 class="music-name">Song 3</h6>
+                  <p class="duration">03:54</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 cards">
+              <div class="h-100">
+                <img src="/covers/4.jpg" class="card-img-top" alt="..." />
+                <div class="song-info">
+                  <h6 class="music-name">Song 4</h6>
+                  <p class="duration">03:54</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 cards">
+              <div class="h-100">
+                <img src="/covers/5.jpg" class="card-img-top" alt="..." />
+                <div class="song-info">
+                  <h6 class="music-name">Song 5</h6>
+                  <p class="duration">03:54</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 cards">
+              <div class="h-100">
+                <img src="/covers/6.jpg" class="card-img-top" alt="..." />
+                <div class="song-info">
+                  <h6 class="music-name">Song 6</h6>
+                  <p class="duration">03:54</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 cards">
+              <div class="h-100">
+                <img src="/covers/7.jpg" class="card-img-top" alt="..." />
+                <div class="song-info">
+                  <h6 class="music-name">Song 7</h6>
+                  <p class="duration">03:54</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 cards">
+              <div class="h-100">
+                <img src="/covers/8.jpg" class="card-img-top" alt="..." />
+                <div class="song-info">
+                  <h6 class="music-name">Song 8</h6>
+                  <p class="duration">03:54</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 cards">
+              <div class="h-100">
+                <img src="/covers/9.jpg" class="card-img-top" alt="..." />
+                <div class="song-info">
+                  <h6 class="music-name">Song 9</h6>
+                  <p class="duration">03:54</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12 cards">
+              <div class="h-100">
+                <img src="/covers/10.jpg" class="card-img-top" alt="..." />
+                <div class="song-info">
+                  <h6 class="music-name">Song 10</h6>
+                  <p class="duration">03:54</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="footer">
-        <div class="playpause">
-          <div class="bottom">
-            <div class="footersong">
-              <img src="/covers/8.jpg" class="footercoverimg" alt="..." />
-              <div class="footersongname">Song 9</div>
-              <i class="fas fa-solid fa-heart smallicon footcovericon"></i>
-            </div>
-            <div class="icons">
-              <i class="fas fa-solid fa-heart smallicon"></i>
-              <i class="fas fa-2x fa-step-backward smallicon" id="previous"></i>
-              <i class="fas fa-2x fa-play-circle" id="masterPlay"></i>
-              <i class="fas fa-2x fa-step-forward smallicon" id="next"></i>
-              <i class=" fas fa-2xs fa-solid fa-repeat smallicon"></i>
-              <div class="volumebar">
-                <i class="fa-solid fa-volume-low volumeicon"></i>
-                <input
-                  id="myVolumeBar"
-                  type="range"
-                  class="progressBar"
-                  min="0"
-                  value="0"
-                  max="100"
-                />
+      <div class="now-playing">
+        <div class="playsectiontop">Now Playing...</div>
+        <div class="photo">
+          <img src="/covers/8.jpg" class="card-img-top" alt="..." />
+          <div class="songdetails">
+            <div class="covermusicinfo">
+              <div class="covermusicname">Song 9</div>
+              <div class="covericon">
+                <i class="fa-solid fa-plus smallicon covericonone"></i>
+                <i class="fas fa-solid fa-heart smallicon covericonone"></i>
               </div>
             </div>
-            <div class="timebar">
-              <div id="timerstart">00:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="playpause">
+        <div class="bottom">
+          <div class="footersong">
+            <img src="/covers/8.jpg" class="footercoverimg" alt="..." />
+            <div class="footersongname">
+              <span id="masterSongName"></span>
+            </div>
+            <i class="fas fa-solid fa-heart smallicon footcovericon"></i>
+          </div>
+          <div class="icons">
+            <i class="fas fa-solid fa-heart smallicon"></i>
+            <i class="fas fa-2x fa-step-backward smallicon" id="previous"></i>
+            <i class="fas fa-2x fa-play-circle" id="masterPlay"></i>
+            <i class="fas fa-2x fa-step-forward smallicon" id="next"></i>
+            <i class="fas fa-2xs fa-solid fa-repeat smallicon"></i>
+            <div class="volumebar">
+              <i class="fa-solid fa-volume-low volumeicon"></i>
               <input
-                id="myProgressBar"
+                id="myVolumeBar"
                 type="range"
                 class="progressBar"
                 min="0"
                 value="0"
                 max="100"
               />
-              <div id="timerend">00:00</div>
             </div>
+          </div>
+          <div class="timebar">
+            <div id="timerstart">00:00</div>
+            <input
+              id="myProgressBar"
+              type="range"
+              class="progressBar"
+              min="0"
+              value="0"
+              max="100"
+            />
+            <div id="timerend">00:00</div>
           </div>
         </div>
       </div>

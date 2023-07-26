@@ -1,6 +1,8 @@
-
-
-
+let songIndex = 0;
+let audioElement = new Audio('songs/1.mp3');
+let songItem = Array.from(document.getElementsByClassName('cardcontent'));
+let masterPlay = document.getElementById('masterPlay');
+let masterSongName = document.getElementById('masterSongName');
 
 let songs = [
     {songName: "Song 1", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg'},
@@ -14,3 +16,28 @@ let songs = [
     {songName: "Song 9", filepath: 'songs/9.mp3', coverPath: 'covers/9.jpg'},
     {songName: "Song 10", filepath: 'songs/10.mp3', coverPath: 'covers/10.jpg'}
 ]
+
+
+
+masterPlay.addEventListener('click', () => {
+    if(audioElement.paused || audioElement.currentTime <=0){
+        audioElement.play();
+        masterSongName.innerText = songs[songIndex].songName;
+        masterPlay.classList.remove('fa-play-circle');
+        masterPlay.classList.add('fa-pause-circle');
+        // gif.style.opacity =1;
+        // playButton[songIndex].classList.remove("fa-play-circle");
+        // playButton[songIndex].classList.add("fa-pause-circle");
+        songItem[songIndex].classList.add('afterSelect');
+        
+        
+    }
+    else{
+        audioElement.pause();
+        masterPlay.classList.remove('fa-pause-circle');
+        masterPlay.classList.add('fa-play-circle');
+        // gif.style.opacity =0;
+        makeAllPlays();
+        songItem[songIndex].classList.remove('afterSelect');
+    }
+})
