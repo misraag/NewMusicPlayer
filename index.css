@@ -120,7 +120,7 @@ background: #000;
     background-color: rgb(67, 67, 170);
     font-family: 'Marcellus', serif;
     font-weight: 520;
-    padding-left: 34%;
+    padding-left: 35%;
 }
 
 /* ************SECOND SECTION******************* */
@@ -169,6 +169,23 @@ background: #000;
 .cards {
     margin-bottom: 4%;
     background-color: rgb(17, 16, 16);
+}
+
+.play-icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 11%;
+    margin-bottom: 38%;
+    font-size: 22px;
+    background-color: transparent;
+    visibility: hidden;
+}
+
+.play-icon i {
+    background-color: transparent;
+    color: rgb(48, 180, 62);
+
 }
 
 .card-img-top {
