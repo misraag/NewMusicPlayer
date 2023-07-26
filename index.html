@@ -65,9 +65,7 @@
               <div class="h-100">
                 <img src="/covers/1.jpg" class="card-img-top" alt="..." />
                 <div class="song-info">
-                  <div class="music-name">
-                    Music Name
-                  </div>
+                  <div class="music-name">Music Name</div>
                   <div class="duration">03:54</div>
                 </div>
               </div>
@@ -157,62 +155,56 @@
         </div>
       </div>
       <div class="now-playing">
-        <div class="playsectiontop">Now Playing...</div>
-        <div class="photo">
+        <div class="now-playing-info">Now Playing...</div>
+        <div class="playing-song-display">
           <img src="/covers/8.jpg" class="card-img-top" alt="..." />
           <div class="songdetails">
-            <div class="covermusicinfo">
-              <div class="covermusicname">Song 9</div>
-              <div class="covericon">
-                <i class="fa-solid fa-plus smallicon covericonone"></i>
-                <i class="fas fa-solid fa-heart smallicon covericonone"></i>
-              </div>
+            <div class="covermusicname">Music Name</div>
+            <div class="covericon">
+              <i class="fa-solid fa-plus"></i>
+              <i class="fas fa-solid fa-heart"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="footer">
-      <div class="playpause">
-        <div class="bottom">
-          <div class="footersong">
-            <img src="/covers/8.jpg" class="footercoverimg" alt="..." />
-            <div class="footersongname">
-              <span id="masterSongName"></span>
-            </div>
-            <i class="fas fa-solid fa-heart smallicon footcovericon"></i>
-          </div>
-          <div class="icons">
-            <i class="fas fa-solid fa-heart smallicon"></i>
-            <i class="fas fa-2x fa-step-backward smallicon" id="previous"></i>
-            <i class="fas fa-2x fa-play-circle" id="masterPlay"></i>
-            <i class="fas fa-2x fa-step-forward smallicon" id="next"></i>
-            <i class="fas fa-2xs fa-solid fa-repeat smallicon"></i>
-            <div class="volumebar">
-              <i class="fa-solid fa-volume-low volumeicon"></i>
-              <input
-                id="myVolumeBar"
-                type="range"
-                class="progressBar"
-                min="0"
-                value="0"
-                max="100"
-              />
-            </div>
-          </div>
-          <div class="timebar">
-            <div id="timerstart">00:00</div>
-            <input
-              id="myProgressBar"
-              type="range"
-              class="progressBar"
-              min="0"
-              value="0"
-              max="100"
-            />
-            <div id="timerend">00:00</div>
-          </div>
+      <div class="footersong">
+        <img src="/covers/8.jpg" class="footercoverimg" alt="..." />
+        <div class="footersongname">
+          <span id="masterSongName"></span>
         </div>
+        <i class="fas fa-solid fa-heart footcovericon"></i>
+      </div>
+      <div class="controls">
+        <i class="fas fa-solid fa-heart smallicon"></i>
+        <i class="fas fa-2x fa-step-backward smallicon" id="previous"></i>
+        <i class="fas fa-2x fa-play-circle" id="masterPlay"></i>
+        <i class="fas fa-2x fa-step-forward smallicon" id="next"></i>
+        <i class="fas fa-2xs fa-solid fa-repeat smallicon"></i>
+        <div class="volumebar">
+          <i class="fa-solid fa-volume-low volume-icon"></i>
+          <input
+            id="myVolumeBar"
+            type="range"
+            class="progressBar"
+            min="0"
+            value="0"
+            max="100"
+          />
+        </div>
+      </div>
+      <div class="timebar">
+        <div id="timerstart">00:00</div>
+        <input
+          id="myProgressBar"
+          type="range"
+          class="progressBar"
+          min="0"
+          value="0"
+          max="100"
+        />
+        <div id="timerend">00:00</div>
       </div>
     </div>
 
