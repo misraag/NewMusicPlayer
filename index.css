@@ -169,23 +169,31 @@ background: #000;
 .cards {
     margin-bottom: 4%;
     background-color: rgb(17, 16, 16);
+    background-color: white;
+}
+
+.h-100 {
+    width: 100%;
+    padding: 0;
 }
 
 .play-icon {
     position: absolute;
-    right: 0;
+    /* right: 0;
     bottom: 0;
     margin-right: 11%;
-    margin-bottom: 38%;
+    margin-bottom: 38%; */
+    right: 0;
     font-size: 22px;
     background-color: transparent;
-    visibility: hidden;
+    /* visibility: hidden; */
+    
 }
 
 .play-icon i {
     background-color: transparent;
     color: rgb(48, 180, 62);
-
+    /* width: 100%; */
 }
 
 .card-img-top {

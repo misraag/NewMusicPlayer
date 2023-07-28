@@ -3,6 +3,9 @@ let audioElement = new Audio('songs/1.mp3');
 let songItem = Array.from(document.getElementsByClassName('cardcontent'));
 let masterPlay = document.getElementById('masterPlay');
 let masterSongName = document.getElementById('masterSongName');
+let songCard = Array.from(document.getElementsByClassName('cards'));
+let playIcon = Array.from(document.getElementsByClassName('play-icon'));
+
 
 let songs = [
     {songName: "Song 1", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg'},
@@ -19,25 +22,29 @@ let songs = [
 
 
 
-masterPlay.addEventListener('click', () => {
-    if(audioElement.paused || audioElement.currentTime <=0){
-        audioElement.play();
-        masterSongName.innerText = songs[songIndex].songName;
-        masterPlay.classList.remove('fa-play-circle');
-        masterPlay.classList.add('fa-pause-circle');
-        // gif.style.opacity =1;
-        // playButton[songIndex].classList.remove("fa-play-circle");
-        // playButton[songIndex].classList.add("fa-pause-circle");
-        songItem[songIndex].classList.add('afterSelect');
+// masterPlay.addEventListener('click', () => {
+//     if(audioElement.paused || audioElement.currentTime <=0){
+//         audioElement.play();
+//         masterSongName.innerText = songs[songIndex].songName;
+//         masterPlay.classList.remove('fa-play-circle');
+//         masterPlay.classList.add('fa-pause-circle');
+//         // gif.style.opacity =1;
+//         // playButton[songIndex].classList.remove("fa-play-circle");
+//         // playButton[songIndex].classList.add("fa-pause-circle");
+//         songItem[songIndex].classList.add('afterSelect');
         
         
-    }
-    else{
-        audioElement.pause();
-        masterPlay.classList.remove('fa-pause-circle');
-        masterPlay.classList.add('fa-play-circle');
-        // gif.style.opacity =0;
-        makeAllPlays();
-        songItem[songIndex].classList.remove('afterSelect');
-    }
-})
+//     }
+//     else{
+//         audioElement.pause();
+//         masterPlay.classList.remove('fa-pause-circle');
+//         masterPlay.classList.add('fa-play-circle');
+//         // gif.style.opacity =0;
+//         makeAllPlays();
+//         songItem[songIndex].classList.remove('afterSelect');
+//     }
+// })
+
+// songCard.addEventListener('hover', () => {
+//     songCard.setAttribute('visibility', 'hidden');
+// })
