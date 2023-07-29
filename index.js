@@ -20,31 +20,3 @@ let songs = [
     {songName: "Song 10", filepath: 'songs/10.mp3', coverPath: 'covers/10.jpg'}
 ]
 
-
-
-// masterPlay.addEventListener('click', () => {
-//     if(audioElement.paused || audioElement.currentTime <=0){
-//         audioElement.play();
-//         masterSongName.innerText = songs[songIndex].songName;
-//         masterPlay.classList.remove('fa-play-circle');
-//         masterPlay.classList.add('fa-pause-circle');
-//         // gif.style.opacity =1;
-//         // playButton[songIndex].classList.remove("fa-play-circle");
-//         // playButton[songIndex].classList.add("fa-pause-circle");
-//         songItem[songIndex].classList.add('afterSelect');
-        
-        
-//     }
-//     else{
-//         audioElement.pause();
-//         masterPlay.classList.remove('fa-pause-circle');
-//         masterPlay.classList.add('fa-play-circle');
-//         // gif.style.opacity =0;
-//         makeAllPlays();
-//         songItem[songIndex].classList.remove('afterSelect');
-//     }
-// })
-
-// songCard.addEventListener('hover', () => {
-//     songCard.setAttribute('visibility', 'hidden');
-// })
