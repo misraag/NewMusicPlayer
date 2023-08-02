@@ -456,13 +456,13 @@ font-family: 'Kalam', cursive;
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 44vw;
+    width: 45vw;
     border-radius: 4px;
     bottom: 0;
 }
 
 #myProgressBar{
-    display: flex;
+    /* display: flex; */
     width: 100%;
     cursor: pointer;
 }
@@ -474,7 +474,8 @@ font-family: 'Kalam', cursive;
 
 #timerstart {
     font-size: 12px;
-    margin: 5px;
+    width: 5%;
+    margin: 1%;
     color: rgb(246, 231, 231);
     border-end-end-radius: 4px;
     border-start-end-radius: 4px;
@@ -482,7 +483,8 @@ font-family: 'Kalam', cursive;
 
 #timerend {
     font-size: 12px;
-    margin: 5px;
+    margin: 1%;
+    width: 5%;
     color: rgb(246, 231, 231);
     border-end-end-radius: 4px;
     border-start-end-radius: 4px;
