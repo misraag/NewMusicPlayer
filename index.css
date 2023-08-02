@@ -221,7 +221,7 @@ font-family: 'Kalam', cursive;
     
 }
 
-.h-100:hover :not(#masterPlayCover){
+.h-100:hover :not(.masterPlayCover){
     cursor: pointer;
     opacity: 0.7;
     transition: 0.15s;
