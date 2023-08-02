@@ -247,7 +247,7 @@ font-family: 'Kalam', cursive;
     text-align: center;
     /* right: 0; */
     cursor: pointer;
-    font-size: 2.9rem;
+    font-size: 2.5rem;
     /* color: rgb(103, 255, 43); */
     color: rgb(255, 255, 255);
     visibility: hidden;
@@ -339,8 +339,12 @@ font-family: 'Kalam', cursive;
     background-color: rgb(17, 16, 16);
 }
 
-
 .covermusicname {
+    background-color: rgb(17, 16, 16);
+}
+
+
+#coversongname {
     font-family: 'Marcellus', serif;
     font-size: 22px;
     font-weight: bolder;
@@ -459,6 +463,7 @@ font-family: 'Kalam', cursive;
     width: 45vw;
     border-radius: 4px;
     bottom: 0;
+    background-color: transparent;
 }
 
 #myProgressBar{

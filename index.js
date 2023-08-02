@@ -4,6 +4,8 @@ let songItem = Array.from(document.getElementsByClassName('cardcontent'));
 let masterPlay = document.getElementById('masterPlay');
 let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
 let masterSongName = document.getElementById('masterSongName');
+let coverSongName = document.getElementById('coversongname');
+let footCoverImage = document.getElementById('footercoverimg');
 let timerStart = document.getElementById('timerstart');
 let timerEnd = document.getElementById('timerend');
 
@@ -28,6 +30,8 @@ masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime <=0){
         audioElement.play();
         masterSongName.innerText = songs[songIndex].songName;
+        coverSongName.innerText = songs[songIndex].songName;
+        // footCoverImage.style.backgroundImage = url(songs[songIndex].coverPath);
         masterPlay.classList.remove('fa-play-circle');
         masterPlay.classList.add('fa-pause-circle');
         masterPlayCover[songIndex].classList.remove("fa-play-circle");
@@ -38,6 +42,8 @@ masterPlay.addEventListener('click',()=>{
         audioElement.pause();
         masterPlay.classList.remove('fa-pause-circle');
         masterPlay.classList.add('fa-play-circle');
+        masterPlayCover[songIndex].classList.add("fa-play-circle");
+        masterPlayCover[songIndex].classList.remove("fa-pause-circle");
     }
     
     })
