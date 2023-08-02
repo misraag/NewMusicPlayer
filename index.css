@@ -8,6 +8,7 @@
     font-size: 18px;
 }
 
+
 i:hover {
     color: rgb(67, 67, 170);
 }
@@ -35,6 +36,7 @@ background: #000;
     height: 86vh;
     display:flex;
     margin: auto;
+    background-color: rgb(17, 16, 16);
 }
 
 /* ********FIRST SECTION************* */
@@ -54,9 +56,11 @@ background: #000;
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
-    background-color: rgb(17, 16, 16);
+    /* background-color: rgb(17, 16, 16); */
     height: 14%;
     color: white;
+    border-radius: 7px;
+ 
 }
 
 .navbar-button {
@@ -66,7 +70,9 @@ background: #000;
     cursor: pointer;
     /* background-color: rgb(17, 16, 16); */
     /* background-color: white; */
-    border-radius: 3px; 
+    /* border-radius: 30px;  */
+    /* border-top-left-radius:10px; */
+    border-radius: 7px;
     color: white;
     font-size: 17px;
     /* height: 100%; */
@@ -140,6 +146,14 @@ background: #000;
     height: 100%;
     z-index: 3;
     border-bottom: 3px solid rgb(67, 67, 170);
+    /* border-top-left-radius:5px;
+    border-top-right-radius: 5px; */
+    background-color: rgb(17, 16, 16);
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 10px;
 }
 
 .name {
@@ -150,8 +164,8 @@ background: #000;
     align-items: center;
     height: 10%;
     font-size: 1.3rem;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     color: white;
     font-family: 'Marcellus', serif;
 }
@@ -174,7 +188,7 @@ background: #000;
 }
 
 .cards {
-    margin-bottom: 4%;
+    margin-bottom: 2%;
     background-color: rgb(17, 16, 16);
     /* background-color: white; */
 }
@@ -185,7 +199,8 @@ background: #000;
     justify-content: center;
     align-items: center;
     /* text-align: center; */
-    /* background-color: aqua; */
+    background-color: transparent;
+    /* border: 0.1px solid rgb(67, 67, 170); */
     /* width: 100%; */
     padding: 0;
 }
@@ -264,8 +279,7 @@ background: #000;
 }
 
 .now-playing-info {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 7px;
     height: 14%;
     width: 100%;
     /* background-color: rgb(17, 16, 16); */
