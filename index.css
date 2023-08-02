@@ -78,9 +78,18 @@ background: #000;
     /* height: 100%; */
 }
 
+.navbar-button:hover {
+    background-color: rgb(67, 67, 170);
+}
+
+.navbar-button:hover i{
+    background-color: rgb(67, 67, 170);
+    color: rgb(255, 255, 255);
+}
+
 .iconspacing {
     margin: 5%;
-    background-color: rgb(17, 16, 16);
+    /* background-color: rgb(17, 16, 16); */
 }
 
 .playlist {
@@ -124,16 +133,21 @@ background: #000;
     font-size: 16px;
     cursor: pointer;
     width: 100%;
+    /* transition: 0.15s; */
 }
 
 .liked:hover {
     background-color: rgb(67, 67, 170);
-    font-family: 'Marcellus', serif;
+    /* font-family: 'Montserrat', serif; */
     font-weight: 520;
     text-align: center;
     align-items: center;
     justify-content: center;
     padding: 0;
+font-family: 'Kalam', cursive;
+/* transform: scale(1.02); */
+    transition: 0.15s;
+/* font-family: 'Lobster', cursive;  */
 }
 
 /* ************SECOND SECTION******************* */
@@ -191,6 +205,7 @@ background: #000;
     margin-bottom: 2%;
     background-color: rgb(17, 16, 16);
     /* background-color: white; */
+    
 }
 
 .h-100 {
@@ -203,20 +218,24 @@ background: #000;
     /* border: 0.1px solid rgb(67, 67, 170); */
     /* width: 100%; */
     padding: 0;
+    
 }
 
 .h-100:hover :not(#masterPlayCover){
     cursor: pointer;
     opacity: 0.7;
+    transition: 0.15s;
+    transform: scale(1.02);
 }
 
 .h-100:hover i{
     visibility: visible;
     z-index: 6;
+    
 }
 
 .h-100 i:hover {
-    color: rgb(67, 67, 170);
+    color: rgb(255, 0, 0);
     /* color: white; */
     /* color: rgb(124, 170, 106); */
 }
@@ -228,7 +247,7 @@ background: #000;
     text-align: center;
     /* right: 0; */
     cursor: pointer;
-    font-size: 45px;
+    font-size: 2.9rem;
     /* color: rgb(103, 255, 43); */
     color: rgb(255, 255, 255);
     visibility: hidden;
