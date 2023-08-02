@@ -114,13 +114,17 @@ background: #000;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
+    width: 100%;
 }
 
 .liked:hover {
     background-color: rgb(67, 67, 170);
     font-family: 'Marcellus', serif;
     font-weight: 520;
-    padding-left: 35%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
 /* ************SECOND SECTION******************* */
