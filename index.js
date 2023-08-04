@@ -188,6 +188,11 @@ masterPlayCover.forEach((element) => {
             currentVolume = audioElement.volume;
         } else if (e.target.classList.contains("fa-play-circle")) {
             tempIndex = songIndex;
+            if(songIndex%10 == 0) {
+                songIndex = 10;
+            } else {
+                songIndex = songIndex%10;
+            }
             audioElement.src = `songs/${songIndex}.mp3`;
             makeAllPlay();
             e.target.classList.remove("fa-play-circle");
@@ -216,15 +221,21 @@ masterPlayCover.forEach((element) => {
 })
 
 volumeIcon.addEventListener("click", () => {
-    // let currentVolume = audioElement.volume;
     let currVol = myVolumeBar.value / 100;
     if(!volumeIcon.classList.contains("fa-volume-xmark")) {
         volumeIcon.classList.remove("fa-volume-high");
+        volumeIcon.classList.remove("fa-volume-low");
         volumeIcon.classList.add("fa-volume-xmark");
         audioElement.volume = 0;
     } else {
         volumeIcon.classList.remove("fa-volume-xmark");
-        volumeIcon.classList.add("fa-volume-high");
+        if(currVol >= 0.3) {
+            volumeIcon.classList.add("fa-volume-high");
+            volumeIcon.classList.remove("fa-volume-low");
+        } else {
+            volumeIcon.classList.add("fa-volume-low");
+            volumeIcon.classList.remove("fa-volume-high");
+        }
         audioElement.volume = currVol;
     }
     
@@ -232,15 +243,22 @@ volumeIcon.addEventListener("click", () => {
 
 function setVolume(){
     audioElement.volume = myVolumeBar.value / 100;
-    // if(audioElement.volume >= 0.5) {
-    //     myVolumeBar.classList.add("fa-volume-high");
-    //     myVolumeBar.classList.remove("fa-volume-low");
-    // } else {
-    //     myVolumeBar.classList.add("fa-volume-low");
-    //     myVolumeBar.classList.remove("fa-volume-high");
-    // }
+    
     if(audioElement.volume == 0) {
-        myVolumeBar.classList.remove("fa-volume-high");
-
+        volumeIcon.classList.remove("fa-volume-high");
+        volumeIcon.classList.remove("fa-volume-low");
+        volumeIcon.classList.add("fa-volume-xmark");
+    } else {
+        if(audioElement.volume >= 0.3) {
+            volumeIcon.classList.add("fa-volume-high");
+            volumeIcon.classList.remove("fa-volume-low");
+            volumeIcon.classList.remove("fa-volume-xmark");
+        } else {
+            volumeIcon.classList.add("fa-volume-low");
+            volumeIcon.classList.remove("fa-volume-high");
+            volumeIcon.classList.remove("fa-volume-xmark");
+        }
+        // volumeIcon.classList.add("fa-volume-high");
+        // volumeIcon.classList.remove("fa-volume-xmark");
     }
 }
