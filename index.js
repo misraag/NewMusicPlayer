@@ -38,10 +38,29 @@ let songs = [
     {songName: "Song 21", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg'}
 ]
 
+function getDuration(src) {
+    return new Promise(function(resolve) {
+        var audio = new Audio();
+        $(audio).on("loadedmetadata", function(){
+            let durationMins = parseInt(audio.duration / 60);
+            let durationSecs = parseInt(audio.duration % 60);
+            if (durationSecs<10) {
+                resolve(`0${durationMins}:0${durationSecs}`);
+            } else {
+               resolve(`0${durationMins}:${durationSecs}`); 
+            }
+        });
+        audio.src = src;
+    });
+}
+
 songItem.forEach((element, i)=>{
     element.getElementsByTagName("img")[0].src = songs[i].coverPath;
     element.getElementsByClassName("music-name")[0].innerText = songs[i].songName;
-    let songElement = new Audio(`'${songs[i].filepath}'`);
+    getDuration(songs[i].filepath).then(function(length) {
+    element.getElementsByClassName("duration")[0].textContent = length;
+    });
+
 })
 
 masterPlay.addEventListener('click',()=>{
