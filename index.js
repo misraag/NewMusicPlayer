@@ -1,4 +1,6 @@
 let songIndex = 0;
+let tempIndex = -1;
+let currentVolume;
 let audioElement = new Audio('songs/1.mp3');
 let songItem = Array.from(document.getElementsByClassName('cards'));
 let masterPlay = document.getElementById('masterPlay');
@@ -9,7 +11,8 @@ let footCoverImage = document.getElementById('footercoverimg');
 let playingCoverImage = document.getElementById('playing-cover-img');
 let timerStart = document.getElementById('timerstart');
 let timerEnd = document.getElementById('timerend');
-
+let volumeIcon = document.getElementById('volumeLogo');
+// let playVisible = Array.from(document.getElementsByClassName('playVisible'));
 let songCard = Array.from(document.getElementsByClassName('cards'));
 let playIcon = Array.from(document.getElementsByClassName('play-icon'));
 
@@ -66,22 +69,46 @@ songItem.forEach((element, i)=>{
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime <=0){
         audioElement.play();
-        masterSongName.innerText = songs[songIndex].songName;
-        coverSongName.innerText = songs[songIndex].songName;
-        footCoverImage.src = songs[songIndex].coverPath;
-        playingCoverImage.src = songs[songIndex].coverPath;
+        currentVolume = audioElement.volume;
         masterPlay.classList.remove('fa-play-circle');
         masterPlay.classList.add('fa-pause-circle');
-        masterPlayCover[songIndex].classList.remove("fa-play-circle");
-        masterPlayCover[songIndex].classList.add("fa-pause-circle");
+        if(songIndex == 0) {
+            masterPlayCover[songIndex].classList.add("fa-pause-circle");
+            masterPlayCover[songIndex].classList.remove("fa-play-circle");
+            masterPlayCover[songIndex].classList.remove('playVisible');
+            masterPlayCover[songIndex].classList.add('colorRed');
+            masterSongName.innerText = songs[songIndex].songName;
+            coverSongName.innerText = songs[songIndex].songName;
+            footCoverImage.src = songs[songIndex].coverPath;
+            playingCoverImage.src = songs[songIndex].coverPath;
+            audioElement.volume = 0.1;
+        } else {
+            masterPlayCover[songIndex-1].classList.add("fa-pause-circle");
+            masterPlayCover[songIndex-1].classList.remove("fa-play-circle");
+            masterPlayCover[songIndex-1].classList.remove('playVisible');
+            masterPlayCover[songIndex-1].classList.add('colorRed');
+            masterSongName.innerText = songs[songIndex-1].songName;
+            coverSongName.innerText = songs[songIndex-1].songName;
+            footCoverImage.src = songs[songIndex-1].coverPath;
+            playingCoverImage.src = songs[songIndex-1].coverPath;
+        }
 
     }
     else{
         audioElement.pause();
         masterPlay.classList.remove('fa-pause-circle');
         masterPlay.classList.add('fa-play-circle');
-        masterPlayCover[songIndex].classList.add("fa-play-circle");
-        masterPlayCover[songIndex].classList.remove("fa-pause-circle");
+        if(songIndex == 0) {
+            masterPlayCover[songIndex].classList.add("fa-play-circle");
+            masterPlayCover[songIndex].classList.remove("fa-pause-circle");
+            masterPlayCover[songIndex].classList.add('playVisible');
+            masterPlayCover[songIndex].classList.remove('colorRed');
+        } else {
+            masterPlayCover[songIndex-1].classList.add("fa-play-circle");
+            masterPlayCover[songIndex-1].classList.remove("fa-pause-circle");
+            masterPlayCover[songIndex-1].classList.add('playVisible');
+            masterPlayCover[songIndex-1].classList.remove('colorRed');
+        }
     }
     
     })
@@ -132,17 +159,88 @@ masterPlay.addEventListener('click',()=>{
         time();
     })
 
-    // masterPlayCover.forEach((element)=> {
-    //     element.addEventListener('click', (e)=>{
-    //         songIndex = parseInt(e.target.id);
-    //         if(e.target.classList.contains("fa-pause-circle")) {
-    //             audioElement.pause();
-    //             e.target.classList.remove("fa-pause-circle");
-    //             e.target.classList.add("fa-play-circle");
-    //             masterPlay.classList.remove("fa-pause-circle");
-    //             masterPlay.classList.add("fa-play-circle");
-    //         } else if () {
 
-    //         }
-    //      })
-    // })
+function makeAllPlay () {
+    masterPlayCover.forEach((element) => {
+        element.classList.remove("fa-pause-circle");
+        element.classList.add("fa-play-circle");
+        element.classList.add('playVisible');
+        element.classList.remove('colorRed');
+    })
+}
+
+
+masterPlayCover.forEach((element) => {
+    element.addEventListener('click', (e) => {
+        songIndex = parseInt(e.target.id);
+        if(tempIndex == songIndex && e.target.classList.contains("fa-play-circle")) {
+            e.target.classList.remove("fa-play-circle");
+            e.target.classList.add("fa-pause-circle");
+            e.target.classList.remove('playVisible');
+            e.target.classList.add('colorRed');
+            masterPlay.classList.remove("fa-play-circle");
+            masterPlay.classList.add("fa-pause-circle");
+            masterSongName.innerText = songs[songIndex-1].songName;
+            coverSongName.innerText = songs[songIndex-1].songName;
+            footCoverImage.src = songs[songIndex-1].coverPath;
+            playingCoverImage.src = songs[songIndex-1].coverPath;
+            audioElement.play();
+            currentVolume = audioElement.volume;
+        } else if (e.target.classList.contains("fa-play-circle")) {
+            tempIndex = songIndex;
+            audioElement.src = `songs/${songIndex}.mp3`;
+            makeAllPlay();
+            e.target.classList.remove("fa-play-circle");
+            e.target.classList.add("fa-pause-circle");
+            e.target.classList.remove('playVisible');
+            e.target.classList.add('colorRed');
+            masterPlay.classList.remove("fa-play-circle");
+            masterPlay.classList.add("fa-pause-circle");
+            masterSongName.innerText = songs[songIndex-1].songName;
+            coverSongName.innerText = songs[songIndex-1].songName;
+            footCoverImage.src = songs[songIndex-1].coverPath;
+            playingCoverImage.src = songs[songIndex-1].coverPath;
+            audioElement.currentTime = 0;
+            audioElement.play();
+            currentVolume = audioElement.volume;
+        } else {
+            e.target.classList.remove("fa-pause-circle");
+            audioElement.pause();
+            e.target.classList.add("fa-play-circle");
+            masterPlay.classList.remove("fa-pause-circle");
+            masterPlay.classList.add("fa-play-circle");
+            e.target.classList.add('playVisible');
+            e.target.classList.remove('colorRed');
+        }
+    })
+})
+
+volumeIcon.addEventListener("click", () => {
+    // let currentVolume = audioElement.volume;
+    let currVol = myVolumeBar.value / 100;
+    if(!volumeIcon.classList.contains("fa-volume-xmark")) {
+        volumeIcon.classList.remove("fa-volume-high");
+        volumeIcon.classList.add("fa-volume-xmark");
+        audioElement.volume = 0;
+    } else {
+        volumeIcon.classList.remove("fa-volume-xmark");
+        volumeIcon.classList.add("fa-volume-high");
+        audioElement.volume = currVol;
+    }
+    
+})
+
+function setVolume(){
+    audioElement.volume = myVolumeBar.value / 100;
+    // if(audioElement.volume >= 0.5) {
+    //     myVolumeBar.classList.add("fa-volume-high");
+    //     myVolumeBar.classList.remove("fa-volume-low");
+    // } else {
+    //     myVolumeBar.classList.add("fa-volume-low");
+    //     myVolumeBar.classList.remove("fa-volume-high");
+    // }
+    if(audioElement.volume == 0) {
+        myVolumeBar.classList.remove("fa-volume-high");
+
+    }
+}
