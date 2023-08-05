@@ -68,8 +68,8 @@ songItem.forEach((element, i)=>{
 
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime <=0){
+        audioElement.volume = myVolumeBar.value / 100;
         audioElement.play();
-        currentVolume = audioElement.volume;
         masterPlay.classList.remove('fa-play-circle');
         masterPlay.classList.add('fa-pause-circle');
         if(songIndex == 0) {
@@ -81,7 +81,7 @@ masterPlay.addEventListener('click',()=>{
             coverSongName.innerText = songs[songIndex].songName;
             footCoverImage.src = songs[songIndex].coverPath;
             playingCoverImage.src = songs[songIndex].coverPath;
-            audioElement.volume = 0.1;
+            // audioElement.volume = myVolumeBar.value / 100;
         } else {
             masterPlayCover[songIndex-1].classList.add("fa-pause-circle");
             masterPlayCover[songIndex-1].classList.remove("fa-play-circle");
@@ -172,6 +172,7 @@ function makeAllPlay () {
 
 masterPlayCover.forEach((element) => {
     element.addEventListener('click', (e) => {
+        audioElement.volume = myVolumeBar.value / 100;
         songIndex = parseInt(e.target.id);
         if(tempIndex == songIndex && e.target.classList.contains("fa-play-circle")) {
             e.target.classList.remove("fa-play-circle");

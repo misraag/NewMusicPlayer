@@ -243,16 +243,16 @@ font-family: 'Kalam', cursive;
 
 
 .masterPlayCover {
-       /* width: 100%; */
-       position: absolute;
-       background-color: transparent;
-       text-align: center;
-       /* right: 0; */
-       cursor: pointer;
-       font-size: 2.5rem;
-       /* color: rgb(103, 255, 43); */
-       color: rgb(255, 255, 255);
-       /* visibility: hidden; */
+    /* width: 100%; */
+    position: absolute;
+    background-color: transparent;
+    text-align: center;
+    /* right: 0; */
+    cursor: pointer;
+    /* font-size: 50px; */
+    /* color: rgb(103, 255, 43); */
+    color: rgb(255, 255, 255);
+    /* visibility: hidden; */
 }
 
 .playVisible {
