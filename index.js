@@ -15,7 +15,8 @@ let volumeIcon = document.getElementById('volumeLogo');
 // let playVisible = Array.from(document.getElementsByClassName('playVisible'));
 let songCard = Array.from(document.getElementsByClassName('cards'));
 let playIcon = Array.from(document.getElementsByClassName('play-icon'));
-
+let playNext = document.getElementById('next');
+let playPrev = document.getElementById('previous');
 
 let songs = [
     {songName: "Song 1", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg'},
@@ -122,30 +123,28 @@ masterPlay.addEventListener('click',()=>{
             if (secondsStart<10) {
                 timerStart.innerText = `0${minsStart}:0${secondsStart}`;
             } else {
-               timerStart.innerText = `0${minsStart}:${secondsStart}`; 
+                timerStart.innerText = `0${minsStart}:${secondsStart}`; 
             }
 
             if (secondsEnd<10) {
                 timerEnd.innerText = `0${minsEnd}:0${secondsEnd}`;
             } else {
-               timerEnd.innerText = `0${minsEnd}:${secondsEnd}`; 
+                timerEnd.innerText = `0${minsEnd}:${secondsEnd}`; 
             }
         }
         else{
             if (secondsStart<10) {
                 timerStart.innerText = `0${minsStart}:0${secondsStart}`;
             } else {
-               timerStart.innerText = `0${minsStart}:${secondsStart}`; 
+                timerStart.innerText = `0${minsStart}:${secondsStart}`; 
             }
 
             if (secondsEnd<10) {
                 timerEnd.innerText = `0${minsEnd}:0${secondsEnd}`;
             } else {
-               timerEnd.innerText = `0${minsEnd}:${secondsEnd}`; 
-            }
-            
-        }
-        
+                timerEnd.innerText = `0${minsEnd}:${secondsEnd}`; 
+            }           
+        }  
     }
     
     audioElement.addEventListener('timeupdate',()=>{
@@ -202,8 +201,8 @@ masterPlayCover.forEach((element) => {
             e.target.classList.add('colorRed');
             masterPlay.classList.remove("fa-play-circle");
             masterPlay.classList.add("fa-pause-circle");
-            masterSongName.innerText = songs[songIndex-1].songName;
-            coverSongName.innerText = songs[songIndex-1].songName;
+            masterSongName.innerText = songs[tempIndex-1].songName;
+            coverSongName.innerText = songs[tempIndex-1].songName;
             footCoverImage.src = songs[songIndex-1].coverPath;
             playingCoverImage.src = songs[songIndex-1].coverPath;
             audioElement.currentTime = 0;
@@ -220,6 +219,13 @@ masterPlayCover.forEach((element) => {
         }
     })
 })
+
+playNext.addEventListener('click', ()=> {
+    songIndex = songIndex + 1;
+
+})
+
+
 
 volumeIcon.addEventListener("click", () => {
     let currVol = myVolumeBar.value / 100;
@@ -259,7 +265,5 @@ function setVolume(){
             volumeIcon.classList.remove("fa-volume-high");
             volumeIcon.classList.remove("fa-volume-xmark");
         }
-        // volumeIcon.classList.add("fa-volume-high");
-        // volumeIcon.classList.remove("fa-volume-xmark");
     }
 }
