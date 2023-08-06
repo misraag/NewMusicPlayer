@@ -88,8 +88,8 @@ masterPlay.addEventListener('click',()=>{
             masterPlayCover[songIndex-1].classList.remove("fa-play-circle");
             masterPlayCover[songIndex-1].classList.remove('playVisible');
             masterPlayCover[songIndex-1].classList.add('colorRed');
-            masterSongName.innerText = songs[songIndex-1].songName;
-            coverSongName.innerText = songs[songIndex-1].songName;
+            masterSongName.innerText = songs[tempIndex-1].songName;
+            coverSongName.innerText = songs[tempIndex-1].songName;
             footCoverImage.src = songs[songIndex-1].coverPath;
             playingCoverImage.src = songs[songIndex-1].coverPath;
         }
@@ -222,6 +222,49 @@ masterPlayCover.forEach((element) => {
 
 playNext.addEventListener('click', ()=> {
     songIndex = songIndex + 1;
+    if(audioElement.paused || audioElement.currentTime <=0){
+        audioElement.volume = myVolumeBar.value / 100;
+        audioElement.play();
+        masterPlay.classList.remove('fa-play-circle');
+        masterPlay.classList.add('fa-pause-circle');
+        if(songIndex == 20) {
+            masterPlayCover[0].classList.add("fa-pause-circle");
+            masterPlayCover[0].classList.remove("fa-play-circle");
+            masterPlayCover[0].classList.remove('playVisible');
+            masterPlayCover[0].classList.add('colorRed');
+            masterSongName.innerText = songs[0].songName;
+            coverSongName.innerText = songs[0].songName;
+            footCoverImage.src = songs[0].coverPath;
+            playingCoverImage.src = songs[0].coverPath;
+            // audioElement.volume = myVolumeBar.value / 100;
+        } else {
+            masterPlayCover[songIndex].classList.add("fa-pause-circle");
+            masterPlayCover[songIndex].classList.remove("fa-play-circle");
+            masterPlayCover[songIndex].classList.remove('playVisible');
+            masterPlayCover[songIndex].classList.add('colorRed');
+            masterSongName.innerText = songs[tempIndex].songName;
+            coverSongName.innerText = songs[tempIndex].songName;
+            footCoverImage.src = songs[songIndex].coverPath;
+            playingCoverImage.src = songs[songIndex].coverPath;
+        }
+
+    }
+    else{
+        audioElement.pause();
+        masterPlay.classList.remove('fa-pause-circle');
+        masterPlay.classList.add('fa-play-circle');
+        if(songIndex == 20) {
+            masterPlayCover[0].classList.add("fa-play-circle");
+            masterPlayCover[0].classList.remove("fa-pause-circle");
+            masterPlayCover[0].classList.add('playVisible');
+            masterPlayCover[0].classList.remove('colorRed');
+        } else {
+            masterPlayCover[songIndex].classList.add("fa-play-circle");
+            masterPlayCover[songIndex].classList.remove("fa-pause-circle");
+            masterPlayCover[songIndex].classList.add('playVisible');
+            masterPlayCover[songIndex].classList.remove('colorRed');
+        }
+    }
 
 })
 
