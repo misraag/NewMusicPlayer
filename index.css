@@ -57,7 +57,7 @@ background: #000;
     /* justify-content: center; */
     flex-direction: column;
     /* background-color: rgb(17, 16, 16); */
-    height: 20%;
+    height: 17%;
     color: white;
     border-radius: 7px;
 }
@@ -135,7 +135,7 @@ background: #000;
 
 .iconspacing {
     margin: 5%;
-    margin-right: 9%;
+    margin-right: 7%;
     /* background-color: rgb(17, 16, 16); */
 }
 

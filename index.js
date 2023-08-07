@@ -19,6 +19,8 @@ let playNext = document.getElementById('next');
 let playPrev = document.getElementById('previous');
 let searchBar = document.getElementById('searchbar');
 let mySpan = document.getElementById('searchbarname');
+let searchfilter = document.getElementById('search');
+let songDiv = document.getElementById('songdiv');
 /**************/
 let navBarButtons = Array.from(document.getElementsByClassName('navbar-button'));
 
@@ -247,7 +249,7 @@ playNext.addEventListener('click', ()=> {
         if(songIndex > 21) {
             songIndex = 1;
         }
-        console.log("Song Index: " + songIndex);
+        // console.log("Song Index: " + songIndex);
         tempIndex = songIndex;
         audioElement.src = `songs/${songIndex}.mp3`;
         makeAllPlay();
@@ -394,3 +396,28 @@ document.addEventListener('click', checkClickOutside);
 //         console.log(element);
 //     })
 // })
+
+function searchFunction() {
+    // console.log(searchfilter.value.toUpperCase());
+    let filter = searchfilter.value.toUpperCase();
+    // let rowDiv = songDiv.getElementById('rowdiv');
+
+    // for(var i = 0; i < rowDiv.length; i++) {
+
+    // }
+    let songInfo = Array.from(document.getElementsByClassName('song-info'));
+    songInfo.forEach((element) => {
+        // console.log(element.parentNode);
+        // console.log(element.getElementsByTagName('div')[0].textContent);
+        let songNameSearch = element.getElementsByTagName('div')[0].textContent.toUpperCase();
+        if(songNameSearch.indexOf(filter) > -1) {
+            console.log(filter);
+            console.log(songNameSearch);
+            // console.log(element.parentElement);
+            element.parentElement.style.display = '';
+
+        } else {
+            element.parentElement.style.display = "none";
+        }
+    })  
+}
