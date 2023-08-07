@@ -66,15 +66,10 @@ background: #000;
     position: relative;
     display: flex;
     align-items: center;
-    /* padding: 5px; */
     cursor: pointer;
     border-radius: 7px;
     color: white;
-    /* font-size: 0.9rem; */
     height: 50%;
-    /* background-color: green; */
-    /* transition: 0.15s; */
-    /* width: 740px; */
 }
 
 .backgroundpurple {

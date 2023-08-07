@@ -363,7 +363,8 @@ function setVolume(){
 /************************************************/ 
 
 function checkClickOutside(event) {
-    if (!searchBar.contains(event.target)) {
+    console.log(searchfilter.value);
+    if (!searchBar.contains(event.target) && searchfilter.value == "") {
         mySpan.classList.remove("hidesearchspan");
         document.getElementById("searchbaricon").classList.remove("searchbariconright");
         document.getElementById("searchbaricon").classList.remove("searchiconclicked");
@@ -411,8 +412,8 @@ function searchFunction() {
         // console.log(element.getElementsByTagName('div')[0].textContent);
         let songNameSearch = element.getElementsByTagName('div')[0].textContent.toUpperCase();
         if(songNameSearch.indexOf(filter) > -1) {
-            console.log(filter);
-            console.log(songNameSearch);
+            // console.log(filter);
+            // console.log(songNameSearch);
             // console.log(element.parentElement);
             element.parentElement.style.display = '';
 
