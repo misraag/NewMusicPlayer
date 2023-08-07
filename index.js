@@ -21,6 +21,7 @@ let searchBar = document.getElementById('searchbar');
 let mySpan = document.getElementById('searchbarname');
 let searchfilter = document.getElementById('search');
 let songDiv = document.getElementById('songdiv');
+let homebutton = document.getElementById('homebutton');
 /**************/
 let navBarButtons = Array.from(document.getElementsByClassName('navbar-button'));
 
@@ -422,3 +423,10 @@ function searchFunction() {
         }
     })  
 }
+
+homebutton.addEventListener('click', () => {
+    homebutton.classList.add('searchiconclicked');
+    document.getElementById('homeicon').classList.add('searchiconclicked');
+    searchfilter.value = "";
+    searchFunction();
+})

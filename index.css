@@ -57,7 +57,7 @@ background: #000;
     /* justify-content: center; */
     flex-direction: column;
     /* background-color: rgb(17, 16, 16); */
-    height: 17%;
+    height: 16%;
     color: white;
     border-radius: 7px;
 }
@@ -67,9 +67,22 @@ background: #000;
     display: flex;
     align-items: center;
     cursor: pointer;
-    border-radius: 7px;
+    /* border-radius: 7px; */
+    /* border-bottom-left-radius: 3px; */
+    /* border-top-right-radius: 10px; */
     color: white;
     height: 50%;
+    /* margin: 2% 0; */
+    /* margin-bottom: 1%; */
+}
+
+#homebutton {
+    border-top-right-radius: 10px;
+    /* background-color: green; */
+}
+
+#searchbar {
+    border-bottom-right-radius: 10px;
 }
 
 .backgroundpurple {
@@ -78,6 +91,7 @@ background: #000;
 
 #search {
     background-color: rgb(67, 67, 170);
+    /* background-color: white; */
     color: white;
     height: 90%;
     border-radius: 0.5rem;
@@ -112,6 +126,7 @@ background: #000;
     background-color: rgb(67, 67, 170);
 }
 
+
 .navbar-button:focus {
     background-color: rgb(67, 67, 170);
 }
@@ -134,7 +149,7 @@ background: #000;
     display: flex;
     flex-direction: column;
     margin-top: 10%;
-    /* height: 85%; */
+    /* height: 82%; */
     
     overflow-y: auto;
     border-radius: 5px;
@@ -348,7 +363,7 @@ font-family: 'Kalam', cursive;
 
 .now-playing-info {
     border-radius: 7px;
-    height: 14%;
+    height: 16%;
     width: 100%;
     /* background-color: rgb(17, 16, 16); */
     color: white;
