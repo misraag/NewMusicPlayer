@@ -17,6 +17,11 @@ let songCard = Array.from(document.getElementsByClassName('cards'));
 let playIcon = Array.from(document.getElementsByClassName('play-icon'));
 let playNext = document.getElementById('next');
 let playPrev = document.getElementById('previous');
+let searchBar = document.getElementById('searchbar');
+let mySpan = document.getElementById('searchbarname');
+/**************/
+let navBarButtons = Array.from(document.getElementsByClassName('navbar-button'));
+
 
 let songs = [
     {songName: "Song 1", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg'},
@@ -351,3 +356,41 @@ function setVolume(){
         }
     }
 }
+
+
+/************************************************/ 
+
+function checkClickOutside(event) {
+    if (!searchBar.contains(event.target)) {
+        mySpan.classList.remove("hidesearchspan");
+        document.getElementById("searchbaricon").classList.remove("searchbariconright");
+        document.getElementById("searchbaricon").classList.remove("searchiconclicked");
+        document.getElementById("search").classList.add("hidesearchbar");
+        // document.removeEventListener('click', checkClickOutside);
+    }
+}
+
+searchBar.addEventListener("click", () =>{
+    mySpan.classList.add("hidesearchspan");
+    document.getElementById("searchbaricon").classList.add("searchbariconright");
+    document.getElementById("searchbaricon").classList.add("searchiconclicked");
+    document.getElementById("search").classList.remove("hidesearchbar");
+})
+
+document.addEventListener('click', checkClickOutside);
+
+// function makeAllNavBlack() {
+//     navBarButtons.forEach((element) => {
+//         element.classList.remove("backgroundpurple");
+//     })
+// }
+
+// navBarButtons.forEach((element) => {
+//     element.addEventListener("click", () => {
+//         console.log(element);
+//         makeAllNavBlack();
+//         console.log(element);
+//         // element.classList.add("backgroundpurple");
+//         console.log(element);
+//     })
+// })

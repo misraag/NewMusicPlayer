@@ -36,12 +36,14 @@
     <div class="header"></div>
     <div class="body">
       <div class="first-section">
-        <div class="nav-bar">
+        <div class="nav-bar" id="navbar">
           <div class="navbar-button">
             <i class="fa-solid fa-house iconspacing"></i>Home
           </div>
-          <div class="navbar-button">
-            <i class="fa-solid fa-magnifying-glass iconspacing"></i>Search
+          <div class="navbar-button" id="searchbar">
+            <input class="form-control me-2 hidesearchbar" id="search" placeholder="Search Songs" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass iconspacing" id="searchbaricon"></i>
+            <span id="searchbarname" class="">Search</span>
           </div>
         </div>
         <div class="playlist">
