@@ -29,17 +29,17 @@ let songs = [
     {songName: "Song 8", filepath: 'songs/8.mp3', coverPath: 'covers/8.jpg'},
     {songName: "Song 9", filepath: 'songs/9.mp3', coverPath: 'covers/9.jpg'},
     {songName: "Song 10", filepath: 'songs/10.mp3', coverPath: 'covers/10.jpg'},
-    {songName: "Song 11", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg'},
-    {songName: "Song 12", filepath: 'songs/2.mp3', coverPath: 'covers/2.jpg'},
-    {songName: "Song 13", filepath: 'songs/3.mp3', coverPath: 'covers/3.jpg'},
-    {songName: "Song 14", filepath: 'songs/4.mp3', coverPath: 'covers/4.jpg'},
-    {songName: "Song 15", filepath: 'songs/5.mp3', coverPath: 'covers/5.jpg'},
-    {songName: "Song 16", filepath: 'songs/6.mp3', coverPath: 'covers/6.jpg'},
-    {songName: "Song 17", filepath: 'songs/7.mp3', coverPath: 'covers/7.jpg'},
-    {songName: "Song 18", filepath: 'songs/8.mp3', coverPath: 'covers/8.jpg'},
-    {songName: "Song 19", filepath: 'songs/9.mp3', coverPath: 'covers/9.jpg'},
-    {songName: "Song 20", filepath: 'songs/10.mp3', coverPath: 'covers/10.jpg'},
-    {songName: "Song 21", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg'}
+    {songName: "Song 11", filepath: 'songs/11.mp3', coverPath: 'covers/11.jpg'},
+    {songName: "Song 12", filepath: 'songs/12.mp3', coverPath: 'covers/12.jpg'},
+    {songName: "Song 13", filepath: 'songs/13.mp3', coverPath: 'covers/13.jpg'},
+    {songName: "Song 14", filepath: 'songs/14.mp3', coverPath: 'covers/14.jpg'},
+    {songName: "Song 15", filepath: 'songs/15.mp3', coverPath: 'covers/15.jpg'},
+    {songName: "Song 16", filepath: 'songs/16.mp3', coverPath: 'covers/16.jpg'},
+    {songName: "Song 17", filepath: 'songs/17.mp3', coverPath: 'covers/17.jpg'},
+    {songName: "Song 18", filepath: 'songs/18.mp3', coverPath: 'covers/18.jpg'},
+    {songName: "Song 19", filepath: 'songs/19.mp3', coverPath: 'covers/19.jpg'},
+    {songName: "Song 20", filepath: 'songs/20.mp3', coverPath: 'covers/20.jpg'},
+    {songName: "Song 21", filepath: 'songs/21.mp3', coverPath: 'covers/21.jpg'}
 ]
 
 function getDuration(src) {
@@ -51,7 +51,7 @@ function getDuration(src) {
             if (durationSecs<10) {
                 resolve(`0${durationMins}:0${durationSecs}`);
             } else {
-               resolve(`0${durationMins}:${durationSecs}`); 
+                resolve(`0${durationMins}:${durationSecs}`); 
             }
         });
         audio.src = src;
@@ -188,11 +188,6 @@ masterPlayCover.forEach((element) => {
             currentVolume = audioElement.volume;
         } else if (e.target.classList.contains("fa-play-circle")) {
             tempIndex = songIndex;
-            if(songIndex%10 == 0) {
-                songIndex = 10;
-            } else {
-                songIndex = songIndex%10;
-            }
             audioElement.src = `songs/${songIndex}.mp3`;
             makeAllPlay();
             e.target.classList.remove("fa-play-circle");
@@ -221,51 +216,97 @@ masterPlayCover.forEach((element) => {
 })
 
 playNext.addEventListener('click', ()=> {
-    songIndex = songIndex + 1;
-    if(audioElement.paused || audioElement.currentTime <=0){
-        audioElement.volume = myVolumeBar.value / 100;
+    audioElement.volume = myVolumeBar.value / 100;
+    if(songIndex == 0) {
+        songIndex = 1;
+        console.log("Song Index: " + songIndex);
+        tempIndex = songIndex;
+        audioElement.src = `songs/${songIndex}.mp3`;
+        makeAllPlay();
+        masterPlayCover[songIndex-1].classList.add("fa-pause-circle");
+        masterPlayCover[songIndex-1].classList.remove("fa-play-circle");
+        masterPlayCover[songIndex-1].classList.remove('playVisible');
+        masterPlayCover[songIndex-1].classList.add('colorRed');
+        masterSongName.innerText = songs[songIndex-1].songName;
+        coverSongName.innerText = songs[songIndex-1].songName;
+        footCoverImage.src = songs[songIndex-1].coverPath;
+        playingCoverImage.src = songs[songIndex-1].coverPath;
+        masterPlay.classList.remove("fa-play-circle");
+        masterPlay.classList.add("fa-pause-circle");
+        playingCoverImage.src = songs[songIndex-1].coverPath;
+        audioElement.currentTime = 0;
         audioElement.play();
-        masterPlay.classList.remove('fa-play-circle');
-        masterPlay.classList.add('fa-pause-circle');
-        if(songIndex == 20) {
-            masterPlayCover[0].classList.add("fa-pause-circle");
-            masterPlayCover[0].classList.remove("fa-play-circle");
-            masterPlayCover[0].classList.remove('playVisible');
-            masterPlayCover[0].classList.add('colorRed');
-            masterSongName.innerText = songs[0].songName;
-            coverSongName.innerText = songs[0].songName;
-            footCoverImage.src = songs[0].coverPath;
-            playingCoverImage.src = songs[0].coverPath;
-            // audioElement.volume = myVolumeBar.value / 100;
-        } else {
-            masterPlayCover[songIndex].classList.add("fa-pause-circle");
-            masterPlayCover[songIndex].classList.remove("fa-play-circle");
-            masterPlayCover[songIndex].classList.remove('playVisible');
-            masterPlayCover[songIndex].classList.add('colorRed');
-            masterSongName.innerText = songs[tempIndex].songName;
-            coverSongName.innerText = songs[tempIndex].songName;
-            footCoverImage.src = songs[songIndex].coverPath;
-            playingCoverImage.src = songs[songIndex].coverPath;
+        currentVolume = audioElement.volume;
+    } else {
+        songIndex = tempIndex + 1;
+        if(songIndex > 21) {
+            songIndex = 1;
         }
-
+        console.log("Song Index: " + songIndex);
+        tempIndex = songIndex;
+        audioElement.src = `songs/${songIndex}.mp3`;
+        makeAllPlay();
+        masterPlayCover[songIndex-1].classList.remove("fa-play-circle");
+        masterPlayCover[songIndex-1].classList.add("fa-pause-circle");
+        masterPlayCover[songIndex-1].classList.remove('playVisible');
+        masterPlayCover[songIndex-1].classList.add('colorRed');
+        masterPlay.classList.remove("fa-play-circle");
+        masterPlay.classList.add("fa-pause-circle");
+        masterSongName.innerText = songs[tempIndex-1].songName;
+        coverSongName.innerText = songs[tempIndex-1].songName;
+        footCoverImage.src = songs[songIndex-1].coverPath;
+        playingCoverImage.src = songs[songIndex-1].coverPath;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        currentVolume = audioElement.volume;
     }
-    else{
-        audioElement.pause();
-        masterPlay.classList.remove('fa-pause-circle');
-        masterPlay.classList.add('fa-play-circle');
-        if(songIndex == 20) {
-            masterPlayCover[0].classList.add("fa-play-circle");
-            masterPlayCover[0].classList.remove("fa-pause-circle");
-            masterPlayCover[0].classList.add('playVisible');
-            masterPlayCover[0].classList.remove('colorRed');
-        } else {
-            masterPlayCover[songIndex].classList.add("fa-play-circle");
-            masterPlayCover[songIndex].classList.remove("fa-pause-circle");
-            masterPlayCover[songIndex].classList.add('playVisible');
-            masterPlayCover[songIndex].classList.remove('colorRed');
+})
+
+playPrev.addEventListener('click', ()=> {
+    audioElement.volume = myVolumeBar.value / 100;
+    if(songIndex == 0) {
+        songIndex = 21;
+        console.log("Song Index: " + songIndex);
+        tempIndex = songIndex;
+        audioElement.src = `songs/${songIndex}.mp3`;
+        makeAllPlay();
+        masterPlayCover[songIndex-1].classList.add("fa-pause-circle");
+        masterPlayCover[songIndex-1].classList.remove("fa-play-circle");
+        masterPlayCover[songIndex-1].classList.remove('playVisible');
+        masterPlayCover[songIndex-1].classList.add('colorRed');
+        masterSongName.innerText = songs[songIndex-1].songName;
+        coverSongName.innerText = songs[songIndex-1].songName;
+        footCoverImage.src = songs[songIndex-1].coverPath;
+        playingCoverImage.src = songs[songIndex-1].coverPath;
+        masterPlay.classList.remove("fa-play-circle");
+        masterPlay.classList.add("fa-pause-circle");
+        playingCoverImage.src = songs[songIndex-1].coverPath;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        currentVolume = audioElement.volume;
+    } else {
+        songIndex = tempIndex - 1;
+        if(songIndex < 1) {
+            songIndex = 21;
         }
+        console.log("Song Index: " + songIndex);
+        tempIndex = songIndex;
+        audioElement.src = `songs/${songIndex}.mp3`;
+        makeAllPlay();
+        masterPlayCover[songIndex-1].classList.remove("fa-play-circle");
+        masterPlayCover[songIndex-1].classList.add("fa-pause-circle");
+        masterPlayCover[songIndex-1].classList.remove('playVisible');
+        masterPlayCover[songIndex-1].classList.add('colorRed');
+        masterPlay.classList.remove("fa-play-circle");
+        masterPlay.classList.add("fa-pause-circle");
+        masterSongName.innerText = songs[tempIndex-1].songName;
+        coverSongName.innerText = songs[tempIndex-1].songName;
+        footCoverImage.src = songs[songIndex-1].coverPath;
+        playingCoverImage.src = songs[songIndex-1].coverPath;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        currentVolume = audioElement.volume;
     }
-
 })
 
 
