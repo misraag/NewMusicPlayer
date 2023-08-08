@@ -541,13 +541,27 @@ function closeAlertBox() {
 window.alert = function () {
     var id = "alertBox", alertBox, closeId = "alertClose", alertClose;
     alertBox = document.createElement("div");
+    var closeButtonDiv = document.createElement("div");
+    closeButtonDiv.classList.add("closeButtonDiv");
+    var closeButton = document.createElement("i");
+    closeButton.classList.add("fa-solid", "fa-circle-xmark");
+    closeButtonDiv.appendChild(closeButton);
+    closeButton.id = "closeButton";
+    alertBox.appendChild(closeButtonDiv);
     var textMsg = document.createElement("div");
     textMsg.classList.add("textMsgName");
     textMsg.innerHTML = "Please enter name for your new playlist!";
     alertBox.appendChild(textMsg);
+    var inputDiv = document.createElement("div");
+    inputDiv.classList.add("inputDivClass");
     var inputText = document.createElement("input");
     inputText.classList.add('inputClassName');
-    alertBox.appendChild(inputText);
+    var acceptName = document.createElement("i");
+    acceptName.id = "acceptName";
+    acceptName.classList.add("fa-solid", "fa-circle-check");
+    inputDiv.appendChild(inputText);
+    inputDiv.appendChild(acceptName);
+    alertBox.appendChild(inputDiv);
     document.body.appendChild(alertBox);
     alertBox.id = id;
     // alertBox.innerHTML = msg;
