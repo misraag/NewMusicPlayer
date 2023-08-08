@@ -24,7 +24,7 @@ let songDiv = document.getElementById('songdiv');
 let homebutton = document.getElementById('homebutton');
 /**************/
 let navBarButtons = Array.from(document.getElementsByClassName('navbar-button'));
-
+let createPlaylist = document.getElementById('createPlaylist');
 
 let songs = [
     {songName: "Song 1", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg'},
@@ -50,6 +50,100 @@ let songs = [
     {songName: "Song 21", filepath: 'songs/21.mp3', coverPath: 'covers/21.jpg'}
 ]
 
+const libraries = {
+    home: {
+        title: "Home Library",
+        songs: JSON.parse(localStorage.getItem("homeSongs")) || [
+            {songName: "Song 1", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg'},
+    {songName: "Song 2", filepath: 'songs/2.mp3', coverPath: 'covers/2.jpg'},
+    {songName: "Song 3", filepath: 'songs/3.mp3', coverPath: 'covers/3.jpg'},
+    {songName: "Song 4", filepath: 'songs/4.mp3', coverPath: 'covers/4.jpg'},
+    {songName: "Song 5", filepath: 'songs/5.mp3', coverPath: 'covers/5.jpg'},
+    {songName: "Song 6", filepath: 'songs/6.mp3', coverPath: 'covers/6.jpg'},
+    {songName: "Song 7", filepath: 'songs/7.mp3', coverPath: 'covers/7.jpg'},
+    {songName: "Song 8", filepath: 'songs/8.mp3', coverPath: 'covers/8.jpg'},
+    {songName: "Song 9", filepath: 'songs/9.mp3', coverPath: 'covers/9.jpg'},
+    {songName: "Song 10", filepath: 'songs/10.mp3', coverPath: 'covers/10.jpg'},
+    {songName: "Song 11", filepath: 'songs/11.mp3', coverPath: 'covers/11.jpg'},
+    {songName: "Song 12", filepath: 'songs/12.mp3', coverPath: 'covers/12.jpg'},
+    {songName: "Song 13", filepath: 'songs/13.mp3', coverPath: 'covers/13.jpg'},
+    {songName: "Song 14", filepath: 'songs/14.mp3', coverPath: 'covers/14.jpg'},
+    {songName: "Song 15", filepath: 'songs/15.mp3', coverPath: 'covers/15.jpg'},
+    {songName: "Song 16", filepath: 'songs/16.mp3', coverPath: 'covers/16.jpg'},
+    {songName: "Song 17", filepath: 'songs/17.mp3', coverPath: 'covers/17.jpg'},
+    {songName: "Song 18", filepath: 'songs/18.mp3', coverPath: 'covers/18.jpg'},
+    {songName: "Song 19", filepath: 'songs/19.mp3', coverPath: 'covers/19.jpg'},
+    {songName: "Song 20", filepath: 'songs/20.mp3', coverPath: 'covers/20.jpg'},
+    {songName: "Song 21", filepath: 'songs/21.mp3', coverPath: 'covers/21.jpg'}
+        ],
+    },
+
+};
+
+let currentLibraryKey = "home";
+
+function saveLibrarySongs (libraryKey) {
+    localStorage.setItem(libraryKey + "Songs", JSON.stringify(libraries[libraryKey].songs));
+}
+
+function displaySongs (libraryKey) {
+    const library = libraries[libraryKey];
+    // const libraryTitleElement = document.getElementById("library-title");
+    // libraryTitleElement.textContent = library.title;
+    // const currentLibrarySongs = document.getElementById("current-library-songs");
+    // currentLibrarySongs.innerHTML = "";
+
+    songItem.forEach((element, i)=>{
+        element.getElementsByTagName("img")[0].src = library.songs[i].coverPath;
+        element.getElementsByClassName("music-name")[0].innerText = library.songs[i].songName;
+        getDuration(library.songs[i].filepath).then(function(length) {
+        element.getElementsByClassName("duration")[0].textContent = length;
+        });
+    })
+}
+
+function displayLibraryList() {
+    const libraryList = document.getElementById("library-list");
+    // libraryList.innerHTML = "";
+
+    for (const libraryKey in libraries) {
+
+        const div = document.createElement("div");
+        div.textContent = libraries[libraryKey].title;
+        div.classList.add('liked');
+        libraryList.appendChild(div);
+    }
+}
+
+function addToLibrary(songIndex) {
+    const song = libraries.home.songs[songIndex];
+    if(!libraries[currentLibraryKey].songs.includes(song)) {
+        libraries[currentLibraryKey].songs.push(song);
+        saveLibrarySongs(currentLibraryKey);
+        displayLibrarySongs(currentLibraryKey);
+    }
+}
+
+function switchLibrary (libraryKey) {
+    currentLibraryKey = libraryKey;
+    displayLibrarySongs(libraryKey);
+}
+
+function createLibrary (libraryName) {
+const newLibraryKey = libraryName.toLowerCase().replace(/\s+/g, "-");
+    libraries[newLibraryKey] = {
+        title: libraryName,
+        songs: [],
+    }
+    saveLibrarySongs(newLibraryKey);
+    displayLibraryList();
+}
+
+displayLibraryList();
+displaySongs(currentLibraryKey);
+
+
+
 function getDuration(src) {
     return new Promise(function(resolve) {
         var audio = new Audio();
@@ -66,14 +160,14 @@ function getDuration(src) {
     });
 }
 
-songItem.forEach((element, i)=>{
-    element.getElementsByTagName("img")[0].src = songs[i].coverPath;
-    element.getElementsByClassName("music-name")[0].innerText = songs[i].songName;
-    getDuration(songs[i].filepath).then(function(length) {
-    element.getElementsByClassName("duration")[0].textContent = length;
-    });
 
-})
+// songItem.forEach((element, i)=>{
+//     element.getElementsByTagName("img")[0].src = songs[i].coverPath;
+//     element.getElementsByClassName("music-name")[0].innerText = songs[i].songName;
+//     getDuration(songs[i].filepath).then(function(length) {
+//     element.getElementsByClassName("duration")[0].textContent = length;
+//     });
+// })
 
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime <=0){
@@ -430,3 +524,35 @@ homebutton.addEventListener('click', () => {
     searchfilter.value = "";
     searchFunction();
 })
+
+createPlaylist.addEventListener('click', () => {
+    alert('Enter name of new playlist');
+
+});
+
+function closeAlertBox() {
+    alertBox = document.getElementById("alertBox");
+    alertClose = document.getElementById("alertClose");
+
+    alertBox.parentNode.removeChild(alertBox);
+    alertClose.parentNode.removeChild(alertClose);
+}
+
+window.alert = function () {
+    var id = "alertBox", alertBox, closeId = "alertClose", alertClose;
+    alertBox = document.createElement("div");
+    var textMsg = document.createElement("div");
+    textMsg.classList.add("textMsgName");
+    textMsg.innerHTML = "Please enter name for your new playlist!";
+    alertBox.appendChild(textMsg);
+    var inputText = document.createElement("input");
+    inputText.classList.add('inputClassName');
+    alertBox.appendChild(inputText);
+    document.body.appendChild(alertBox);
+    alertBox.id = id;
+    // alertBox.innerHTML = msg;
+    alertClose = document.createElement("div");
+    alertClose.id = closeId;
+    document.body.appendChild(alertClose);
+    alertClose.onclick = closeAlertBox;
+};
