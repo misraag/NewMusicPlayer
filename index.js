@@ -526,7 +526,8 @@ homebutton.addEventListener('click', () => {
 })
 
 createPlaylist.addEventListener('click', () => {
-    alert('Enter name of new playlist');
+    // alert('Enter name of new playlist');
+    alert();
 
 });
 
@@ -539,15 +540,17 @@ function closeAlertBox() {
 }
 
 window.alert = function () {
+    var alertBoxDiv = document.createElement("div");
+    // alertBoxDiv.id = "alertBoxDiv";
     var id = "alertBox", alertBox, closeId = "alertClose", alertClose;
     alertBox = document.createElement("div");
-    var closeButtonDiv = document.createElement("div");
-    closeButtonDiv.classList.add("closeButtonDiv");
-    var closeButton = document.createElement("i");
-    closeButton.classList.add("fa-solid", "fa-circle-xmark");
-    closeButtonDiv.appendChild(closeButton);
-    closeButton.id = "closeButton";
-    alertBox.appendChild(closeButtonDiv);
+    // var closeButtonDiv = document.createElement("div");
+    // closeButtonDiv.classList.add("closeButtonDiv");
+    // var closeButton = document.createElement("i");
+    // closeButton.classList.add("fa-solid", "fa-circle-xmark");
+    // closeButtonDiv.appendChild(closeButton);
+    // closeButton.id = "closeButton";
+    // alertBox.appendChild(closeButtonDiv);
     var textMsg = document.createElement("div");
     textMsg.classList.add("textMsgName");
     textMsg.innerHTML = "Please enter name for your new playlist!";
@@ -562,11 +565,13 @@ window.alert = function () {
     inputDiv.appendChild(inputText);
     inputDiv.appendChild(acceptName);
     alertBox.appendChild(inputDiv);
+    // alertBoxDiv.appendChild(alertBox);
     document.body.appendChild(alertBox);
     alertBox.id = id;
     // alertBox.innerHTML = msg;
     alertClose = document.createElement("div");
     alertClose.id = closeId;
     document.body.appendChild(alertClose);
+    // document.body.setAttribute("background-color", rgba(0, 0, 0, .7));
     alertClose.onclick = closeAlertBox;
 };
