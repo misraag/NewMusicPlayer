@@ -127,6 +127,8 @@ background: #000;
 
 .navbar-button:hover {
     background-color: rgb(67, 67, 170);
+    /* background-color: antiquewhite; */
+    /* color: black; */
 }
 
 
@@ -136,10 +138,14 @@ background: #000;
 .navbar-button:hover i{
     background-color: rgb(67, 67, 170);
     color: rgb(255, 255, 255);
+    /* background-color: antiquewhite; */
+    /* color: black; */
 }
 
 .navbar-button:hover span {
     background-color: rgb(67, 67, 170);
+    /* background-color: antiquewhite; */
+    /* color: black; */
 }
 
 .iconspacing {
@@ -233,6 +239,7 @@ font-family: 'Kalam', cursive;
     height: 100%;
     z-index: 3;
     border-bottom: 3px solid rgb(67, 67, 170);
+    /* border-bottom: 3px solid antiquewhite; */
     /* border-top-left-radius:5px;
     border-top-right-radius: 5px; */
     background-color: rgb(17, 16, 16);
@@ -245,6 +252,7 @@ font-family: 'Kalam', cursive;
 
 .name {
     background-color: rgb(67, 67, 170);
+    /* background-color: antiquewhite; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -254,6 +262,8 @@ font-family: 'Kalam', cursive;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: white;
+    /* color: #000; */
+    font-weight: bolder;
     font-family: 'Marcellus', serif;
 }
 
@@ -355,9 +365,12 @@ font-family: 'Kalam', cursive;
 .duration {
     /* width: 100%; */
     padding: 3%;
-    font-size: 0.60rem;
+    font-size: 0.70rem;
     /* font-weight:bold; */
     background-color: rgb(67, 67, 170);
+    /* background-color: antiquewhite; */
+    /* color: black; */
+    font-weight: 501;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
