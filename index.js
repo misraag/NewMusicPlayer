@@ -419,8 +419,11 @@ volumeIcon.addEventListener("click", () => {
         volumeIcon.classList.remove("fa-volume-high");
         volumeIcon.classList.remove("fa-volume-low");
         volumeIcon.classList.add("fa-volume-xmark");
+        // volumeIcon.setAttribute("color", "red");
+        volumeIcon.classList.add("volumeiconmuted");
         audioElement.volume = 0;
     } else {
+        volumeIcon.classList.remove("volumeiconmuted");
         volumeIcon.classList.remove("fa-volume-xmark");
         if(currVol >= 0.3) {
             volumeIcon.classList.add("fa-volume-high");
