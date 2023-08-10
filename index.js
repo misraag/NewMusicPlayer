@@ -21,7 +21,7 @@ let searchBar = document.getElementById('searchbar');
 let mySpan = document.getElementById('searchbarname');
 let searchfilter = document.getElementById('search');
 let songDiv = document.getElementById('songdiv');
-let homebutton = document.getElementById('homebutton');
+let homeButton = document.getElementById('homeButton');
 /**************/
 let navBarButtons = Array.from(document.getElementsByClassName('navbar-button'));
 let createPlaylist = document.getElementById('createPlaylist');
@@ -470,70 +470,40 @@ function setVolume(){
 /************************************************/ 
 
 function checkClickOutside(event) {
-    console.log(searchfilter.value);
     if (!searchBar.contains(event.target) && searchfilter.value == "") {
         mySpan.classList.remove("hidesearchspan");
         document.getElementById("searchbaricon").classList.remove("searchbariconright");
-        document.getElementById("searchbaricon").classList.remove("searchiconclicked");
+        document.getElementById("searchbaricon").classList.remove("button-clicked");
         document.getElementById("search").classList.add("hidesearchbar");
-        // document.removeEventListener('click', checkClickOutside);
     }
 }
 
 searchBar.addEventListener("click", () =>{
     mySpan.classList.add("hidesearchspan");
     document.getElementById("searchbaricon").classList.add("searchbariconright");
-    document.getElementById("searchbaricon").classList.add("searchiconclicked");
+    document.getElementById("searchbaricon").classList.add("button-clicked");
     document.getElementById("search").classList.remove("hidesearchbar");
 })
 
 document.addEventListener('click', checkClickOutside);
 
-// function makeAllNavBlack() {
-//     navBarButtons.forEach((element) => {
-//         element.classList.remove("backgroundpurple");
-//     })
-// }
-
-// navBarButtons.forEach((element) => {
-//     element.addEventListener("click", () => {
-//         console.log(element);
-//         makeAllNavBlack();
-//         console.log(element);
-//         // element.classList.add("backgroundpurple");
-//         console.log(element);
-//     })
-// })
-
 function searchFunction() {
-    // console.log(searchfilter.value.toUpperCase());
     let filter = searchfilter.value.toUpperCase();
-    // let rowDiv = songDiv.getElementById('rowdiv');
-
-    // for(var i = 0; i < rowDiv.length; i++) {
-
-    // }
     let songInfo = Array.from(document.getElementsByClassName('song-info'));
     songInfo.forEach((element) => {
-        // console.log(element.parentNode);
-        // console.log(element.getElementsByTagName('div')[0].textContent);
         let songNameSearch = element.getElementsByTagName('div')[0].textContent.toUpperCase();
         if(songNameSearch.indexOf(filter) > -1) {
-            // console.log(filter);
-            // console.log(songNameSearch);
-            // console.log(element.parentElement);
             element.parentElement.style.display = '';
-
         } else {
             element.parentElement.style.display = "none";
         }
     })  
 }
 
-homebutton.addEventListener('click', () => {
-    homebutton.classList.add('searchiconclicked');
-    document.getElementById('homespan').classList.add('searchiconclicked');
-    document.getElementById('homeicon').classList.add('searchiconclicked');
+homeButton.addEventListener('click', () => {
+    homeButton.classList.add('button-clicked');
+    document.getElementById('homeButtonName').classList.add('button-clicked');
+    document.getElementById('homeIcon').classList.add('button-clicked');
     searchfilter.value = "";
     searchFunction();
 })
