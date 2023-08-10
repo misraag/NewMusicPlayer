@@ -7,6 +7,7 @@
     background-color: black;
     color: white;
     font-size: 1rem;
+    /* position: relative; */
 }
 
 
@@ -72,11 +73,13 @@ background: #000;
 
 #homebutton {
     border-top-right-radius: 10px;
+    /* font-family: 'Preahvihear', sans-serif; */
 }
 
 #searchbar {
     border-bottom-right-radius: 10px;
     border: none;
+    /* font-family: 'Preahvihear', sans-serif; */
 }
 
 #search {
@@ -612,6 +615,7 @@ font-family: 'Kalam', cursive;
     margin-right: 1%;
     color: rgb(246, 231, 231);
     /* background-color: blue; */
+    font-family: 'Preahvihear', sans-serif;
 }
 
 #timerend {
@@ -620,6 +624,7 @@ font-family: 'Kalam', cursive;
     width: 7%;
     color: rgb(246, 231, 231);
     /* background-color: blue; */
+    font-family: 'Preahvihear', sans-serif;
 }
 
 #masterPlay {
@@ -683,6 +688,7 @@ font-family: 'Kalam', cursive;
     border: 2px solid rgb(30, 241, 30);
     border: 2px solid red;
     /* padding-bottom: 2%; */
+    /* display: none; */
 }
 
 #alertClose {
@@ -694,6 +700,15 @@ font-family: 'Kalam', cursive;
 	width: 100vw;
 	height: 100vh;
     z-index: 3;
+    /* display: none; */
+}
+
+.hideAlerts {
+    display: none;
+}
+
+.displayAlerts {
+    display: block;
 }
 
 .inputDivClass {
@@ -711,7 +726,7 @@ font-family: 'Kalam', cursive;
     margin: 2% auto;
 }
 
-.inputClassName {
+#inputClassName {
     padding-left: 5%;
     font-family: 'Marcellus', serif;
     /* color: white; */

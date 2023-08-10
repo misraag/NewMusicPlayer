@@ -50,7 +50,12 @@ let songs = [
     {songName: "Song 21", filepath: '/songs/21.mp3', coverPath: '/covers/21.jpg'}
 ]
 
-const libraries = {
+const libraries = JSON.parse(localStorage.getItem('libraries')) || { 
+    liked: {
+        title: "Liked Songs",
+        songs: JSON.parse(localStorage.getItem("homeSongs")) || []
+    },
+
     home: {
         title: "Home Library",
         songs: JSON.parse(localStorage.getItem("homeSongs")) || [
@@ -77,10 +82,13 @@ const libraries = {
     {songName: "Song 21", filepath: 'songs/21.mp3', coverPath: 'covers/21.jpg'}
         ],
     },
-
 };
 
 let currentLibraryKey = "home";
+
+function saveLibraries() {
+    localStorage.setItem("libraries", JSON.stringify(libraries));
+}
 
 function saveLibrarySongs (libraryKey) {
     localStorage.setItem(libraryKey + "Songs", JSON.stringify(libraries[libraryKey].songs));
@@ -104,7 +112,7 @@ function displaySongs (libraryKey) {
 
 function displayLibraryList() {
     const libraryList = document.getElementById("library-list");
-    // libraryList.innerHTML = "";
+    libraryList.innerHTML = "";
 
     for (const libraryKey in libraries) {
 
@@ -135,6 +143,7 @@ const newLibraryKey = libraryName.toLowerCase().replace(/\s+/g, "-");
         title: libraryName,
         songs: [],
     }
+    saveLibraries();
     saveLibrarySongs(newLibraryKey);
     displayLibraryList();
 }
@@ -530,52 +539,34 @@ homebutton.addEventListener('click', () => {
 })
 
 createPlaylist.addEventListener('click', () => {
-    // alert('Enter name of new playlist');
-    alert();
-
+    newPlaylist();
 });
 
-function closeAlertBox() {
-    alertBox = document.getElementById("alertBox");
-    alertClose = document.getElementById("alertClose");
+let alertClose = document.getElementById('alertClose');
+let alertBox = document.getElementById('alertBox');
+let acceptName = document.getElementById('acceptName');
+let inputClassName = document.getElementById('inputClassName');
 
-    alertBox.parentNode.removeChild(alertBox);
-    alertClose.parentNode.removeChild(alertClose);
+function newPlaylist() {
+    alertClose.classList.remove('hideAlerts');
+    alertBox.classList.remove('hideAlerts');
+    alertClose.classList.add('displayAlerts');
+    alertBox.classList.add('displayAlerts');
 }
 
-window.alert = function () {
-    var alertBoxDiv = document.createElement("div");
-    // alertBoxDiv.id = "alertBoxDiv";
-    var id = "alertBox", alertBox, closeId = "alertClose", alertClose;
-    alertBox = document.createElement("div");
-    // var closeButtonDiv = document.createElement("div");
-    // closeButtonDiv.classList.add("closeButtonDiv");
-    // var closeButton = document.createElement("i");
-    // closeButton.classList.add("fa-solid", "fa-circle-xmark");
-    // closeButtonDiv.appendChild(closeButton);
-    // closeButton.id = "closeButton";
-    // alertBox.appendChild(closeButtonDiv);
-    var textMsg = document.createElement("div");
-    textMsg.classList.add("textMsgName");
-    textMsg.innerHTML = "Please enter name for your new playlist!";
-    alertBox.appendChild(textMsg);
-    var inputDiv = document.createElement("div");
-    inputDiv.classList.add("inputDivClass");
-    var inputText = document.createElement("input");
-    inputText.classList.add('inputClassName');
-    var acceptName = document.createElement("i");
-    acceptName.id = "acceptName";
-    acceptName.classList.add("fa-solid", "fa-circle-check");
-    inputDiv.appendChild(inputText);
-    inputDiv.appendChild(acceptName);
-    alertBox.appendChild(inputDiv);
-    // alertBoxDiv.appendChild(alertBox);
-    document.body.appendChild(alertBox);
-    alertBox.id = id;
-    // alertBox.innerHTML = msg;
-    alertClose = document.createElement("div");
-    alertClose.id = closeId;
-    document.body.appendChild(alertClose);
-    // document.body.setAttribute("background-color", rgba(0, 0, 0, .7));
-    alertClose.onclick = closeAlertBox;
-};
+alertClose.addEventListener('click', () => {
+    alertClose.classList.add('hideAlerts');
+    alertBox.classList.add('hideAlerts');
+    alertClose.classList.remove('displayAlerts');
+    alertBox.classList.remove('displayAlerts');
+})
+
+acceptName.addEventListener('click', () => {
+    var playlistName = inputClassName.value;
+    alertClose.classList.add('hideAlerts');
+    alertBox.classList.add('hideAlerts');
+    alertClose.classList.remove('displayAlerts');
+    alertBox.classList.remove('displayAlerts');
+    createLibrary(playlistName);
+
+})
