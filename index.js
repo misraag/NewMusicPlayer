@@ -523,6 +523,7 @@ function searchFunction() {
 
 homebutton.addEventListener('click', () => {
     homebutton.classList.add('searchiconclicked');
+    document.getElementById('homespan').classList.add('searchiconclicked');
     document.getElementById('homeicon').classList.add('searchiconclicked');
     searchfilter.value = "";
     searchFunction();
