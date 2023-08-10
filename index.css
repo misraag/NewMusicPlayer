@@ -746,14 +746,7 @@ font-family: 'Kalam', cursive;
 
 .closeButtonDiv {
     width: 100%;
-    /* background-color: white; */
     background-color: rgb(17, 16, 16);
-    /* height: 100%; */
-    /* display: flex; */
-    /* position: relative; */
-    /* height: 50%; */
-    /* background-color: white; */
-    /* color: aqua; */
     text-align: end;
     padding-right: 1%;
 }
