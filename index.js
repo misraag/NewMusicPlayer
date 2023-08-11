@@ -94,7 +94,38 @@ function saveLibrarySongs (libraryKey) {
     localStorage.setItem(libraryKey, JSON.stringify(libraries[libraryKey].songs));
 }
 
+function initializeMusicPlayer() {
+    let songIndex = 0;
+let tempIndex = -1;
+let currentVolume;
+let audioElement = new Audio('songs/1.mp3');
+let songItem = Array.from(document.getElementsByClassName('cards'));
+let masterPlay = document.getElementById('masterPlay');
+let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
+let masterSongName = document.getElementById('masterSongName');
+let coverSongName = document.getElementById('coversongname');
+let footCoverImage = document.getElementById('footercoverimg');
+let playingCoverImage = document.getElementById('playing-cover-img');
+let timerStart = document.getElementById('timerstart');
+let timerEnd = document.getElementById('timerend');
+let volumeIcon = document.getElementById('volumeLogo');
+// let playVisible = Array.from(document.getElementsByClassName('playVisible'));
+let songCard = Array.from(document.getElementsByClassName('cards'));
+let playIcon = Array.from(document.getElementsByClassName('play-icon'));
+let playNext = document.getElementById('next');
+let playPrev = document.getElementById('previous');
+let searchBar = document.getElementById('searchbar');
+let mySpan = document.getElementById('searchbarname');
+let searchfilter = document.getElementById('search');
+let songDiv = document.getElementById('songdiv');
+let homeButton = document.getElementById('homeButton');
+/**************/
+let navBarButtons = Array.from(document.getElementsByClassName('navbar-button'));
+let createPlaylist = document.getElementById('createPlaylist');
+}
+
 function displaySongs (libraryKey) {
+    initializeMusicPlayer();
     document.getElementById('rowdiv').innerHTML = "";
     const library = libraries[libraryKey];
     // const libraryTitleElement = document.getElementById("library-title");
@@ -249,16 +280,20 @@ function getDuration(src) {
 // })
 
 masterPlay.addEventListener('click',()=>{
+    const songList = libraries[currentLibraryKey].songs;
+    let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
+    console.log(songList);
     if(audioElement.paused || audioElement.currentTime <=0){
         audioElement.volume = myVolumeBar.value / 100;
         audioElement.play();
         masterPlay.classList.remove('fa-play-circle');
         masterPlay.classList.add('fa-pause-circle');
         if(songIndex == 0) {
-            masterPlayCover[songIndex].classList.add("fa-pause-circle");
-            masterPlayCover[songIndex].classList.remove("fa-play-circle");
-            masterPlayCover[songIndex].classList.remove('playVisible');
-            masterPlayCover[songIndex].classList.add('colorRed');
+            console.log("this")
+            masterPlayCover[0].classList.add("fa-pause-circle");
+            masterPlayCover[0].classList.remove("fa-play-circle");
+            masterPlayCover[0].classList.remove('playVisible');
+            masterPlayCover[0].classList.add('colorRed');
             masterSongName.innerText = songs[songIndex].songName;
             coverSongName.innerText = songs[songIndex].songName;
             footCoverImage.src = songs[songIndex].coverPath;
@@ -351,6 +386,8 @@ function makeAllPlay () {
 
 
 masterPlayCover.forEach((element) => {
+    // let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
+    console.log(element);
     element.addEventListener('click', (e) => {
         audioElement.volume = myVolumeBar.value / 100;
         songIndex = parseInt(e.target.id);
