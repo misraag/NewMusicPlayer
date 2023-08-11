@@ -620,3 +620,16 @@ background: #000;
     background-color: rgb(30, 241, 30);
 }
 
+.playlist-clicked {
+    background-color: white;
+    color: red;
+}
+
+.hideCards {
+    display: none;
+}
+
+.showCards {
+    display: block;
+}
+

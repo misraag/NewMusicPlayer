@@ -51,13 +51,13 @@ let songs = [
 ]
 
 const libraries = JSON.parse(localStorage.getItem('libraries')) || { 
-    liked: {
+    "Liked Songs": {
         title: "Liked Songs",
         songs: JSON.parse(localStorage.getItem("homeSongs")) || []
     },
 
-    home: {
-        title: "Home Library",
+    "Home": {
+        title: "Home",
         songs: JSON.parse(localStorage.getItem("homeSongs")) || [
             {songName: "Song 1", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg'},
     {songName: "Song 2", filepath: 'songs/2.mp3', coverPath: 'covers/2.jpg'},
@@ -84,14 +84,14 @@ const libraries = JSON.parse(localStorage.getItem('libraries')) || {
     },
 };
 
-let currentLibraryKey = "home";
+let currentLibraryKey = "Home";
 
 function saveLibraries() {
     localStorage.setItem("libraries", JSON.stringify(libraries));
 }
 
 function saveLibrarySongs (libraryKey) {
-    localStorage.setItem(libraryKey + "Songs", JSON.stringify(libraries[libraryKey].songs));
+    localStorage.setItem(libraryKey, JSON.stringify(libraries[libraryKey].songs));
 }
 
 function displaySongs (libraryKey) {
@@ -100,14 +100,46 @@ function displaySongs (libraryKey) {
     // libraryTitleElement.textContent = library.title;
     // const currentLibrarySongs = document.getElementById("current-library-songs");
     // currentLibrarySongs.innerHTML = "";
-
-    songItem.forEach((element, i)=>{
-        element.getElementsByTagName("img")[0].src = library.songs[i].coverPath;
-        element.getElementsByClassName("music-name")[0].innerText = library.songs[i].songName;
-        getDuration(library.songs[i].filepath).then(function(length) {
-        element.getElementsByClassName("duration")[0].textContent = length;
-        });
+    // console.log(songItem[0].classList.add('hideCards'));
+    // console.log(songItem[0].getElementsByClassName("music-name")[0].innerText);
+    // songItem[0].style.setAttribute("display", "none");
+    // songItem.forEach((element, i)=>{
+        // if (library.songs[i] != null) {
+        //     element.getElementsByTagName("img")[0].src = library.songs[i].coverPath;
+        //     element.getElementsByClassName("music-name")[0].innerText = library.songs[i].songName;
+        //     getDuration(library.songs[i].filepath).then(function(length) {
+        //     element.getElementsByClassName("duration")[0].textContent = length;    
+        //     }); 
+        // } else {
+            
+        // }
+    //     element[0].style.setAttribute("display", "none");
+    // })
+    let cardIndex = 0;
+    console.log(library.songs[0])
+    library.songs.forEach((song) => {
+        console.log("Song is: " + song.songName);
+        // songItem[cardIndex]
+        songItem[cardIndex].getElementsByTagName("img")[0].src = song.coverPath;
+        songItem[cardIndex].getElementsByClassName("music-name")[0].innerText = song.songName;
+        showHiddenCards();
+        // songItem[cardIndex].classList.add('showCards');
+        // songItem[cardIndex].classList.remove('hideCards');
+        // getDuration(song.filepath).then(function(length) {
+        // songItem[cardIndex].getElementsByClassName("duration")[0].textContent = length;    
+        // });
+        cardIndex++;
     })
+    for(var x = cardIndex ; x < songItem.length ; x++) {
+        songItem[x].classList.add('hideCards');
+    }
+
+}
+
+function showHiddenCards() {
+    for (var y = 0; y < songItem.length; y++) {
+        songItem[y].classList.remove('hideCards');
+    }
 }
 
 function displayLibraryList() {
@@ -137,8 +169,14 @@ function switchLibrary (libraryKey) {
     displayLibrarySongs(libraryKey);
 }
 
+function getLibraryKey (libraryName) {
+    return libraryName.toLowerCase().replace(/\s+/g, "-");
+}
+
 function createLibrary (libraryName) {
-const newLibraryKey = libraryName.toLowerCase().replace(/\s+/g, "-");
+// const newLibraryKey = libraryName.toLowerCase().replace(/\s+/g, "-");
+// const newLibraryKey = getLibraryKey(libraryName);
+const newLibraryKey = libraryName;
     libraries[newLibraryKey] = {
         title: libraryName,
         songs: [],
@@ -540,3 +578,27 @@ acceptName.addEventListener('click', () => {
     createLibrary(playlistName);
 
 })
+
+let heartIcon = document.getElementById('heart');
+
+// heartIcon.addEventListener('click', () => {
+//     console.log("clicked on heartbeat");
+// })
+
+let playlists = Array.from(document.getElementsByClassName('liked'));
+
+playlists.forEach((playlist) => {
+    playlist.addEventListener('click', (e) => {
+        // console.log(e.target.textContent);
+        displaySongs(e.target.textContent);
+        removeAllClickedPlaylist();
+        e.target.classList.add('playlist-clicked');
+        // console.log(getLibraryKey('Liked Songs'));
+    })
+})
+
+function removeAllClickedPlaylist() {
+    playlists.forEach((playlist) => {
+            playlist.classList.remove('playlist-clicked');
+        })
+}
