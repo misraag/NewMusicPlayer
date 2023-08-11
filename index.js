@@ -601,4 +601,4 @@ function removeAllClickedPlaylist() {
     playlists.forEach((playlist) => {
             playlist.classList.remove('playlist-clicked');
         })
-}
+} 
