@@ -1,30 +1,30 @@
-let songIndex = 0;
-let tempIndex = -1;
-let currentVolume;
-let audioElement = new Audio('songs/1.mp3');
-let songItem = Array.from(document.getElementsByClassName('cards'));
-let masterPlay = document.getElementById('masterPlay');
-let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
-let masterSongName = document.getElementById('masterSongName');
-let coverSongName = document.getElementById('coversongname');
-let footCoverImage = document.getElementById('footercoverimg');
-let playingCoverImage = document.getElementById('playing-cover-img');
-let timerStart = document.getElementById('timerstart');
-let timerEnd = document.getElementById('timerend');
-let volumeIcon = document.getElementById('volumeLogo');
-// let playVisible = Array.from(document.getElementsByClassName('playVisible'));
-let songCard = Array.from(document.getElementsByClassName('cards'));
-let playIcon = Array.from(document.getElementsByClassName('play-icon'));
-let playNext = document.getElementById('next');
-let playPrev = document.getElementById('previous');
-let searchBar = document.getElementById('searchbar');
-let mySpan = document.getElementById('searchbarname');
-let searchfilter = document.getElementById('search');
-let songDiv = document.getElementById('songdiv');
-let homeButton = document.getElementById('homeButton');
-/**************/
-let navBarButtons = Array.from(document.getElementsByClassName('navbar-button'));
-let createPlaylist = document.getElementById('createPlaylist');
+// let songIndex = 0;
+// let tempIndex = -1;
+// let currentVolume;
+// let audioElement = new Audio('songs/1.mp3');
+// let songItem = Array.from(document.getElementsByClassName('cards'));
+// let masterPlay = document.getElementById('masterPlay');
+// let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
+// let masterSongName = document.getElementById('masterSongName');
+// let coverSongName = document.getElementById('coversongname');
+// let footCoverImage = document.getElementById('footercoverimg');
+// let playingCoverImage = document.getElementById('playing-cover-img');
+// let timerStart = document.getElementById('timerstart');
+// let timerEnd = document.getElementById('timerend');
+// let volumeIcon = document.getElementById('volumeLogo');
+// // let playVisible = Array.from(document.getElementsByClassName('playVisible'));
+// let songCard = Array.from(document.getElementsByClassName('cards'));
+// let playIcon = Array.from(document.getElementsByClassName('play-icon'));
+// let playNext = document.getElementById('next');
+// let playPrev = document.getElementById('previous');
+// let searchBar = document.getElementById('searchbar');
+// let mySpan = document.getElementById('searchbarname');
+// let searchfilter = document.getElementById('search');
+// let songDiv = document.getElementById('songdiv');
+// let homeButton = document.getElementById('homeButton');
+// /**************/
+// let navBarButtons = Array.from(document.getElementsByClassName('navbar-button'));
+// let createPlaylist = document.getElementById('createPlaylist');
 
 let songs = [
     {songName: "Song 1", filepath: '/songs/1.mp3', coverPath: '/covers/1.jpg'},
