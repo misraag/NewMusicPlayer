@@ -95,6 +95,7 @@ function saveLibrarySongs (libraryKey) {
 }
 
 function initializeMusicPlayer() {
+    console.log("HELLO INITIALIZEMUSICPLAYER");
     let songIndex = 0;
 let tempIndex = -1;
 let currentVolume;
@@ -102,6 +103,7 @@ let audioElement = new Audio('songs/1.mp3');
 let songItem = Array.from(document.getElementsByClassName('cards'));
 let masterPlay = document.getElementById('masterPlay');
 let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
+console.log("MASTERPLAYCOVER" + masterPlayCover.length);
 let masterSongName = document.getElementById('masterSongName');
 let coverSongName = document.getElementById('coversongname');
 let footCoverImage = document.getElementById('footercoverimg');
@@ -125,7 +127,6 @@ let createPlaylist = document.getElementById('createPlaylist');
 }
 
 function displaySongs (libraryKey) {
-    initializeMusicPlayer();
     document.getElementById('rowdiv').innerHTML = "";
     const library = libraries[libraryKey];
     // const libraryTitleElement = document.getElementById("library-title");
@@ -197,6 +198,7 @@ function showHiddenCards() {
 }
 
 function displayLibraryList() {
+    console.log("HELLO DISPLAYLIBRARYLIST");
     const libraryList = document.getElementById("library-list");
     libraryList.innerHTML = "";
 
@@ -249,6 +251,7 @@ const newLibraryKey = libraryName;
     displayLibraryList();
 }
 
+initializeMusicPlayer();
 displayLibraryList();
 displaySongs(currentLibraryKey);
 
@@ -329,61 +332,6 @@ masterPlay.addEventListener('click',()=>{
     }
     
     })
-    
-    function time(){
-        minsStart = parseInt((audioElement.currentTime)/60);
-        secondsStart = parseInt((audioElement.currentTime)-(60*minsStart));
-        minsEnd = parseInt((audioElement.duration - audioElement.currentTime)/60);
-        secondsEnd = parseInt((audioElement.duration - audioElement.currentTime) % 60);
-        if(audioElement.currentTime>59){
-            if (secondsStart<10) {
-                timerStart.innerText = `0${minsStart}:0${secondsStart}`;
-            } else {
-                timerStart.innerText = `0${minsStart}:${secondsStart}`; 
-            }
-
-            if (secondsEnd<10) {
-                timerEnd.innerText = `0${minsEnd}:0${secondsEnd}`;
-            } else {
-                timerEnd.innerText = `0${minsEnd}:${secondsEnd}`; 
-            }
-        }
-        else{
-            if (secondsStart<10) {
-                timerStart.innerText = `0${minsStart}:0${secondsStart}`;
-            } else {
-                timerStart.innerText = `0${minsStart}:${secondsStart}`; 
-            }
-
-            if (secondsEnd<10) {
-                timerEnd.innerText = `0${minsEnd}:0${secondsEnd}`;
-            } else {
-                timerEnd.innerText = `0${minsEnd}:${secondsEnd}`; 
-            }           
-        }  
-    }
-    
-    audioElement.addEventListener('timeupdate',()=>{
-        let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
-        myProgressBar.value = progress;
-        time();
-    })
-    
-    myProgressBar.addEventListener('change', ()=>{
-        audioElement.currentTime = ((myProgressBar.value)*(audioElement.duration))/100;
-        time();
-    })
-
-
-function makeAllPlay () {
-    masterPlayCover.forEach((element) => {
-        element.classList.remove("fa-pause-circle");
-        element.classList.add("fa-play-circle");
-        element.classList.add('playVisible');
-        element.classList.remove('colorRed');
-    })
-}
-
 
 masterPlayCover.forEach((element) => {
     // let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
@@ -432,6 +380,63 @@ masterPlayCover.forEach((element) => {
         }
     })
 })
+
+    
+function makeAllPlay () {
+    masterPlayCover.forEach((element) => {
+        element.classList.remove("fa-pause-circle");
+        element.classList.add("fa-play-circle");
+        element.classList.add('playVisible');
+        element.classList.remove('colorRed');
+    })
+}
+
+    
+    function time(){
+        minsStart = parseInt((audioElement.currentTime)/60);
+        secondsStart = parseInt((audioElement.currentTime)-(60*minsStart));
+        minsEnd = parseInt((audioElement.duration - audioElement.currentTime)/60);
+        secondsEnd = parseInt((audioElement.duration - audioElement.currentTime) % 60);
+        if(audioElement.currentTime>59){
+            if (secondsStart<10) {
+                timerStart.innerText = `0${minsStart}:0${secondsStart}`;
+            } else {
+                timerStart.innerText = `0${minsStart}:${secondsStart}`; 
+            }
+
+            if (secondsEnd<10) {
+                timerEnd.innerText = `0${minsEnd}:0${secondsEnd}`;
+            } else {
+                timerEnd.innerText = `0${minsEnd}:${secondsEnd}`; 
+            }
+        }
+        else{
+            if (secondsStart<10) {
+                timerStart.innerText = `0${minsStart}:0${secondsStart}`;
+            } else {
+                timerStart.innerText = `0${minsStart}:${secondsStart}`; 
+            }
+
+            if (secondsEnd<10) {
+                timerEnd.innerText = `0${minsEnd}:0${secondsEnd}`;
+            } else {
+                timerEnd.innerText = `0${minsEnd}:${secondsEnd}`; 
+            }           
+        }  
+    }
+    
+    audioElement.addEventListener('timeupdate',()=>{
+        let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
+        myProgressBar.value = progress;
+        time();
+    })
+    
+    myProgressBar.addEventListener('change', ()=>{
+        audioElement.currentTime = ((myProgressBar.value)*(audioElement.duration))/100;
+        time();
+    })
+
+
 
 playNext.addEventListener('click', ()=> {
     audioElement.volume = myVolumeBar.value / 100;
