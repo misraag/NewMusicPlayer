@@ -251,9 +251,10 @@ const newLibraryKey = libraryName;
     displayLibraryList();
 }
 
-initializeMusicPlayer();
+
 displayLibraryList();
 displaySongs(currentLibraryKey);
+
 
 
 
