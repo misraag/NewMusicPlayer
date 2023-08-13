@@ -43,30 +43,67 @@ const libraries = JSON.parse(localStorage.getItem('libraries')) || {
     "Home": {
         title: "Home",
         songs: JSON.parse(localStorage.getItem("Home")) || [
-            {songName: "Song 1", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg', id: 1},
-            {songName: "Song 2", filepath: 'songs/2.mp3', coverPath: 'covers/2.jpg', id: 2},
-            {songName: "Song 3", filepath: 'songs/3.mp3', coverPath: 'covers/3.jpg', id: 3},
-            {songName: "Song 4", filepath: 'songs/4.mp3', coverPath: 'covers/4.jpg', id: 4},
-            {songName: "Song 5", filepath: 'songs/5.mp3', coverPath: 'covers/5.jpg', id: 5},
-            {songName: "Song 6", filepath: 'songs/6.mp3', coverPath: 'covers/6.jpg', id: 6},
-            {songName: "Song 7", filepath: 'songs/7.mp3', coverPath: 'covers/7.jpg', id: 7},
-            {songName: "Song 8", filepath: 'songs/8.mp3', coverPath: 'covers/8.jpg', id: 8},
-            {songName: "Song 9", filepath: 'songs/9.mp3', coverPath: 'covers/9.jpg', id: 9},
-            {songName: "Song 10", filepath: 'songs/10.mp3', coverPath: 'covers/10.jpg', id: 10},
-            {songName: "Song 11", filepath: 'songs/11.mp3', coverPath: 'covers/11.jpg', id: 11},
-            {songName: "Song 12", filepath: 'songs/12.mp3', coverPath: 'covers/12.jpg', id: 12},
-            {songName: "Song 13", filepath: 'songs/13.mp3', coverPath: 'covers/13.jpg', id: 13},
-            {songName: "Song 14", filepath: 'songs/14.mp3', coverPath: 'covers/14.jpg', id: 14},
-            {songName: "Song 15", filepath: 'songs/15.mp3', coverPath: 'covers/15.jpg', id: 15},
-            {songName: "Song 16", filepath: 'songs/16.mp3', coverPath: 'covers/16.jpg', id: 16},
-            {songName: "Song 17", filepath: 'songs/17.mp3', coverPath: 'covers/17.jpg', id: 17},
-            {songName: "Song 18", filepath: 'songs/18.mp3', coverPath: 'covers/18.jpg', id: 18},
-            {songName: "Song 19", filepath: 'songs/19.mp3', coverPath: 'covers/19.jpg', id: 19},
-            {songName: "Song 20", filepath: 'songs/20.mp3', coverPath: 'covers/20.jpg', id: 20},
-            {songName: "Song 21", filepath: 'songs/21.mp3', coverPath: 'covers/21.jpg', id: 21}
+            {songName: "Darkhaast", filepath: 'songs/Darkhaast Shivaay.mp3', coverPath: 'covers/Darkhaast.jpg', id: 1},
+            {songName: "Kyon", filepath: 'songs/Kyon Barfi.mp3', coverPath: 'covers/Kyon.jpg', id: 2},
+            {songName: "No Love", filepath: 'songs/No Love Shubh.mp3', coverPath: 'covers/No Love.jpg', id: 3},
+            {songName: "Tere Hawaale", filepath: 'songs/Tere Hawaale Laal Singh Chaddha.mp3', coverPath: 'covers/Tere Hawale.jpg', id: 4},
+            {songName: "Aye Khuda", filepath: 'songs/Aye Khuda - Murder 2.mp3', coverPath: 'covers/Aye Khuda.jpg', id: 5},
+            {songName: "Cheques", filepath: 'songs/Cheques.mp3', coverPath: 'covers/Cheques.jpg', id: 6},
+            {songName: "Kasoor", filepath: 'songs/Kasoor (Prateek Kuhad).mp3', coverPath: 'covers/Kasoor.jpg', id: 7},
+            {songName: "Nadaan Parindey", filepath: 'songs/Nadaan Parindey Rockstar.mp3', coverPath: 'covers/Nadaan Parindey.jpg', id: 8},
+            {songName: "Tere Naina", filepath: 'songs/Tere Naina.mp3', coverPath: 'covers/Tere Naina.jpg', id: 9},
+            {songName: "Aaya Na Tu", filepath: 'songs/Aaya Na Tu.mp3', coverPath: 'covers/Aaya Na Tu.jpg', id: 10},
+            {songName: "Bezubaan", filepath: 'songs/Bezubaan Kab Se Street Dancer.mp3', coverPath: 'covers/Bezubaan.jpg', id: 11},
+            {songName: "Kaise Hua", filepath: 'songs/Kaise Hua - Kabir Singh.mp3', coverPath: 'covers/Kaise Hua.jpg', id: 12},
+            {songName: "Mitwa", filepath: 'songs/Mitwa Kabhi Alvida Naa Kehna.mp3', coverPath: 'covers/Mitwa.jpg', id: 13},
+            {songName: "Roobaroo", filepath: 'songs/Roobaroo - Rang De Basanti.mp3', coverPath: 'covers/Roobaroo.jpg', id: 14},
+            {songName: "Banjaara", filepath: 'songs/Banjaara Ek Villain.mp3', coverPath: 'covers/Banjaara.jpg', id: 15},
+            {songName: "Dildaara", filepath: 'songs/Dildaara Stand By Me Ra One.mp3', coverPath: 'covers/Dildaara.jpg', id: 16},
+            {songName: "Left-Right", filepath: 'songs/Left Right Song Ali Sethi.mp3', coverPath: 'covers/LeftRight.jpg', id: 17},
+            {songName: "Phir Mohabbat", filepath: 'songs/Phir Mohabbat - Murder 2.mp3', coverPath: 'covers/Phir Mohabbat.jpg', id: 18},
+            {songName: "Bekhayali", filepath: 'songs/Bekhayali - Kabir Singh.mp3', coverPath: 'covers/Bekhayali.jpg', id: 19},
+            {songName: "Beete Lamhein", filepath: 'songs/Beete Lamhein The Train.mp3', coverPath: 'covers/Beete Lamhein.jpg', id: 20},
+            {songName: "Gul", filepath: 'songs/Gul.mp3', coverPath: 'covers/Gul.jpg', id: 21},
+            {songName: "Mann Mera", filepath: 'songs/Mann Mera - Table No. 21.mp3', coverPath: 'covers/Mann Mera.jpg', id: 21},
+            {songName: "Ranjha", filepath: 'songs/Ranjha - Shershaah.mp3', coverPath: 'covers/Ranjha.jpg', id: 21},
+            {songName: "Zaroorat", filepath: 'songs/Zaroorat.mp3', coverPath: 'covers/Zaroorat.jpg', id: 21}
         ],
     },
 };
+
+// const libraries = JSON.parse(localStorage.getItem('libraries')) || { 
+//     "Liked Songs": {
+//         title: "Liked Songs",
+//         songs: JSON.parse(localStorage.getItem("Liked Songs")) || []
+//     }
+
+//     "Home": {
+//         title: "Home",
+//         songs: JSON.parse(localStorage.getItem("Home")) || [
+//             {songName: "Song 1", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg', id: 1},
+//             {songName: "Song 2", filepath: 'songs/2.mp3', coverPath: 'covers/2.jpg', id: 2},
+//             {songName: "Song 3", filepath: 'songs/3.mp3', coverPath: 'covers/3.jpg', id: 3},
+//             {songName: "Song 4", filepath: 'songs/4.mp3', coverPath: 'covers/4.jpg', id: 4},
+//             {songName: "Song 5", filepath: 'songs/5.mp3', coverPath: 'covers/5.jpg', id: 5},
+//             {songName: "Song 6", filepath: 'songs/6.mp3', coverPath: 'covers/6.jpg', id: 6},
+//             {songName: "Song 7", filepath: 'songs/7.mp3', coverPath: 'covers/7.jpg', id: 7},
+//             {songName: "Song 8", filepath: 'songs/8.mp3', coverPath: 'covers/8.jpg', id: 8},
+//             {songName: "Song 9", filepath: 'songs/9.mp3', coverPath: 'covers/9.jpg', id: 9},
+//             {songName: "Song 10", filepath: 'songs/10.mp3', coverPath: 'covers/10.jpg', id: 10},
+//             {songName: "Song 11", filepath: 'songs/11.mp3', coverPath: 'covers/11.jpg', id: 11},
+//             {songName: "Song 12", filepath: 'songs/12.mp3', coverPath: 'covers/12.jpg', id: 12},
+//             {songName: "Song 13", filepath: 'songs/13.mp3', coverPath: 'covers/13.jpg', id: 13},
+//             {songName: "Song 14", filepath: 'songs/14.mp3', coverPath: 'covers/14.jpg', id: 14},
+//             {songName: "Song 15", filepath: 'songs/15.mp3', coverPath: 'covers/15.jpg', id: 15},
+//             {songName: "Song 16", filepath: 'songs/16.mp3', coverPath: 'covers/16.jpg', id: 16},
+//             {songName: "Song 17", filepath: 'songs/17.mp3', coverPath: 'covers/17.jpg', id: 17},
+//             {songName: "Song 18", filepath: 'songs/18.mp3', coverPath: 'covers/18.jpg', id: 18},
+//             {songName: "Song 19", filepath: 'songs/19.mp3', coverPath: 'covers/19.jpg', id: 19},
+//             {songName: "Song 20", filepath: 'songs/20.mp3', coverPath: 'covers/20.jpg', id: 20},
+//             {songName: "Song 21", filepath: 'songs/21.mp3', coverPath: 'covers/21.jpg', id: 21}
+//         ],
+//     },
+// };
 
 let currentLibraryKey = "Home";
 displayLibraryList();
@@ -203,7 +240,7 @@ function initializePlayCover() {
 playNext.addEventListener('click', ()=> {
     audioElement.volume = myVolumeBar.value / 100;
         songIndex = tempIndex + 1;
-        if(songIndex > 20) {
+        if(songIndex > songItem.length - 1) {
             songIndex = 0;
         }
         console.log(songIndex);
@@ -230,7 +267,7 @@ playPrev.addEventListener('click', ()=> {
     audioElement.volume = myVolumeBar.value / 100;
     songIndex = tempIndex - 1;
     if(songIndex < 0) {
-        songIndex = 20;
+        songIndex = songItem.length - 1;
     }
     tempIndex = songIndex;
     audioElement.src = library.songs[songIndex].filepath;
@@ -301,13 +338,12 @@ function createLibrary (libraryName) {
 }
 
 heartIcon.addEventListener('click', () => {
-    console.log("clicked on heartbeat");
-    console.log(libraries[currentLibraryKey].songs[songIndex - 1]);
+    console.log(libraries[currentLibraryKey].songs[songIndex]);
     addToLiked(songIndex);
 })
 
 function addToLiked(songIndex){
-    const song = libraries.Home.songs[songIndex-1];
+    const song = libraries.Home.songs[songIndex];
     if(!libraries['Liked Songs'].songs.includes(song)) {
         libraries['Liked Songs'].songs.push(song);
         saveLibrarySongs("Liked Songs");
