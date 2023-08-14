@@ -71,40 +71,6 @@ const libraries = JSON.parse(localStorage.getItem('libraries')) || {
     },
 };
 
-// const libraries = JSON.parse(localStorage.getItem('libraries')) || { 
-//     "Liked Songs": {
-//         title: "Liked Songs",
-//         songs: JSON.parse(localStorage.getItem("Liked Songs")) || []
-//     }
-
-//     "Home": {
-//         title: "Home",
-//         songs: JSON.parse(localStorage.getItem("Home")) || [
-//             {songName: "Song 1", filepath: 'songs/1.mp3', coverPath: 'covers/1.jpg', id: 1},
-//             {songName: "Song 2", filepath: 'songs/2.mp3', coverPath: 'covers/2.jpg', id: 2},
-//             {songName: "Song 3", filepath: 'songs/3.mp3', coverPath: 'covers/3.jpg', id: 3},
-//             {songName: "Song 4", filepath: 'songs/4.mp3', coverPath: 'covers/4.jpg', id: 4},
-//             {songName: "Song 5", filepath: 'songs/5.mp3', coverPath: 'covers/5.jpg', id: 5},
-//             {songName: "Song 6", filepath: 'songs/6.mp3', coverPath: 'covers/6.jpg', id: 6},
-//             {songName: "Song 7", filepath: 'songs/7.mp3', coverPath: 'covers/7.jpg', id: 7},
-//             {songName: "Song 8", filepath: 'songs/8.mp3', coverPath: 'covers/8.jpg', id: 8},
-//             {songName: "Song 9", filepath: 'songs/9.mp3', coverPath: 'covers/9.jpg', id: 9},
-//             {songName: "Song 10", filepath: 'songs/10.mp3', coverPath: 'covers/10.jpg', id: 10},
-//             {songName: "Song 11", filepath: 'songs/11.mp3', coverPath: 'covers/11.jpg', id: 11},
-//             {songName: "Song 12", filepath: 'songs/12.mp3', coverPath: 'covers/12.jpg', id: 12},
-//             {songName: "Song 13", filepath: 'songs/13.mp3', coverPath: 'covers/13.jpg', id: 13},
-//             {songName: "Song 14", filepath: 'songs/14.mp3', coverPath: 'covers/14.jpg', id: 14},
-//             {songName: "Song 15", filepath: 'songs/15.mp3', coverPath: 'covers/15.jpg', id: 15},
-//             {songName: "Song 16", filepath: 'songs/16.mp3', coverPath: 'covers/16.jpg', id: 16},
-//             {songName: "Song 17", filepath: 'songs/17.mp3', coverPath: 'covers/17.jpg', id: 17},
-//             {songName: "Song 18", filepath: 'songs/18.mp3', coverPath: 'covers/18.jpg', id: 18},
-//             {songName: "Song 19", filepath: 'songs/19.mp3', coverPath: 'covers/19.jpg', id: 19},
-//             {songName: "Song 20", filepath: 'songs/20.mp3', coverPath: 'covers/20.jpg', id: 20},
-//             {songName: "Song 21", filepath: 'songs/21.mp3', coverPath: 'covers/21.jpg', id: 21}
-//         ],
-//     },
-// };
-
 let currentLibraryKey = "Home";
 displayLibraryList();
 displaySongs(currentLibraryKey);
