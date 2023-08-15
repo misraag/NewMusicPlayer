@@ -527,5 +527,3 @@ homeButton.addEventListener('click', () => {
     searchfilter.value = "";
     searchFunction();
 })
-
-
