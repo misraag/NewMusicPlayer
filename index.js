@@ -72,7 +72,7 @@ const libraries = JSON.parse(localStorage.getItem('libraries')) || {
 };
 
 let currentLibraryKey = "Home";
-library = libraries[currentLibraryKey];
+// library = libraries[currentLibraryKey];
 let audioElement = new Audio(libraries[currentLibraryKey].songs[0].filepath);
 
 displayLibraryList();
@@ -129,21 +129,22 @@ function displaySongs (libraryKey) {
 function initializeMusicPlayer() {
     songIndex = 0;
     tempIndex = -1;
-    // myProgressBar.value = 0;
+    // audioElement.pause();
+    myProgressBar.value = 0;
     // audioElement.duration = 0;
-    // audioElement = new Audio(libraries[currentLibraryKey].songs[0].filepath);
+    audioElement.src = libraries[currentLibraryKey].songs[0].filepath;
     playlists = Array.from(document.getElementsByClassName('liked'));
     songItem = Array.from(document.getElementsByClassName('cards'));
     masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
     songCard = Array.from(document.getElementsByClassName('cards'));
+
     // audioElement.currentTime = 0;
-    
-    // masterPlay.classList.remove('fa-pause-circle');
-    // masterPlay.classList.add('fa-play-circle');
-    // masterPlayCover[songIndex].classList.add("fa-play-circle");
-    // masterPlayCover[songIndex].classList.remove("fa-pause-circle");
-    // masterPlayCover[songIndex].classList.add('playVisible');
-    // masterPlayCover[songIndex].classList.add('colorRed');
+    masterPlay.classList.remove('fa-pause-circle');
+    masterPlay.classList.add('fa-play-circle');
+    masterPlayCover[songIndex].classList.add("fa-play-circle");
+    masterPlayCover[songIndex].classList.remove("fa-pause-circle");
+    masterPlayCover[songIndex].classList.add('playVisible');
+    masterPlayCover[songIndex].classList.add('colorRed');
 
     initializePlayCover();
 }
@@ -428,13 +429,14 @@ function time(){
 
 audioElement.addEventListener('timeupdate',()=>{
 changedLibrary = currentLibraryKey;
-// if(changedLibrary != initialLibrary) {
-//     myProgressBar.value = 0;
-//     initialLibrary = changedLibrary;
-// } else {
+if(changedLibrary != initialLibrary) {
+    console.log("changed library");
+    myProgressBar.value = 0;
+    initialLibrary = changedLibrary;
+} else {
     let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
     myProgressBar.value = progress;
-// }
+}
 
 time();
 })
