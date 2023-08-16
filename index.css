@@ -525,6 +525,10 @@ background: #000;
     align-items: center;
 }
 
+.volumebar i{
+    margin: auto 3%;
+}
+
 #myVolumeBar{
     width: 40%;
     background-color: white; 
@@ -533,11 +537,11 @@ background: #000;
     cursor: pointer;
     right: 0;
     position: absolute;
-    margin: 4%;
+    /* margin: 4%; */
 }
 
 #volumeLogo {
-    margin-right: 1px;
+    margin-right: 0;
     cursor: pointer;
 }
 
