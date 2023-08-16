@@ -133,6 +133,10 @@ background: #000;
     color: red;
 }
 
+.navbar-button:hover #homeButton {
+    background-color: white;
+    color: red;
+}
 .iconspacing {
     margin: 5%;
     margin-right: 6%;
