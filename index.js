@@ -31,6 +31,7 @@ let alertBox = document.getElementById('alertBox');
 let acceptName = document.getElementById('acceptName');
 let inputClassName = document.getElementById('inputClassName');
 let heartIcon = document.getElementById('heart');
+let hearts = Array.from(document.getElementsByClassName('fa-heart'));
 
 let library;
 
@@ -211,6 +212,7 @@ function initializePlayCover() {
                     audioElement.src = library.songs[songIndex].filepath;
                     makeAllPlay();
                     audioElement.currentTime = 0;
+                    removeRedHearts();
                 }
                 audioElement.play();
                 currentVolume = audioElement.volume;
@@ -327,20 +329,55 @@ acceptName.addEventListener('click', () => {
 })
 
 function createLibrary (libraryName) {
+    console.log("inside create library function");
     const newLibraryKey = libraryName;
-        libraries[newLibraryKey] = {
+        // libraries[newLibraryKey] = {
+        //     title: libraryName,
+        //     songs: [],
+        // }
+
+
+        const existingLibraries = JSON.parse(localStorage.getItem("libraries")) || {};
+
+        // Add the new library to the existing libraries object
+        existingLibraries[newLibraryKey] = {
             title: libraryName,
-            songs: [],
-        }
-        saveLibraries();
-        saveLibrarySongs(newLibraryKey);
+            songs: []
+        };
+    
+        // Update the libraries object in localStorage
+        localStorage.setItem("libraries", JSON.stringify(existingLibraries));
+
+
+        // saveLibraries();
+        // saveLibrarySongs(newLibraryKey);
         displayLibraryList();
 }
 
-heartIcon.addEventListener('click', () => {
-    console.log(libraries[currentLibraryKey].songs[songIndex]);
-    addtoliked(songIndex);
+hearts.forEach((heart) => {
+    heart.addEventListener('click', () =>{
+        console.log(libraries[currentLibraryKey].songs[songIndex]);
+        addtoliked(songIndex);
+        allHeartRed();
+    })
 })
+
+function allHeartRed() {
+    hearts.forEach((heart) => {
+        heart.classList.add('colorRed');
+    })
+}
+
+function removeRedHearts() {
+    hearts.forEach((heart) => {
+        heart.classList.remove('colorRed');
+    })
+}
+
+// heartIcon.addEventListener('click', () => {
+//     console.log(libraries[currentLibraryKey].songs[songIndex]);
+//     addtoliked(songIndex);
+// })
 
 function addToLiked(songIndex){
     const song = libraries.Home.songs[songIndex];

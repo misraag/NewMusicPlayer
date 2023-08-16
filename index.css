@@ -73,7 +73,7 @@ background: #000;
 #navbar {
     display: flex;
     flex-direction: column;
-    height: 16%;
+    height: 18%;
     color: white;
     border-radius: 7px;
     margin-top: 4%;
@@ -86,12 +86,14 @@ background: #000;
     cursor: pointer;
     color: white;
     height: 50%;
+
     /* background-color: rgb(56, 55, 55); */
 }
 
 .navbar-button span {
     font-family: 'Marcellus', serif;
     font-weight: lighter;
+
     /* background-color: rgb(56, 55, 55); */
 }
 
