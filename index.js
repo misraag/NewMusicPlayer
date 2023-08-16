@@ -84,12 +84,16 @@ displaySongs(currentLibraryKey);
 function displayLibraryList() {
     const libraryList = document.getElementById("library-list");
     libraryList.innerHTML = "";
-
-    for (const libraryKey in libraries) {
-        const div = document.createElement("div");
-        div.textContent = libraries[libraryKey].title;
-        div.classList.add('liked');
-        libraryList.appendChild(div);
+    var librariesList = JSON.parse(localStorage.getItem("libraries")) || libraries;
+    for (const libraryKey in librariesList) {
+        
+        if(!(libraryKey == "Home")) {
+            console.log("Library key is : " + libraryKey);
+            const div = document.createElement("div");
+            div.textContent = libraries[libraryKey].title;
+            div.classList.add('liked');
+            libraryList.appendChild(div);
+        }
     }
 }
 
@@ -409,6 +413,9 @@ function removeAllClickedPlaylist() {
     playlists.forEach((playlist) => {
             playlist.classList.remove('playlist-clicked');
         })
+    homeButton.classList.remove('button-clicked');
+    document.getElementById('homeButtonName').classList.remove('button-clicked');
+    document.getElementById('homeIcon').classList.remove('button-clicked');
 } 
 
 function getDuration(src) {
@@ -574,6 +581,10 @@ homeButton.addEventListener('click', () => {
     homeButton.classList.add('button-clicked');
     document.getElementById('homeButtonName').classList.add('button-clicked');
     document.getElementById('homeIcon').classList.add('button-clicked');
-    searchfilter.value = "";
-    searchFunction();
+    // searchfilter.value = "";
+    // searchFunction();
+    playlists.forEach((playlist) => {
+        playlist.classList.remove('playlist-clicked');
+    })
+    switchLibrary("Home");
 })
