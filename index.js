@@ -76,6 +76,7 @@ let currentLibraryKey = "Home";
 let audioElement = new Audio(libraries[currentLibraryKey].songs[0].filepath);
 
 displayLibraryList();
+
 displaySongs(currentLibraryKey);
 
 /******************************DOM ELEMENT**************************/ 
@@ -93,10 +94,14 @@ function displayLibraryList() {
 }
 
 function displaySongs (libraryKey) {
+    saveLibraries();
     document.getElementById('rowdiv').innerHTML = "";
-    library = libraries[libraryKey];
+    // library = libraries[libraryKey];
+    console.log(JSON.parse(localStorage.getItem("libraries")));
+    library = JSON.parse(localStorage.getItem("libraries"))[currentLibraryKey];
+    var librarysongs = library.songs || [];
     var indexNo = 0;
-    library.songs.forEach((song) => {
+    librarysongs.forEach((song) => {
         var cardDiv = document.createElement('div');
         cardDiv.classList.add('col-lg-2', 'col-md-4', 'col-sm-6', 'col-xs-12',  'cards', 'h-100');
         var playCover = document.createElement('i');
@@ -129,10 +134,15 @@ function displaySongs (libraryKey) {
 function initializeMusicPlayer() {
     songIndex = 0;
     tempIndex = -1;
-    // audioElement.pause();
+    audioElement.pause();
     myProgressBar.value = 0;
     // audioElement.duration = 0;
-    audioElement.src = libraries[currentLibraryKey].songs[0].filepath;
+    if(JSON.parse(localStorage.getItem("libraries"))[currentLibraryKey].songs[0] != null) {
+        audioElement.src = JSON.parse(localStorage.getItem("libraries"))[currentLibraryKey].songs[0].filepath;
+    } else {
+        audioElement.src =  null;
+    }
+    
     playlists = Array.from(document.getElementsByClassName('liked'));
     songItem = Array.from(document.getElementsByClassName('cards'));
     masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
@@ -141,10 +151,14 @@ function initializeMusicPlayer() {
     // audioElement.currentTime = 0;
     masterPlay.classList.remove('fa-pause-circle');
     masterPlay.classList.add('fa-play-circle');
-    masterPlayCover[songIndex].classList.add("fa-play-circle");
-    masterPlayCover[songIndex].classList.remove("fa-pause-circle");
-    masterPlayCover[songIndex].classList.add('playVisible');
-    masterPlayCover[songIndex].classList.add('colorRed');
+    // masterPlayCover[songIndex].classList.add("fa-play-circle");
+    // masterPlayCover[songIndex].classList.remove("fa-pause-circle");
+    // masterPlayCover[songIndex].classList.add('playVisible');
+    // masterPlayCover[songIndex].classList.add('colorRed');
+    makeAllPlay();
+
+    // saveLibraries();
+    // saveLibrarySongs(currentLibraryKey);
 
     initializePlayCover();
 }
@@ -274,7 +288,7 @@ playPrev.addEventListener('click', ()=> {
 /*******************DOM FUNCTIONALITIES CLICK EVENTS************************/ 
 
 function saveLibraries() {
-    localStorage.setItem("libraries", JSON.stringify(libraries));
+    localStorage.setItem("libraries", JSON.stringify(JSON.parse(localStorage.getItem("libraries")) || libraries));
 }
 
 function saveLibrarySongs (libraryKey) {
@@ -321,16 +335,50 @@ function createLibrary (libraryName) {
 
 heartIcon.addEventListener('click', () => {
     console.log(libraries[currentLibraryKey].songs[songIndex]);
-    addToLiked(songIndex);
+    addtoliked(songIndex);
 })
 
 function addToLiked(songIndex){
     const song = libraries.Home.songs[songIndex];
-    if(!libraries['Liked Songs'].songs.includes(song)) {
-        libraries['Liked Songs'].songs.push(song);
-        saveLibraries();
-        saveLibrarySongs("Liked Songs");
+
+    const savedlibrary = JSON.parse(localStorage.getItem('libraries'));
+    const likedSongs = savedlibrary['Liked Songs'];
+    
+    if (!likedSongs.songs.includes(song)) {
+        likedSongs.songs.push(song);
+        // saveLibrarySongs("Liked Songs");
+        // localStorage.setItem('libraries', JSON.stringify(saveLibraries));
     }
+
+    // if(!libraries['Liked Songs'].songs.includes(song)) {
+    //     libraries['Liked Songs'].songs.push(song);
+    //     saveLibraries();
+    //     saveLibrarySongs("Liked Songs");
+    // }
+}
+
+function addtoliked(songIndex) {
+    // Get the existing "Liked Songs" playlist from localStorage
+    const song = libraries.Home.songs[songIndex];
+    const likedSongs = JSON.parse(localStorage.getItem("libraries"))["Liked Songs"].songs || [];
+
+    // Check if the song is already in the likedSongs playlist
+    const existingSong = likedSongs.find(existing => existing.id === song.id);
+    if (!existingSong) {
+        // If the song is not already in the playlist, add it
+        likedSongs.push(song);
+
+        // Update the localStorage with the new likedSongs playlist
+        localStorage.setItem("libraries", JSON.stringify({
+            ...JSON.parse(localStorage.getItem("libraries")),
+            "Liked Songs": {
+                title: "Liked Songs",
+                songs: likedSongs
+            }
+        }));
+    }
+    // saveLibraries();
+    // saveLibrarySongs("Liked Songs");
 }
 
 function addToLibrary(songIndex) {
