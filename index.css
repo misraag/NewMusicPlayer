@@ -22,8 +22,7 @@ i:hover {
 }
     
 ::-webkit-scrollbar-thumb {
-background: #000;
-/* background-color: white; */
+    background: #000;
 }
 
 /* ***********HEADER************** */
@@ -57,13 +56,7 @@ background: #000;
 
 .heading {
     border-top-right-radius: 10px;
-    /* border-radius: 7px; */
     height: 10%;
-    /* background-color: white;
-    background-color: grey;
-    background-color: rgb(56, 55, 55);
-    background-color: #dc3545;
-    background-color: #870d19; */
     width: 100%;
     color: black;
     color: white;
@@ -91,15 +84,11 @@ background: #000;
     cursor: pointer;
     color: white;
     height: 50%;
-
-    /* background-color: rgb(56, 55, 55); */
 }
 
 .navbar-button span {
     font-family: 'Marcellus', serif;
     font-weight: lighter;
-
-    /* background-color: rgb(56, 55, 55); */
 }
 
 #homeButton {
@@ -124,7 +113,6 @@ background: #000;
 
 .button-clicked {
     background-color: white;
-    color: red;
     color: #1b95cf;
 }
 
@@ -146,33 +134,26 @@ background: #000;
 
 .navbar-button:hover {
     background-color: white;
-    color: black;
     color: #1b95cf;
 }
 
 #homeButton:hover {
     background-color: white;
-    color: black;
     color: #1b95cf;
 }
 
 .navbar-button:hover i{
     background-color: white;
-    color: red;
     color: #1b95cf;
 }
 
 .navbar-button:hover span {
-    /* background-color: white;
-    color: red; */
     background-color: white;
-    color: red;
     color: #1b95cf;
     font-weight: 520;
     align-items: center;
     justify-content: center;
     font-family: 'Kalam', cursive;
-    /* transition: 0.15s; */
     font-size: 1.05rem;
 }
 
@@ -181,26 +162,13 @@ background: #000;
     margin-right: 5%;
 }
 
-/* .playlist {
-    display: flex;
-    flex-direction: column;
-    height: 68%;
-    margin-top: 5%;
-    overflow-y: auto;
-    border-radius: 5px;
-    background-color: rgb(17, 16, 16);
-    background-color: #1b95cf;
-} */
-
 .subheader {
     display: flex;
     align-items: center;
     color: white;
     width: 100%;
     margin: 10% auto 1%;
-    /* margin-bottom: 3%; */
     background-color: #1b95cf;
-    /* background-color: #14bbf3; */
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
@@ -222,7 +190,6 @@ background: #000;
     right: 0;
     margin-right: 7%;
     cursor: pointer;
-    /* background-color: #000; */
 }
 
 #library-list {
@@ -241,15 +208,10 @@ background: #000;
     width: 100%;
     background-color: rgb(56, 55, 55);
     margin: 1% auto;
-    /* padding-left: 5%;
-    padding-top: 5%;
-    padding-bottom: 5%; */
     background-color: rgb(56, 55, 55);
     border-radius: 5px;
-    /* font-size: 0.9rem; */
     cursor: pointer;
     align-items: center;
-    /* justify-content: center; */
 }
 
 
@@ -259,7 +221,6 @@ background: #000;
 }
 
 .library-div:hover span{
-    /* background-color: white; */
     color: #1b95cf;
     font-weight: 520;
     align-items: center;
@@ -270,7 +231,6 @@ background: #000;
 }
 
 .library-div:hover i{
-    /* background-color: white; */
     color: #1b95cf;
 }
 
@@ -279,55 +239,22 @@ background: #000;
 }
 
 .fa-ellipsis {
-    /* display: flex;
-    align-items: center; */
-    /* background-color: rgb(56, 55, 55); */
     background-color: transparent;
-    /* background-color: green; */
     width: 10%;
     margin-right: 5px;
     font-size: 1.2rem;
-    /* height: 100%; */
-    /* align-items: center; */
     justify-content: center;
     text-align: center;
-    /* display: flex; */
 }
 
 .liked {
-    /* display: flex; */
-    /* margin: 1% auto;
-    padding-left: 5%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    background-color: rgb(56, 55, 55);
-    border-radius: 5px;
-    font-size: 0.9rem;
-    cursor: pointer; */
     width: 90%;
     background-color: transparent;
-    /* background-color: red; */
-    /* height: 100%; */
     font-size: 0.9rem;
     padding-left: 5%;
     padding-top: 5%;
     padding-bottom: 5%;
 }
-
-
-
-
-/* .liked:hover {
-    background-color: white;
-    color: red;
-    color: #1b95cf;
-    font-weight: 520;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Kalam', cursive;
-    transition: 0.15s;
-    font-size: 1.05rem;
-} */
 
 /* ************SECOND SECTION******************* */
 
@@ -342,7 +269,6 @@ background: #000;
     background-color: rgb(17, 16, 16);
     border-left: 1px solid black;
     border-right: 1px solid black;
-    /* border-radius: 10px; */
 }
 
 .name {
@@ -354,8 +280,7 @@ background: #000;
     height: 10%;
     font-size: 1.3rem;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    color: red;  
+    border-top-right-radius: 10px; 
     color: #1b95cf;  
     font-weight: bolder;
     font-family: 'Marcellus', serif;
@@ -402,8 +327,6 @@ background: #000;
 }
 
 .cards i:hover {
-    color: rgb(255, 0, 0);
-    color: #1b95cf;
     color: #14bbf3;
 }
 
@@ -423,8 +346,6 @@ background: #000;
 .colorRed {
     color: rgb(255, 0, 0);
     color: #14bbf3;
-    /* color: darkblue; */
-    /* color: #1b95cf; */
 }
 
 .colorDarkblue {
@@ -455,7 +376,6 @@ background: #000;
     font-weight: 501;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    border-bottom: 3px solid red;
     border-bottom: 3px solid #1b95cf;
     font-family: 'Preahvihear', sans-serif;
 }
@@ -471,31 +391,18 @@ background: #000;
     width: 18%;
     height: 100%;
     position: relative;
-    /* margin: auto 1px; */
     margin-left: 1px;
     z-index: 3;
-    /* background-color: #1b95cf; */
-    border-bottom: 3px solid #870d19;
-    border-bottom: 3px solid #1b95cf;
     border-bottom: 3px solid white;
-    /* background-color: rgb(56, 55, 55); */
     background-color: rgb(17, 16, 16);
     border-left: 1px solid black;
 }
 
 .now-playing-info {
     border-top-left-radius: 10px;
-    /* border-radius: 7px; */
     height: 10%;
-    /* background-color: white;
-    background-color: grey;
-    background-color: rgb(56, 55, 55);
-    background-color: #dc3545;
-    background-color: #870d19; */
     width: 100%;
-    color: black;
     color: white;
-    /* color: #1b95cf; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -534,7 +441,6 @@ background: #000;
 
 .covermusicname {
     background-color: rgb(17, 16, 16);
-    /* color: #1b95cf; */
 }
 
 
@@ -543,7 +449,6 @@ background: #000;
     font-size: 22px;
     font-weight: bolder;
     background-color: rgb(17, 16, 16);
-    /* color: #1b95cf; */
 }
 
 .covericon{
@@ -552,7 +457,6 @@ background: #000;
     right: 0;
     margin: auto 5%;
     background-color: rgb(17, 16, 16);
-    /* padding: 1%; */
 }
 
 .covericon i {
@@ -628,7 +532,6 @@ background: #000;
     margin: auto 9px;
     font-size: 1.6rem;
     background-color: #1b95cf;
-    /* color: white; */
 }
 
 .controls .smallicon {
@@ -658,13 +561,11 @@ background: #000;
 #myVolumeBar{
     width: 40%;
     background-color: white; 
-    accent-color: red;
     accent-color: white;
     height: 3px;
     cursor: pointer;
     right: 0;
     position: absolute;
-    /* margin: 4%; */
 }
 
 #volumeLogo {
@@ -673,15 +574,10 @@ background: #000;
 }
 
 .volumeiconmuted {
-    color: red;
     color: darkblue;
-    /* color: #1b95cf; */
-    /* color: #1b95cf; */
 }
 
 .volume-icon:hover {
-    /* color: red;
-    color: #1b95cf; */
     color: darkblue;
 }
 
@@ -697,7 +593,6 @@ background: #000;
 #myProgressBar{
     width: 84%;
     cursor: pointer;
-    accent-color: red;
     height: 3px;
     accent-color: white;
     color: darkblue;
@@ -725,7 +620,6 @@ background: #000;
 
 #masterPlay {
     font-size: 2.3rem;
-    color: red;
     color: white;
 }
 
@@ -736,15 +630,12 @@ background: #000;
     top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    /* background-color: white; */
 	border-radius: 10px;
 	padding: 1rem;
 	z-index: 4;
-    color: red;
     color: #1b95cf;
     transition: 0.15s;
     width: 25%;
-    border: 2px solid red;
     border: 2px solid #1b95cf;
 }
 
@@ -753,15 +644,12 @@ background: #000;
     top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    /* background-color: white; */
 	border-radius: 10px;
 	padding: 1rem;
 	z-index: 4;
-    color: red;
     color: #1b95cf;
     transition: 0.15s;
     width: 30%;
-    border: 2px solid red;
     border: 2px solid #1b95cf;
     max-height: 50vh;
     overflow-y: auto;
@@ -772,16 +660,28 @@ background: #000;
     width: 100%;
     background-color: rgb(56, 55, 55);
     margin: 1% auto;
-    /* padding-left: 5%;
-    padding-top: 5%;
-    padding-bottom: 5%; */
     background-color: rgb(56, 55, 55);
     border-radius: 5px;
-    /* font-size: 0.9rem; */
     cursor: pointer;
     align-items: center;
     height: 50px;
-    /* justify-content: center; */
+}
+
+.popup-liked {
+    width: 90%;
+    background-color: transparent;
+    font-size: 0.9rem;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.popup-library:hover {
+    background-color: white;
+}
+
+.popup-library:hover span {
+    color: #1b95cf;
 }
 
 #alertClose {
@@ -803,7 +703,6 @@ background: #000;
 }
 
 .inputDivClass {
-    background-color: red;
     background-color: #1b95cf;
     justify-content: center;
     position: relative;
@@ -819,12 +718,10 @@ background: #000;
     width: 100%;
     font-weight: bolder;
     height: 2.3rem;
-    /* border: 1px solid red; */
 }
 
 .textMsgName {
     background-color: transparent;
-    color: red;
     color: #1b95cf;
     font-size: 0.9rem;
     border-radius: 0.2rem;
@@ -834,7 +731,6 @@ background: #000;
 }
 
 #acceptName {
-    background-color: red;
     background-color: #1b95cf;
     cursor: pointer;
     position: absolute;
@@ -842,14 +738,11 @@ background: #000;
     bottom: 0;
     font-size: 1.1rem;
     text-align: center;
-    /* padding: 1%; */
     width: 15%;
     height: 2.28rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid rgb(30, 241, 30); */
-    /* border: 2px solid black; */
 }
 
 #acceptName:hover {
@@ -859,7 +752,6 @@ background: #000;
 
 .playlist-clicked {
     background-color: white;
-    color: red;
     color: #1b95cf;
 }
 
@@ -873,5 +765,4 @@ background: #000;
 
 #repeaticon {
     font-size: 1rem;
-    /* background-color: green; */
 }

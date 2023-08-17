@@ -25,8 +25,8 @@ let homeButton = document.getElementById('homeButton');
 let navBarButtons = Array.from(document.getElementsByClassName('navbar-button'));
 let createPlaylist = document.getElementById('createPlaylist');
 
-// let playlists = Array.from(document.getElementsByClassName('liked'));
-let playlists = Array.from(document.getElementsByClassName('library-div'));
+let playlists = Array.from(document.getElementsByClassName('liked'));
+// let playlists = Array.from(document.getElementsByClassName('library-div'));
 
 let alertClose = document.getElementById('alertClose');
 let alertBox = document.getElementById('alertBox');
@@ -37,6 +37,7 @@ let heartIcon = document.getElementById('heart');
 let repeatIcon = document.getElementById('repeaticon');
 let hearts = Array.from(document.getElementsByClassName('fa-heart'));
 let booksicon = Array.from(document.getElementsByClassName('fa-book-medical'));
+let deleticons;
 let librariespopups;
 let flagRepeat = false;
 let library;
@@ -110,6 +111,11 @@ function displayLibraryList() {
             libraryList.appendChild(div);
         }
     }
+    playlists = Array.from(document.getElementsByClassName('liked'));
+    initializePlaylistLibrary();
+
+    console.log(playlists);
+    deleticons = Array.from(document.getElementsByClassName('fa-ellipsis'));
     populatelibrarylistpopup();
 }
 
@@ -137,7 +143,7 @@ function populatelibrarylistpopup() {
             div.classList.add("popup-library");
             const span = document.createElement('span');
             span.textContent = librariesList[libraryKey].title;
-            span.classList.add('liked');
+            span.classList.add('popup-liked');
             // const icon = document.createElement('i');
             // icon.classList.add("fa-solid", "fa-ellipsis");
             div.classList.add('librariespopup')
@@ -152,8 +158,11 @@ function populatelibrarylistpopup() {
         textdiv.textContent = "NO LIBRARIES PRESENT!";
     }
     librariespopups = Array.from(document.getElementsByClassName('librariespopup'));
+    initializePopUplibraries();
 }
 
+
+function initializePopUplibraries() {
 librariespopups.forEach((element) => {
     element.addEventListener('click', (e) => {
         const popupLibraryList = document.getElementById("librarylistpopup");
@@ -165,13 +174,16 @@ librariespopups.forEach((element) => {
         addToLibrary(e.target.textContent, songIndex);
     })
 })
+}
 
 function displaySongs (libraryKey) {
     saveLibraries();
     document.getElementById('rowdiv').innerHTML = "";
     // library = libraries[libraryKey];
     console.log(JSON.parse(localStorage.getItem("libraries")));
-    library = JSON.parse(localStorage.getItem("libraries"))[currentLibraryKey];
+    library = JSON.parse(localStorage.getItem("libraries"))[libraryKey];
+    console.log(libraryKey);
+    console.log(library[libraryKey]);
     var librarysongs = library.songs || [];
     var indexNo = 0;
     librarysongs.forEach((song) => {
@@ -218,7 +230,7 @@ function initializeMusicPlayer() {
     }
     
     // playlists = Array.from(document.getElementsByClassName('liked'));
-    playlists = Array.from(document.getElementsByClassName('library-div'));
+    // playlists = Array.from(document.getElementsByClassName('library-div'));
 
     songItem = Array.from(document.getElementsByClassName('cards'));
     masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
@@ -568,15 +580,26 @@ function addToLibrary(libraryName, songIndex) {
     }
 }
 
+deleticons.forEach((deleteicon) => {
+    deleteicon.addEventListener('click', (e)=> {
+        console.log(e.target);
+    })
+})
+
 function switchLibrary (libraryKey) {
     // audioElement.pause();
     currentLibraryKey = libraryKey;
     displaySongs(currentLibraryKey);
 }
 
+function initializePlaylistLibrary() {
+
 playlists.forEach((playlist) => {
     playlist.addEventListener('click', (e) => {
+        console.log(e.target.textContent)
         switchLibrary(e.target.textContent);
+        
+        
         removeAllClickedPlaylist();
         // console.log(e.target.parentElement);
         // const icon = e.target.parentElement.getElementsByClassName('fa-ellipsis');
@@ -588,14 +611,22 @@ playlists.forEach((playlist) => {
         e.target.parentElement.getElementsByClassName('fa-ellipsis')[0].classList.add('playlist-clicked');
     })
 })
+}
 
 function removeAllClickedPlaylist() {
     playlists.forEach((playlist) => {
             playlist.classList.remove('playlist-clicked');
             console.log(playlist);
-            console.log( playlist.getElementsByClassName('liked')[0]);
-            playlist.getElementsByClassName('liked')[0].classList.remove('playlist-clicked');
-            playlist.getElementsByClassName('fa-ellipsis')[0].classList.remove('playlist-clicked');
+            playlist.parentElement.classList.remove('playlist-clicked');
+            // console.log(playlist.parentElement.children[1]);
+            // playlist.parentElement.children[1].classList.remove('playlist-clicked');
+
+            // console.log(playlist.parentElement.getElementsByTagName("i")[0].classList);
+            // playlist.parentElement.getElementsByTagName("i")[0].classList.remove('playlist-clicked');
+
+            // console.log( playlist.getElementsByClassName('liked')[0]);
+            // playlist.getElementsByClassName('liked')[0].classList.remove('playlist-clicked');
+            playlist.parentElement.getElementsByClassName('fa-ellipsis')[0].classList.remove('playlist-clicked');
         })
     homeButton.classList.remove('button-clicked');
     document.getElementById('homeButtonName').classList.remove('button-clicked');
