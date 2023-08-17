@@ -598,7 +598,22 @@ background: #000;
     top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    background-color: white;
+    /* background-color: white; */
+	border-radius: 10px;
+	padding: 1rem;
+	z-index: 4;
+    color: red;
+    transition: 0.15s;
+    width: 25%;
+    border: 2px solid red;
+}
+
+#librarylistpopup {
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    /* background-color: white; */
 	border-radius: 10px;
 	padding: 1rem;
 	z-index: 4;
@@ -606,6 +621,8 @@ background: #000;
     transition: 0.15s;
     width: 30%;
     border: 2px solid red;
+    max-height: 50vh;
+    overflow-y: auto;
 }
 
 #alertClose {
@@ -642,7 +659,7 @@ background: #000;
     width: 100%;
     font-weight: bolder;
     height: 2.3rem;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .textMsgName {
@@ -663,13 +680,14 @@ background: #000;
     bottom: 0;
     font-size: 1.1rem;
     text-align: center;
-    padding: 1%;
+    /* padding: 1%; */
     width: 15%;
     height: 2.28rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(30, 241, 30);
+    /* border: 1px solid rgb(30, 241, 30); */
+    /* border: 2px solid black; */
 }
 
 #acceptName:hover {
