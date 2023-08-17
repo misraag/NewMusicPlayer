@@ -175,6 +175,7 @@ function displaySongs (libraryKey) {
 }
 
 function initializeMusicPlayer() {
+    removeRedHearts();
     songIndex = 0;
     tempIndex = -1;
     audioElement.pause();
@@ -279,6 +280,7 @@ function initializePlayCover() {
 
 playNext.addEventListener('click', ()=> {
     audioElement.volume = myVolumeBar.value / 100;
+        removeRedHearts();
         songIndex = tempIndex + 1;
         if(songIndex > songItem.length - 1) {
             songIndex = 0;
@@ -305,6 +307,7 @@ playNext.addEventListener('click', ()=> {
 
 playPrev.addEventListener('click', ()=> {
     audioElement.volume = myVolumeBar.value / 100;
+    removeRedHearts();
     songIndex = tempIndex - 1;
     if(songIndex < 0) {
         songIndex = songItem.length - 1;
@@ -421,13 +424,13 @@ function libraryListPopup() {
 
 function allHeartRed() {
     hearts.forEach((heart) => {
-        heart.classList.add('colorRed');
+        heart.classList.add('colorDarkblue');
     })
 }
 
 function removeRedHearts() {
     hearts.forEach((heart) => {
-        heart.classList.remove('colorRed');
+        heart.classList.remove('colorDarkblue');
     })
 }
 
