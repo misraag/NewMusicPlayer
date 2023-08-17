@@ -25,17 +25,20 @@ let homeButton = document.getElementById('homeButton');
 let navBarButtons = Array.from(document.getElementsByClassName('navbar-button'));
 let createPlaylist = document.getElementById('createPlaylist');
 
-let playlists = Array.from(document.getElementsByClassName('liked'));
+// let playlists = Array.from(document.getElementsByClassName('liked'));
+let playlists = Array.from(document.getElementsByClassName('library-div'));
+
 let alertClose = document.getElementById('alertClose');
 let alertBox = document.getElementById('alertBox');
 let librarylistpopup = document.getElementById('librarylistpopup');
 let acceptName = document.getElementById('acceptName');
 let inputClassName = document.getElementById('inputClassName');
 let heartIcon = document.getElementById('heart');
+let repeatIcon = document.getElementById('repeaticon');
 let hearts = Array.from(document.getElementsByClassName('fa-heart'));
 let booksicon = Array.from(document.getElementsByClassName('fa-book-medical'));
 let librariespopups;
-
+let flagRepeat = false;
 let library;
 
 const libraries = JSON.parse(localStorage.getItem('libraries')) || { 
@@ -86,16 +89,24 @@ displaySongs(currentLibraryKey);
 /******************************DOM ELEMENT**************************/ 
 
 function displayLibraryList() {
-    const libraryList = document.getElementById("library-list");
+    saveLibraries();
+    let libraryList = document.getElementById("library-list");
     libraryList.innerHTML = "";
     var librariesList = JSON.parse(localStorage.getItem("libraries")) || libraries;
+    console.log("created new list" + librariesList);
     for (const libraryKey in librariesList) {
         
         if(!(libraryKey == "Home")) {
             console.log("Library key is : " + libraryKey);
             const div = document.createElement("div");
-            div.textContent = libraries[libraryKey].title;
-            div.classList.add('liked');
+            div.classList.add("library-div");
+            const span = document.createElement('span');
+            span.textContent = librariesList[libraryKey].title;
+            span.classList.add('liked');
+            const icon = document.createElement('i');
+            icon.classList.add("fa-solid", "fa-ellipsis");
+            div.appendChild(span);
+            div.appendChild(icon);
             libraryList.appendChild(div);
         }
     }
@@ -103,23 +114,37 @@ function displayLibraryList() {
 }
 
 function populatelibrarylistpopup() {
-    const libraryList = document.getElementById("librarylistpopup");
-    libraryList.innerHTML = "";
+    const popupLibraryList = document.getElementById("librarylistpopup");
+    popupLibraryList.innerHTML = "";
+    // libraryList.classList.add('librariespopup')
     var librariesList = JSON.parse(localStorage.getItem("libraries")) || libraries;
     let textdiv = document.createElement('div');
     textdiv.classList.add('textMsgName');
     textdiv.textContent = "Please select the playlist to add song!";
-    libraryList.appendChild(textdiv);
+    popupLibraryList.appendChild(textdiv);
     let checkIfLibrariesPresent = false;
     for (const libraryKey in librariesList) {
         if(!(libraryKey == "Home") && !(libraryKey == "Liked Songs")) {
             checkIfLibrariesPresent = true;
+            // console.log("Library key is : " + libraryKey);
+            // const div = document.createElement("div");
+            // div.textContent = libraries[libraryKey].title;
+            // div.classList.add('library-div');
+            // div.classList.add('librariespopup')
+            // libraryList.appendChild(div);
             console.log("Library key is : " + libraryKey);
             const div = document.createElement("div");
-            div.textContent = libraries[libraryKey].title;
-            div.classList.add('liked');
+            div.classList.add("popup-library");
+            const span = document.createElement('span');
+            span.textContent = librariesList[libraryKey].title;
+            span.classList.add('liked');
+            // const icon = document.createElement('i');
+            // icon.classList.add("fa-solid", "fa-ellipsis");
             div.classList.add('librariespopup')
-            libraryList.appendChild(div);
+            div.appendChild(span);
+            // div.appendChild(icon);
+            // librariesList.classList.add('librariespopup');
+            popupLibraryList.appendChild(div);
         }
     }
     if(checkIfLibrariesPresent == false) {
@@ -131,7 +156,12 @@ function populatelibrarylistpopup() {
 
 librariespopups.forEach((element) => {
     element.addEventListener('click', (e) => {
+        const popupLibraryList = document.getElementById("librarylistpopup");
         console.log(e.target.textContent);
+        alertClose.classList.add('hideAlerts');
+        popupLibraryList.classList.add('hideAlerts');
+        alertClose.classList.remove('displayAlerts');
+        popupLibraryList.classList.remove('displayAlerts');
         addToLibrary(e.target.textContent, songIndex);
     })
 })
@@ -187,7 +217,9 @@ function initializeMusicPlayer() {
         audioElement.src =  null;
     }
     
-    playlists = Array.from(document.getElementsByClassName('liked'));
+    // playlists = Array.from(document.getElementsByClassName('liked'));
+    playlists = Array.from(document.getElementsByClassName('library-div'));
+
     songItem = Array.from(document.getElementsByClassName('cards'));
     masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
     songCard = Array.from(document.getElementsByClassName('cards'));
@@ -364,6 +396,7 @@ alertClose.addEventListener('click', () => {
 
 acceptName.addEventListener('click', () => {
     var playlistName = inputClassName.value;
+    inputClassName.value = "";
     alertClose.classList.add('hideAlerts');
     alertBox.classList.add('hideAlerts');
     alertClose.classList.remove('displayAlerts');
@@ -433,6 +466,16 @@ function removeRedHearts() {
         heart.classList.remove('colorDarkblue');
     })
 }
+
+repeatIcon.addEventListener('click', () => {
+    if(repeatIcon.classList.contains('colorDarkblue')) {
+        repeatIcon.classList.remove('colorDarkblue');
+        flagRepeat = false;
+    } else {
+        repeatIcon.classList.add('colorDarkblue');
+        flagRepeat = true;
+    }
+})
 
 // heartIcon.addEventListener('click', () => {
 //     console.log(libraries[currentLibraryKey].songs[songIndex]);
@@ -535,13 +578,24 @@ playlists.forEach((playlist) => {
     playlist.addEventListener('click', (e) => {
         switchLibrary(e.target.textContent);
         removeAllClickedPlaylist();
+        // console.log(e.target.parentElement);
+        // const icon = e.target.parentElement.getElementsByClassName('fa-ellipsis');
+        // console.log(icon[0]);
+        // icon[0].classList.add('playlist-clicked');
+        // e.target.classList.add('playlist-clicked');
+        e.target.parentElement.classList.add('playlist-clicked');
         e.target.classList.add('playlist-clicked');
+        e.target.parentElement.getElementsByClassName('fa-ellipsis')[0].classList.add('playlist-clicked');
     })
 })
 
 function removeAllClickedPlaylist() {
     playlists.forEach((playlist) => {
             playlist.classList.remove('playlist-clicked');
+            console.log(playlist);
+            console.log( playlist.getElementsByClassName('liked')[0]);
+            playlist.getElementsByClassName('liked')[0].classList.remove('playlist-clicked');
+            playlist.getElementsByClassName('fa-ellipsis')[0].classList.remove('playlist-clicked');
         })
     homeButton.classList.remove('button-clicked');
     document.getElementById('homeButtonName').classList.remove('button-clicked');
@@ -619,6 +673,12 @@ if(changedLibrary != initialLibrary) {
     myProgressBar.value = 0;
     initialLibrary = changedLibrary;
 } else {
+    if(flagRepeat == true && audioElement.currentTime == audioElement.duration){
+        audioElement.currentTime = 0;
+        audioElement.play();
+    } else if (audioElement.currentTime == audioElement.duration) {
+        document.getElementById("next").click();
+    }
     let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
     myProgressBar.value = progress;
 }
@@ -708,13 +768,14 @@ function searchFunction() {
 }
 
 homeButton.addEventListener('click', () => {
+    removeAllClickedPlaylist();
     homeButton.classList.add('button-clicked');
     document.getElementById('homeButtonName').classList.add('button-clicked');
     document.getElementById('homeIcon').classList.add('button-clicked');
     // searchfilter.value = "";
     // searchFunction();
-    playlists.forEach((playlist) => {
-        playlist.classList.remove('playlist-clicked');
-    })
+    // playlists.forEach((playlist) => {
+    //     playlist.classList.remove('playlist-clicked');
+    // })
     switchLibrary("Home");
 })
