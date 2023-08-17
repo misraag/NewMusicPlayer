@@ -212,6 +212,7 @@ i:hover {
     border-radius: 5px;
     cursor: pointer;
     align-items: center;
+    position: relative;
 }
 
 
@@ -757,6 +758,7 @@ i:hover {
 
 .hideCards {
     display: none;
+    /* transition: 0.9s; */
 }
 
 .showCards {
@@ -765,4 +767,20 @@ i:hover {
 
 #repeaticon {
     font-size: 1rem;
+}
+
+.divdelete {
+    background-color: white;
+    background-color: darkblue;
+    background-color: #1b95cf;
+    font-size: 0.9rem;
+    color: black;
+    color: white;
+    position: absolute;
+    right: 0;
+    z-index: 6;
+    margin-right: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.15s;
 }

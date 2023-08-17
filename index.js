@@ -41,6 +41,7 @@ let deleticons;
 let librariespopups;
 let flagRepeat = false;
 let library;
+let deleteButtons;
 
 const libraries = JSON.parse(localStorage.getItem('libraries')) || { 
     "Liked Songs": {
@@ -104,18 +105,27 @@ function displayLibraryList() {
             const span = document.createElement('span');
             span.textContent = librariesList[libraryKey].title;
             span.classList.add('liked');
-            const icon = document.createElement('i');
-            icon.classList.add("fa-solid", "fa-ellipsis");
             div.appendChild(span);
-            div.appendChild(icon);
+            if(!(libraryKey == "Liked Songs")) {
+                const icon = document.createElement('i');
+                icon.classList.add("fa-solid", "fa-ellipsis");
+                div.appendChild(icon);
+                const divdelete = document.createElement('div');
+                divdelete.textContent = "Delete";
+                divdelete.classList.add('divdelete', 'hideCards');
+                div.appendChild(divdelete);
+            }
             libraryList.appendChild(div);
         }
     }
+    deleteButtons = Array.from(document.getElementsByClassName('divdelete'));
     playlists = Array.from(document.getElementsByClassName('liked'));
+    initializeDeleteButtons()
     initializePlaylistLibrary();
 
     console.log(playlists);
     deleticons = Array.from(document.getElementsByClassName('fa-ellipsis'));
+    initializeDeleteIcons();
     populatelibrarylistpopup();
 }
 
@@ -443,6 +453,21 @@ function createLibrary (libraryName) {
         displayLibraryList();
 }
 
+function deleteLibrary(libraryName) {
+    const libraries = JSON.parse(localStorage.getItem('libraries')) || {};
+
+    if (libraries.hasOwnProperty(libraryName)) {
+        delete libraries[libraryName];
+
+        localStorage.setItem('libraries', JSON.stringify(libraries));
+
+        console.log(`Library "${libraryName}" has been deleted.`);
+        // Optionally, you might want to update your UI or perform other actions here.
+    } else {
+        console.log(`Library "${libraryName}" does not exist.`);
+    }
+}
+
 hearts.forEach((heart) => {
     heart.addEventListener('click', () =>{
         console.log(libraries[currentLibraryKey].songs[songIndex]);
@@ -579,17 +604,46 @@ function addToLibrary(libraryName, songIndex) {
 
     }
 }
+let currentSelectedPlaylist = null;
+let flagSelectedPlaylist = false;
 
+
+function initializeDeleteIcons() {
 deleticons.forEach((deleteicon) => {
     deleteicon.addEventListener('click', (e)=> {
+        if(flagSelectedPlaylist == true) {
+            currentSelectedPlaylist.getElementsByClassName('divdelete')[0].classList.add('hideCards');
+        }
+        flagSelectedPlaylist = true;
         console.log(e.target);
+        currentSelectedPlaylist = e.target.parentElement;
+        e.target.parentElement.getElementsByClassName('divdelete')[0].classList.remove('hideCards');
     })
 })
+}
+
+function checkclickOutsideLibrary(event) {
+   if(flagSelectedPlaylist == true && !(currentSelectedPlaylist.contains(event.target))){
+    currentSelectedPlaylist.getElementsByClassName('divdelete')[0].classList.add('hideCards');
+    flagSelectedPlaylist = false;
+   }
+}
 
 function switchLibrary (libraryKey) {
     // audioElement.pause();
     currentLibraryKey = libraryKey;
     displaySongs(currentLibraryKey);
+}
+
+function initializeDeleteButtons() {
+    deleteButtons.forEach((deleteButton) => {
+        deleteButton.addEventListener('click', (e) => {
+            console.log(e.target.parentElement.getElementsByClassName('liked')[0].textContent);
+            deleteLibrary(e.target.parentElement.getElementsByClassName('liked')[0].textContent);
+            displayLibraryList();
+        })
+    })
+    // displayLibraryList();
 }
 
 function initializePlaylistLibrary() {
@@ -608,7 +662,9 @@ playlists.forEach((playlist) => {
         // e.target.classList.add('playlist-clicked');
         e.target.parentElement.classList.add('playlist-clicked');
         e.target.classList.add('playlist-clicked');
-        e.target.parentElement.getElementsByClassName('fa-ellipsis')[0].classList.add('playlist-clicked');
+        if(e.target.textContent != "Liked Songs"){
+            e.target.parentElement.getElementsByClassName('fa-ellipsis')[0].classList.add('playlist-clicked');
+        }
     })
 })
 }
@@ -626,7 +682,9 @@ function removeAllClickedPlaylist() {
 
             // console.log( playlist.getElementsByClassName('liked')[0]);
             // playlist.getElementsByClassName('liked')[0].classList.remove('playlist-clicked');
-            playlist.parentElement.getElementsByClassName('fa-ellipsis')[0].classList.remove('playlist-clicked');
+            if(playlist.textContent != "Liked Songs"){
+                playlist.parentElement.getElementsByClassName('fa-ellipsis')[0].classList.remove('playlist-clicked');
+            }
         })
     homeButton.classList.remove('button-clicked');
     document.getElementById('homeButtonName').classList.remove('button-clicked');
@@ -784,6 +842,7 @@ searchBar.addEventListener("click", () =>{
 })
 
 document.addEventListener('click', checkClickOutside);
+document.addEventListener('click', checkclickOutsideLibrary);
 
 function searchFunction() {
     let filter = searchfilter.value.toUpperCase();
