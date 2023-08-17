@@ -34,6 +34,7 @@ let inputClassName = document.getElementById('inputClassName');
 let heartIcon = document.getElementById('heart');
 let hearts = Array.from(document.getElementsByClassName('fa-heart'));
 let booksicon = Array.from(document.getElementsByClassName('fa-book-medical'));
+let librariespopups;
 
 let library;
 
@@ -98,7 +99,42 @@ function displayLibraryList() {
             libraryList.appendChild(div);
         }
     }
+    populatelibrarylistpopup();
 }
+
+function populatelibrarylistpopup() {
+    const libraryList = document.getElementById("librarylistpopup");
+    libraryList.innerHTML = "";
+    var librariesList = JSON.parse(localStorage.getItem("libraries")) || libraries;
+    let textdiv = document.createElement('div');
+    textdiv.classList.add('textMsgName');
+    textdiv.textContent = "Please select the playlist to add song!";
+    libraryList.appendChild(textdiv);
+    let checkIfLibrariesPresent = false;
+    for (const libraryKey in librariesList) {
+        if(!(libraryKey == "Home") && !(libraryKey == "Liked Songs")) {
+            checkIfLibrariesPresent = true;
+            console.log("Library key is : " + libraryKey);
+            const div = document.createElement("div");
+            div.textContent = libraries[libraryKey].title;
+            div.classList.add('liked');
+            div.classList.add('librariespopup')
+            libraryList.appendChild(div);
+        }
+    }
+    if(checkIfLibrariesPresent == false) {
+        textdiv.style.textAlign = "center";
+        textdiv.textContent = "NO LIBRARIES PRESENT!";
+    }
+    librariespopups = Array.from(document.getElementsByClassName('librariespopup'));
+}
+
+librariespopups.forEach((element) => {
+    element.addEventListener('click', (e) => {
+        console.log(e.target.textContent);
+        addToLibrary(e.target.textContent, songIndex);
+    })
+})
 
 function displaySongs (libraryKey) {
     saveLibraries();
@@ -355,6 +391,7 @@ function createLibrary (libraryName) {
 
         // saveLibraries();
         // saveLibrarySongs(newLibraryKey);
+
         displayLibraryList();
 }
 
@@ -380,29 +417,6 @@ function libraryListPopup() {
     librarylistpopup.classList.remove('hideAlerts');
     alertClose.classList.add('displayAlerts');
     librarylistpopup.classList.add('displayAlerts');
-
-    const libraryList = document.getElementById("librarylistpopup");
-    libraryList.innerHTML = "";
-    var librariesList = JSON.parse(localStorage.getItem("libraries")) || libraries;
-    let textdiv = document.createElement('div');
-    textdiv.classList.add('textMsgName');
-    textdiv.textContent = "Please select the playlist to add song!";
-    libraryList.appendChild(textdiv);
-    let checkIfLibrariesPresent = false;
-    for (const libraryKey in librariesList) {
-        if(!(libraryKey == "Home") && !(libraryKey == "Liked Songs")) {
-            checkIfLibrariesPresent = true;
-            console.log("Library key is : " + libraryKey);
-            const div = document.createElement("div");
-            div.textContent = libraries[libraryKey].title;
-            div.classList.add('liked');
-            libraryList.appendChild(div);
-        }
-    }
-    if(checkIfLibrariesPresent == false) {
-        textdiv.style.textAlign = "center";
-        textdiv.textContent = "NO LIBRARIES PRESENT!";
-    }
 }
 
 function allHeartRed() {
@@ -474,8 +488,9 @@ function addToLibrary(libraryName, songIndex) {
     //     // displayLibrarySongs(currentLibraryKey);
     // }
 
-    const song = libraries.Home.songs[songIndex];
-    const existingLibraries = JSON.parse(localStorage.getItem("libraries")) || {};
+    
+    const existingLibraries = JSON.parse(localStorage.getItem("libraries")) || libraries;
+    const song = existingLibraries.Home.songs[songIndex];
     const librarysongs = JSON.parse(localStorage.getItem("libraries"))[libraryName].songs || [];
 
     // Check if the song is already in the likedSongs playlist
