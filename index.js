@@ -81,25 +81,22 @@ const libraries = JSON.parse(localStorage.getItem('libraries')) || {
 };
 
 let currentLibraryKey = "Home";
-// library = libraries[currentLibraryKey];
 let audioElement = new Audio(libraries[currentLibraryKey].songs[0].filepath);
 
 displayLibraryList();
 
 displaySongs(currentLibraryKey);
 
-/******************************DOM ELEMENT**************************/ 
+/******************************DISPLAY LIBRARIES AND POPUPS**************************/ 
 
 function displayLibraryList() {
     saveLibraries();
     let libraryList = document.getElementById("library-list");
     libraryList.innerHTML = "";
     var librariesList = JSON.parse(localStorage.getItem("libraries")) || libraries;
-    console.log("created new list" + librariesList);
+    
     for (const libraryKey in librariesList) {
-        
         if(!(libraryKey == "Home")) {
-            console.log("Library key is : " + libraryKey);
             const div = document.createElement("div");
             div.classList.add("library-div");
             const span = document.createElement('span');
@@ -112,7 +109,7 @@ function displayLibraryList() {
                 div.appendChild(icon);
                 const divdelete = document.createElement('div');
                 divdelete.textContent = "Delete";
-                divdelete.classList.add('divdelete', 'hideCards');
+                divdelete.classList.add('divdelete', 'hideDiv');
                 div.appendChild(divdelete);
             }
             libraryList.appendChild(div);
@@ -612,19 +609,19 @@ function initializeDeleteIcons() {
 deleticons.forEach((deleteicon) => {
     deleteicon.addEventListener('click', (e)=> {
         if(flagSelectedPlaylist == true) {
-            currentSelectedPlaylist.getElementsByClassName('divdelete')[0].classList.add('hideCards');
+            currentSelectedPlaylist.getElementsByClassName('divdelete')[0].classList.add('hideDiv');
         }
         flagSelectedPlaylist = true;
         console.log(e.target);
         currentSelectedPlaylist = e.target.parentElement;
-        e.target.parentElement.getElementsByClassName('divdelete')[0].classList.remove('hideCards');
+        e.target.parentElement.getElementsByClassName('divdelete')[0].classList.remove('hideDiv');
     })
 })
 }
 
 function checkclickOutsideLibrary(event) {
    if(flagSelectedPlaylist == true && !(currentSelectedPlaylist.contains(event.target))){
-    currentSelectedPlaylist.getElementsByClassName('divdelete')[0].classList.add('hideCards');
+    currentSelectedPlaylist.getElementsByClassName('divdelete')[0].classList.add('hideDiv');
     flagSelectedPlaylist = false;
    }
 }

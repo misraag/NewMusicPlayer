@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
     font-family: 'Marcellus', serif;
     background-color: black;
     color: white;
@@ -10,8 +9,6 @@
 }
 
 i:hover {
-    color: red;
-    color: #1b95cf;
     color: darkblue;
 }
 
@@ -30,7 +27,7 @@ i:hover {
     height: 2vh;
 }
 
-/* *************BODY SECTION**************** */
+/* ******************************************************************* BODY SECTION****************************************************************** */
 
 .body {
     height: 86vh;
@@ -39,7 +36,7 @@ i:hover {
     background-color: rgb(17, 16, 16);
 }
 
-/* ********FIRST SECTION************* */
+/* *******************************************************************FIRST SECTION******************************************************************* */
 
 
 .first-section {
@@ -192,6 +189,8 @@ i:hover {
     cursor: pointer;
 }
 
+/* *************************LIBRARY LIST*************************** */
+
 #library-list {
     display: flex;
     flex-direction: column;
@@ -208,20 +207,17 @@ i:hover {
     width: 100%;
     background-color: rgb(56, 55, 55);
     margin: 1% auto;
-    background-color: rgb(56, 55, 55);
     border-radius: 5px;
     cursor: pointer;
     align-items: center;
     position: relative;
 }
 
-
-
 .library-div:hover {
     background-color: white;
 }
 
-.library-div:hover span{
+.library-div:hover .liked{
     color: #1b95cf;
     font-weight: 520;
     align-items: center;
@@ -239,15 +235,6 @@ i:hover {
     color: darkblue;
 }
 
-.fa-ellipsis {
-    background-color: transparent;
-    width: 10%;
-    margin-right: 5px;
-    font-size: 1.2rem;
-    justify-content: center;
-    text-align: center;
-}
-
 .liked {
     width: 90%;
     background-color: transparent;
@@ -257,7 +244,16 @@ i:hover {
     padding-bottom: 5%;
 }
 
-/* ************SECOND SECTION******************* */
+.fa-ellipsis {
+    background-color: transparent;
+    width: 10%;
+    margin-right: 5px;
+    font-size: 1.2rem;
+    justify-content: center;
+    text-align: center;
+}
+
+/* *********************************************************************SECOND SECTION************************************************************* */
 
 .songs {
     display: flex;
@@ -381,9 +377,7 @@ i:hover {
     font-family: 'Preahvihear', sans-serif;
 }
 
-
-
-/* ************THIRD SECTION******************* */
+/* *****************************************************************THIRD SECTION**************************************************** */
 
 .now-playing {
     display: flex;
@@ -467,7 +461,7 @@ i:hover {
 }
 
 
-/* ************FOOTER SECTION******************* */
+/* ********************************************************FOOTER SECTION***************************************************************** */
 
 
 .footer {
@@ -624,7 +618,19 @@ i:hover {
     color: white;
 }
 
-/* **********Create Playlist POPUP************* */
+#repeaticon {
+    font-size: 1rem;
+}
+
+
+/* **************************************************FOOTER SECTION ENDS****************************************** */
+
+
+
+
+
+/* ***********************************JAVASCRIPT POPUPS BELOW************************************* */
+/* **********************************CREATE PLAYLIST POPUP ************************************** */
 
 #alertBox {
 	left: 50%; 
@@ -639,6 +645,92 @@ i:hover {
     width: 25%;
     border: 2px solid #1b95cf;
 }
+
+.inputDivClass {
+    background-color: #1b95cf;
+    justify-content: center;
+    position: relative;
+    border: none;
+    margin: 2% auto;
+}
+
+#inputClassName {
+    padding-left: 5%;
+    font-family: 'Marcellus', serif;
+    background-color: white;
+    color: black;
+    width: 100%;
+    font-weight: bolder;
+    height: 2.3rem;
+}
+
+.textMsgName {
+    background-color: transparent;
+    color: #1b95cf;
+    font-size: 0.9rem;
+    border-radius: 0.2rem;
+    font-family: 'Marcellus', serif;
+    padding: 1%;
+    font-weight: bolder;
+}
+
+.divdelete {
+    background-color: white;
+    background-color: darkblue;
+    background-color: #1b95cf;
+    font-size: 0.9rem;
+    color: black;
+    color: white;
+    position: absolute;
+    right: 0;
+    z-index: 6;
+    margin-right: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+#acceptName {
+    background-color: #1b95cf;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 15%;
+    height: 2.28rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#acceptName:hover {
+    color: white;
+    background-color: rgb(30, 241, 30);
+}
+
+#alertClose {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, .8);
+	width: 100vw;
+	height: 100vh;
+    z-index: 3;
+}
+
+.hideAlerts {
+    display: none;
+}
+
+.displayAlerts {
+    display: block;
+}
+
+/* **********************************CREATE PLAYLIST POPUP ENDS*************************************** */
+
+/* **********************************ADD TO LIBRARY POPUP*************************************** */
 
 #librarylistpopup {
     left: 50%; 
@@ -685,102 +777,13 @@ i:hover {
     color: #1b95cf;
 }
 
-#alertClose {
-	position: absolute;
-	right: 0;
-	top: 0;
-	background-color: rgba(0, 0, 0, .8);
-	width: 100vw;
-	height: 100vh;
-    z-index: 3;
-}
-
-.hideAlerts {
-    display: none;
-}
-
-.displayAlerts {
-    display: block;
-}
-
-.inputDivClass {
-    background-color: #1b95cf;
-    justify-content: center;
-    position: relative;
-    border: none;
-    margin: 2% auto;
-}
-
-#inputClassName {
-    padding-left: 5%;
-    font-family: 'Marcellus', serif;
-    background-color: white;
-    color: black;
-    width: 100%;
-    font-weight: bolder;
-    height: 2.3rem;
-}
-
-.textMsgName {
-    background-color: transparent;
-    color: #1b95cf;
-    font-size: 0.9rem;
-    border-radius: 0.2rem;
-    font-family: 'Marcellus', serif;
-    padding: 1%;
-    font-weight: bolder;
-}
-
-#acceptName {
-    background-color: #1b95cf;
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    font-size: 1.1rem;
-    text-align: center;
-    width: 15%;
-    height: 2.28rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#acceptName:hover {
-    color: white;
-    background-color: rgb(30, 241, 30);
-}
-
 .playlist-clicked {
     background-color: white;
     color: #1b95cf;
 }
 
-.hideCards {
+.hideDiv {
     display: none;
-    /* transition: 0.9s; */
 }
 
-.showCards {
-    display: block;
-}
-
-#repeaticon {
-    font-size: 1rem;
-}
-
-.divdelete {
-    background-color: white;
-    background-color: darkblue;
-    background-color: #1b95cf;
-    font-size: 0.9rem;
-    color: black;
-    color: white;
-    position: absolute;
-    right: 0;
-    z-index: 6;
-    margin-right: 5px;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: 0.15s;
-}
+/* **********************************ADD TO LIBRARY POPUP ENDS*************************************** */
