@@ -820,22 +820,11 @@ i:hover {
 
 
 
-.headersection {
-    display: none;
-}
-
-.mobilesearch {
-    display: none;
-    background-color: #000;
-}
-
-
-
 
 /* ****************************** media query responsive ********************************* */
 
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
     
     .first-section {
         width: 20%;
@@ -865,135 +854,6 @@ i:hover {
 
 @media screen and (max-width: 576px) {
 
-    .first-section {
-        /* height: 20vh; */
-        display: none;
-    }
-
-    .first-mobile {
-        display: block;
-        width: 100vw;
-    }
-    /* .header:after {
-
-        background-color: white;
-        content: "Joe's Task: ";
-        color: black;
-    }
-
-    .header {
-        height: 5bh;
-    } */
-
-    .header {
-        display: none;
-    }
-
-    .body {
-        /* flex-direction: column; */
-        height: 60vh;
-    }
-
-    .heading {
-        display: none;
-    }
-
-    .headingmobile {
-        height: 15vw;
-        width: 100vw;
-        display: block;
-        display: flex;
-        background-color: #1b95cf;
-        border-radius: 0;
-        /* margin-bottom: 2%; */
-    }
-
-    .songs {
-        /* width: 100%; */
-        width: 100vw;
-        padding: auto 50%;
-        /* margin: auto; */
-    }
-
-    .name {
-        border-radius: 0;
-        display: none;
-    }
-
-    .now-playing {
-        display: none;
-    }
-
-    .footer {
-        height: 20vh;
-        width: 100vw;
-        padding: 0;
-    }
-
-    .footersong {
-        display: none;
-    }
-
-    .controls {
-        width: 100vw;
-    }
     
-    .timebar {
-        width: 80%;
-    }
 
-    .volumebar {
-        width: 25%;
-    }
-
-    #volumeLogo {
-        margin-right: 25%;
-    }
-
-    #navbar {
-        flex-direction: row;
-        width: 100vw;
-        /* height: 50%; */
-        background-color: green;
-        margin: 0;
-    }
-
-    .navbar-button {
-        margin: 0 5%;
-        background-color: red;
-        height: auto;
-        padding: 0;
-
-
-    }
-
-    #searchbar {
-        border-radius: 0;
-        margin-left: 1%;
-        /* width: 120px; */
-        justify-content: center;
-        align-items: center;
-    }
-
-    #searchbaricon {
-        font-size: 1.5rem;
-        height: 100%;
-        background-color: yellow;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-
-        display: flex;
-        padding: 0 1rem;
-    }
-
-    .mobilesearch {
-        display: block;
-    }
-
-    /* .headersection {
-        display: block;
-        display: flex;
-        flex-direction: column;
-    } */
-}
+} */
