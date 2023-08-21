@@ -824,34 +824,6 @@ i:hover {
 /* ****************************** media query responsive ********************************* */
 
 
-/* @media screen and (max-width: 800px) {
-    
-    .first-section {
-        width: 20%;
-    }
-    
-    .songs {
-        width: 80%;
-    }
-
-    .now-playing {
-        display: none;
-    }
-
-    .footersong {
-        display: none;
-    }
-
-    .controls {
-        width: 100vw;
-    }
-    
-    .timebar {
-        width: 80vw;
-    }
-
-} */
-
 @media screen and (max-width: 576px) {
 
     
