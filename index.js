@@ -129,7 +129,6 @@ function displayLibraryList() {
 function populatelibrarylistpopup() {
     const popupLibraryList = document.getElementById("librarylistpopup");
     popupLibraryList.innerHTML = "";
-    // libraryList.classList.add('librariespopup')
     var librariesList = JSON.parse(localStorage.getItem("libraries")) || libraries;
     let textdiv = document.createElement('div');
     textdiv.classList.add('textMsgName');
@@ -139,24 +138,14 @@ function populatelibrarylistpopup() {
     for (const libraryKey in librariesList) {
         if(!(libraryKey == "Home") && !(libraryKey == "Liked Songs")) {
             checkIfLibrariesPresent = true;
-            // console.log("Library key is : " + libraryKey);
-            // const div = document.createElement("div");
-            // div.textContent = libraries[libraryKey].title;
-            // div.classList.add('library-div');
-            // div.classList.add('librariespopup')
-            // libraryList.appendChild(div);
             console.log("Library key is : " + libraryKey);
             const div = document.createElement("div");
             div.classList.add("popup-library");
             const span = document.createElement('span');
             span.textContent = librariesList[libraryKey].title;
             span.classList.add('popup-liked');
-            // const icon = document.createElement('i');
-            // icon.classList.add("fa-solid", "fa-ellipsis");
             div.classList.add('librariespopup')
             div.appendChild(span);
-            // div.appendChild(icon);
-            // librariesList.classList.add('librariespopup');
             popupLibraryList.appendChild(div);
         }
     }
@@ -235,25 +224,15 @@ function initializeMusicPlayer() {
     } else {
         audioElement.src =  null;
     }
-    
-    // playlists = Array.from(document.getElementsByClassName('liked'));
-    // playlists = Array.from(document.getElementsByClassName('library-div'));
 
     songItem = Array.from(document.getElementsByClassName('cards'));
     masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
     songCard = Array.from(document.getElementsByClassName('cards'));
 
-    // audioElement.currentTime = 0;
     masterPlay.classList.remove('fa-pause-circle');
     masterPlay.classList.add('fa-play-circle');
-    // masterPlayCover[songIndex].classList.add("fa-play-circle");
-    // masterPlayCover[songIndex].classList.remove("fa-pause-circle");
-    // masterPlayCover[songIndex].classList.add('playVisible');
-    // masterPlayCover[songIndex].classList.add('colorRed');
-    makeAllPlay();
 
-    // saveLibraries();
-    // saveLibrarySongs(currentLibraryKey);
+    makeAllPlay();
 
     initializePlayCover();
 }
