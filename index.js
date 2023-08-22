@@ -405,11 +405,6 @@ acceptName.addEventListener('click', () => {
 function createLibrary (libraryName) {
     console.log("inside create library function");
     const newLibraryKey = libraryName;
-        // libraries[newLibraryKey] = {
-        //     title: libraryName,
-        //     songs: [],
-        // }
-
 
         const existingLibraries = JSON.parse(localStorage.getItem("libraries")) || {};
 
@@ -421,10 +416,6 @@ function createLibrary (libraryName) {
     
         // Update the libraries object in localStorage
         localStorage.setItem("libraries", JSON.stringify(existingLibraries));
-
-
-        // saveLibraries();
-        // saveLibrarySongs(newLibraryKey);
 
         displayLibraryList();
 }
@@ -490,11 +481,6 @@ repeatIcon.addEventListener('click', () => {
     }
 })
 
-// heartIcon.addEventListener('click', () => {
-//     console.log(libraries[currentLibraryKey].songs[songIndex]);
-//     addtoliked(songIndex);
-// })
-
 function addToLiked(songIndex){
     const song = libraries.Home.songs[songIndex];
 
@@ -503,15 +489,7 @@ function addToLiked(songIndex){
     
     if (!likedSongs.songs.includes(song)) {
         likedSongs.songs.push(song);
-        // saveLibrarySongs("Liked Songs");
-        // localStorage.setItem('libraries', JSON.stringify(saveLibraries));
     }
-
-    // if(!libraries['Liked Songs'].songs.includes(song)) {
-    //     libraries['Liked Songs'].songs.push(song);
-    //     saveLibraries();
-    //     saveLibrarySongs("Liked Songs");
-    // }
 }
 
 function addtoliked(songIndex) {
@@ -539,13 +517,6 @@ function addtoliked(songIndex) {
 }
 
 function addToLibrary(libraryName, songIndex) {
-    // const song = libraries.home.songs[songIndex];
-    // if(!libraries[currentLibraryKey].songs.includes(song)) {
-    //     libraries[currentLibraryKey].songs.push(song);
-    //     saveLibraries();
-    //     saveLibrarySongs(currentLibraryKey);
-    //     // displayLibrarySongs(currentLibraryKey);
-    // }
 
     
     const existingLibraries = JSON.parse(localStorage.getItem("libraries")) || libraries;
@@ -558,18 +529,6 @@ function addToLibrary(libraryName, songIndex) {
         // If the song is not already in the playlist, add it
         librarysongs.push(song);
 
-        // Update the localStorage with the new likedSongs playlist
-        // localStorage.setItem("libraries", JSON.stringify({
-        //     ...JSON.parse(localStorage.getItem("libraries")),
-        //     "Liked Songs": {
-        //         title: libraryName,
-        //         songs: librarysongs,
-        //     }
-        // }));
-
-        // const existingLibraries = JSON.parse(localStorage.getItem("libraries")) || {};
-
-        // Add the new library to the existing libraries object
         existingLibraries[libraryName] = {
             title: libraryName,
             songs: librarysongs,
