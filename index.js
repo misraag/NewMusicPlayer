@@ -797,10 +797,5 @@ homeButton.addEventListener('click', () => {
     homeButton.classList.add('button-clicked');
     document.getElementById('homeButtonName').classList.add('button-clicked');
     document.getElementById('homeIcon').classList.add('button-clicked');
-    // searchfilter.value = "";
-    // searchFunction();
-    // playlists.forEach((playlist) => {
-    //     playlist.classList.remove('playlist-clicked');
-    // })
     switchLibrary("Home");
 })
