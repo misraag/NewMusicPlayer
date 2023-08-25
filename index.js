@@ -590,11 +590,7 @@ playlists.forEach((playlist) => {
         
         
         removeAllClickedPlaylist();
-        // console.log(e.target.parentElement);
-        // const icon = e.target.parentElement.getElementsByClassName('fa-ellipsis');
-        // console.log(icon[0]);
-        // icon[0].classList.add('playlist-clicked');
-        // e.target.classList.add('playlist-clicked');
+
         e.target.parentElement.classList.add('playlist-clicked');
         e.target.classList.add('playlist-clicked');
         if(e.target.textContent != "Liked Songs"){
@@ -609,14 +605,7 @@ function removeAllClickedPlaylist() {
             playlist.classList.remove('playlist-clicked');
             console.log(playlist);
             playlist.parentElement.classList.remove('playlist-clicked');
-            // console.log(playlist.parentElement.children[1]);
-            // playlist.parentElement.children[1].classList.remove('playlist-clicked');
 
-            // console.log(playlist.parentElement.getElementsByTagName("i")[0].classList);
-            // playlist.parentElement.getElementsByTagName("i")[0].classList.remove('playlist-clicked');
-
-            // console.log( playlist.getElementsByClassName('liked')[0]);
-            // playlist.getElementsByClassName('liked')[0].classList.remove('playlist-clicked');
             if(playlist.textContent != "Liked Songs"){
                 playlist.parentElement.getElementsByClassName('fa-ellipsis')[0].classList.remove('playlist-clicked');
             }
