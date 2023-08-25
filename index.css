@@ -825,6 +825,7 @@ i:hover {
 
 
 @media only screen and (max-width: 600px) {
+
     .header {
         height: 0;
         display: none;
@@ -835,12 +836,13 @@ i:hover {
     }
 
     .first-section {
-                visibility: hidden;
-        width: 0;
+                /* visibility: hidden;
+        width: 0; */
+        display: none;
     }
 
     .songs {
-        width: 100%;
+        width: 100vw;
         /* background-color: green; */
         background-color: white;
         margin: 0;
@@ -858,8 +860,9 @@ i:hover {
     }
 
     .now-playing {
-        visibility: hidden;
-        width: 0;
+        /* visibility: hidden; */
+        display: none;
+        /* width: 0; */
     }
 
     .footer {
