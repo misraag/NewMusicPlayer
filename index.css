@@ -824,3 +824,61 @@ i:hover {
 /* ****************************** media query responsive ********************************* */
 
 
+@media only screen and (max-width: 600px) {
+    .header {
+        height: 0;
+        display: none;
+    }
+
+    .body {
+        height: 88vh;
+    }
+
+    .first-section {
+                visibility: hidden;
+        width: 0;
+    }
+
+    .songs {
+        width: 100%;
+        /* background-color: green; */
+        background-color: white;
+        margin: 0;
+        /* height: 88vh; */
+        /* height: 0%; */
+    }
+
+    .songs-section {
+        background-color: white;
+        width: 100%;
+    }
+
+    .name {
+        border-radius: 0;
+    }
+
+    .now-playing {
+        visibility: hidden;
+        width: 0;
+    }
+
+    .footer {
+        height: 12vh;
+    }
+
+    .footersong {
+        display: none;
+    }
+
+    .cards {
+        margin-bottom: 70px;
+        background-color: white;
+    }
+
+
+    .row {
+        padding: 9%;
+        background-color: white;
+    }
+
+}
