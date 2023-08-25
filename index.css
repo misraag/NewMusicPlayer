@@ -832,7 +832,9 @@ i:hover {
     }
 
     .body {
-        height: 88vh;
+        height: 87vh;
+        /* width: 100vw; */
+        background-color: white;
     }
 
     .first-section {
@@ -843,6 +845,7 @@ i:hover {
 
     .songs {
         width: 100vw;
+        /* width: 99%; */
         /* background-color: green; */
         background-color: white;
         margin: 0;
@@ -853,6 +856,8 @@ i:hover {
     .songs-section {
         background-color: white;
         width: 100%;
+        width: 99%;
+        /* padding: 30%; */
     }
 
     .name {
@@ -866,7 +871,7 @@ i:hover {
     }
 
     .footer {
-        height: 12vh;
+        height: 13vh;
     }
 
     .footersong {
@@ -882,6 +887,10 @@ i:hover {
     .row {
         padding: 9%;
         background-color: white;
+    }
+
+    .volumebar {
+        display: none;
     }
 
 }
