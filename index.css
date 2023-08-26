@@ -377,9 +377,15 @@ i:hover {
     color: darkblue;
 }
 
-.card-img-top {
-    padding: 8px;
+.cardimg-top {
+    padding: 2px;
+    width: 100%;
     background-color: rgb(13, 13, 13);
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: white;
 }
 
 .song-info {
@@ -401,8 +407,10 @@ i:hover {
     font-weight: 501;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    border-bottom: 3px solid #1b95cf;
+    border-bottom: 4px solid #1b95cf;
     font-family: 'Preahvihear', sans-serif;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 /* *****************************************************************THIRD SECTION**************************************************** */
@@ -819,7 +827,9 @@ i:hover {
 /* **********************************ADD TO LIBRARY POPUP ENDS*************************************** */
 
 
-
+.mobile-firstsection {
+    display: none;
+}
 
 /* ****************************** media query responsive ********************************* */
 
@@ -834,7 +844,7 @@ i:hover {
     }
 
     .body {
-        height: 80vh;
+        height: 84vh;
         /* width: 90vw; */
         background-color: white;
     }
@@ -861,9 +871,14 @@ i:hover {
         background-color: white;
         background-color: black;
         /* width: 100%; */
-        width: 82%;
+        width: 100%;
         /* padding: 30%; */
         border-right: 5px solid black;
+        justify-content: flex-end;
+        /* display: flex; */
+        height: 75%;
+        /* background-color: green; */
+        padding: 0;
     }
 
     .name {
@@ -879,9 +894,13 @@ i:hover {
     }
 
     .footer {
-        height: 20vh;
+        height: 16vh;
         /* width: 100vw; */
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /* display: none; */
     }
 
     .footersong {
@@ -889,19 +908,34 @@ i:hover {
     }
 
     .cards {
-        /* margin-bottom: 70px; */
         background-color: white;
         background-color: green;
         background-color: black;
         /* background-color: #1b95cf; */
-        border-radius: 20px;
-        border: 1px solid white;
+        /* border-radius: 20px;
+        border: 1px solid white; */
+        /* margin-right: 1px; */
+        /* margin-top: 30px; */
+        margin: 10px auto;
+        /* border-top-left-radius: 5000px; */
+    }
+
+    .duration {
+        border-bottom: 2px solid #1b95cf;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .col-6 {
+        /* margin: auto 1px; */
+        /* padding: auto 1px; */
     }
 
 
     .row {
         padding-left: 5%;
         padding-right: 5%;
+        /* margin-right: 2px; */
         background-color: white;
         background-color: #000;
     }
@@ -910,21 +944,30 @@ i:hover {
         display: none;
     }
 
-    .card-img-top {
-        display: none;
+    .cardimg-top {
+        /* display: none; */
+        /* padding: 3%; */
+        padding: 2px;
+        /* background-color: #1b95cf;
+        background-color: white; */
+        /* background-color: black; */
+        /* border-top-left-radius: 5000px; */
+        /* border-radius: 50px; */
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        /* background-color: #1b95cf; */
+        background-color: #000;
+        background-color: grey;
     }
 
-    .duration {
-        display: none;
-    }
 
     .music-name {
-        width: 100%;
+        /* width: 100%; */
         /* background-color: #1b95cf; */
-        background-color: white;
-        color: black;
-        background-color: grey;
-        height: 40px;
+        /* background-color: white; */
+        /* color: black; */
+        /* background-color: grey; */
+        height: 45px;
         align-items: center;
         /* justify-content: center; */
         text-align: center;
@@ -945,14 +988,15 @@ i:hover {
         margin: 5%; */
     }
 
-    .masterPlayCover {
+    /* .masterPlayCover {
         right: 0;
         margin: 3%;
-    }
+        background-color: #000;
+    } */
 
-    .cards i {
-        font-size: 35px;
-    }
+    /* .cards i {
+        font-size: 30px;
+    } */
 
     .timebar {
         width: 85%;
@@ -961,16 +1005,23 @@ i:hover {
 
     .controls .smallicon{
         font-size: 1.3rem;
-        margin: 10px;
+        /* margin-right: 30px; */
+        margin: auto 15px;
+        margin-bottom: 22px;
     }
 
     #masterPlay {
-        font-size: 2.7rem;
+        font-size: 2.9rem;
+        margin: auto 15px;
+        margin-bottom: 10px;
+        /* margin-right: 30px; */
     }
 
     .controls {
-        margin-top: 9px;
-        margin-bottom: 5px;
+        /* margin-top: 9px;
+        margin-bottom: 5px; */
+        width: 100%;
+        /* background-color: green; */
     }
 
     #myProgressBar {
@@ -985,5 +1036,13 @@ i:hover {
     #timerend {
         font-size: 0.8rem;
         margin-left: 10px;
+    }
+
+    .mobile-firstsection {
+        display: block;
+        height: 15%;
+        width: 100%;
+        background-color: #1b95cf;
+        background-color: black;
     }
 }

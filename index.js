@@ -184,13 +184,13 @@ function displaySongs (libraryKey) {
     var indexNo = 0;
     librarysongs.forEach((song) => {
         var cardDiv = document.createElement('div');
-        cardDiv.classList.add('col-lg-2', 'col-md-4', 'col-sm-6', 'col-xs-12',  'cards', 'h-100');
+        cardDiv.classList.add('col-lg-2', 'col-md-4', 'col-4',  'cards', 'h-100');
         var playCover = document.createElement('i');
         playCover.classList.add('fas', 'fa-3x', 'fa-play-circle', 'masterPlayCover', 'playVisible');
         playCover.id = indexNo;
         indexNo++;
         var imageCover = document.createElement('img');
-        imageCover.classList.add('card-img-top');
+        imageCover.classList.add('cardimg-top');
         imageCover.src = song.coverPath;
         var songInfo = document.createElement('div');
         songInfo.classList.add('song-info');
@@ -287,10 +287,10 @@ function initializePlayCover() {
                 currentVolume = audioElement.volume;
 
 
-                console.log("Jai " + e.target.parentElement.classList)
-                console.log(e.target.parentElement.getElementsByClassName('card-img-top')[0]);
+                // console.log("Jai " + e.target.parentElement.classList)
+                // console.log(e.target.parentElement.getElementsByClassName('card-img-top')[0]);
                 // var parentElement = e.target.parentElement.classList;
-                e.target.parentElement.getElementsByClassName('card-img-top')[0].style.display = 'block';
+                // e.target.parentElement.getElementsByClassName('card-img-top')[0].style.display = 'block';
                 // parentElement.getElementsByClassName('card-img-top')[0].style.display = 'block';
                
                
