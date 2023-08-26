@@ -285,6 +285,15 @@ function initializePlayCover() {
                 }
                 audioElement.play();
                 currentVolume = audioElement.volume;
+
+
+                console.log("Jai " + e.target.parentElement.classList)
+                console.log(e.target.parentElement.getElementsByClassName('card-img-top')[0]);
+                // var parentElement = e.target.parentElement.classList;
+                e.target.parentElement.getElementsByClassName('card-img-top')[0].style.display = 'block';
+                // parentElement.getElementsByClassName('card-img-top')[0].style.display = 'block';
+               
+               
                 e.target.classList.remove("fa-play-circle");
                 e.target.classList.add("fa-pause-circle");
                 e.target.classList.remove('playVisible');
@@ -788,3 +797,11 @@ homeButton.addEventListener('click', () => {
     document.getElementById('homeIcon').classList.add('button-clicked');
     switchLibrary("Home");
 })
+
+
+function setDocHeight() {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+};
+
+addEventListener('resize', setDocHeight);
+addEventListener('orientationchange', setDocHeight);
