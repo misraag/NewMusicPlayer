@@ -43,6 +43,11 @@ let flagRepeat = false;
 let library;
 let deleteButtons;
 
+let searchMobile = document.getElementById('searchmobile');
+let searchMobileIcon = document.getElementById('searchbariconmobile');
+let searchMobileDiv = document.getElementById('mobile-firstsection');
+let searchBarMobile = document.getElementById('searchbarmobile');
+
 const libraries = JSON.parse(localStorage.getItem('libraries')) || { 
     "Liked Songs": {
         title: "Liked Songs",
@@ -184,7 +189,7 @@ function displaySongs (libraryKey) {
     var indexNo = 0;
     librarysongs.forEach((song) => {
         var cardDiv = document.createElement('div');
-        cardDiv.classList.add('col-lg-2', 'col-md-4', 'col-4',  'cards', 'h-100');
+        cardDiv.classList.add('col-lg-2', 'col-md-3', 'col-6',  'cards', 'h-100');
         var playCover = document.createElement('i');
         playCover.classList.add('fas', 'fa-3x', 'fa-play-circle', 'masterPlayCover', 'playVisible');
         playCover.id = indexNo;
@@ -767,6 +772,19 @@ function checkClickOutside(event) {
     }
 }
 
+function checkClickOutsideMobile(event) {
+
+    if ((!searchMobileDiv.contains(event.target) && !searchBarMobile.contains(event.target))  && searchMobile.value == "") {
+        console.log('clicked outside  of mobile seach icon');
+        // mySpan.classList.remove("hidesearchspan");
+        // document.getElementById("searchbaricon").classList.remove("searchbariconright");
+        searchMobileIcon.classList.remove("button-clicked");
+        // document.getElementById("search").classList.add("hidesearchbar");
+        searchMobileDiv.style.display = "none";
+        // searchMobileDiv.classList.add("hidesearchbar");
+    }
+}
+
 searchBar.addEventListener("click", () =>{
     mySpan.classList.add("hidesearchspan");
     document.getElementById("searchbaricon").classList.add("searchbariconright");
@@ -774,11 +792,36 @@ searchBar.addEventListener("click", () =>{
     document.getElementById("search").classList.remove("hidesearchbar");
 })
 
+searchMobileIcon.addEventListener("click", () =>{
+    console.log("clicked on mobile seach icon");
+    // mySpan.classList.add("hidesearchspan");
+    // document.getElementById("searchbaricon").classList.add("searchbariconright");
+    searchMobileIcon.classList.add("button-clicked");
+    // document.getElementById("search").classList.remove("hidesearchbar");
+    searchMobileDiv.style.display = "block";
+    // searchMobileDiv.classList.remove("hidemobilesearch");
+})
+
 document.addEventListener('click', checkClickOutside);
+document.addEventListener('click', checkClickOutsideMobile);
 document.addEventListener('click', checkclickOutsideLibrary);
+
 
 function searchFunction() {
     let filter = searchfilter.value.toUpperCase();
+    let songInfo = Array.from(document.getElementsByClassName('song-info'));
+    songInfo.forEach((element) => {
+        let songNameSearch = element.getElementsByTagName('div')[0].textContent.toUpperCase();
+        if(songNameSearch.indexOf(filter) > -1) {
+            element.parentElement.style.display = '';
+        } else {
+            element.parentElement.style.display = "none";
+        }
+    })  
+}
+
+function searchFunctionMobile() {
+    let filter = searchMobile.value.toUpperCase();
     let songInfo = Array.from(document.getElementsByClassName('song-info'));
     songInfo.forEach((element) => {
         let songNameSearch = element.getElementsByTagName('div')[0].textContent.toUpperCase();
