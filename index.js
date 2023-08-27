@@ -43,10 +43,11 @@ let flagRepeat = false;
 let library;
 let deleteButtons;
 
-let searchMobile = document.getElementById('searchmobile');
-let searchMobileIcon = document.getElementById('searchbariconmobile');
+
 let searchMobileDiv = document.getElementById('mobile-firstsection');
+let searchMobile = document.getElementById('searchmobile');
 let searchBarMobile = document.getElementById('searchbarmobile');
+let searchMobileIcon = document.getElementById('searchbariconmobile');
 
 const libraries = JSON.parse(localStorage.getItem('libraries')) || { 
     "Liked Songs": {
@@ -778,8 +779,9 @@ function checkClickOutsideMobile(event) {
         console.log('clicked outside  of mobile seach icon');
         // mySpan.classList.remove("hidesearchspan");
         // document.getElementById("searchbaricon").classList.remove("searchbariconright");
-        searchMobileIcon.classList.remove("button-clicked");
+        searchMobileIcon.classList.remove("button-clicked-mobile");
         // document.getElementById("search").classList.add("hidesearchbar");
+        searchMobileDiv.classList.add('visuallyhidden');    
         searchMobileDiv.style.display = "none";
         // searchMobileDiv.classList.add("hidesearchbar");
     }
@@ -796,10 +798,14 @@ searchMobileIcon.addEventListener("click", () =>{
     console.log("clicked on mobile seach icon");
     // mySpan.classList.add("hidesearchspan");
     // document.getElementById("searchbaricon").classList.add("searchbariconright");
-    searchMobileIcon.classList.add("button-clicked");
+    searchMobileIcon.classList.add("button-clicked-mobile");
     // document.getElementById("search").classList.remove("hidesearchbar");
+    setTimeout(function () {
+        searchMobileDiv.classList.remove('visuallyhidden');
+      }, 100);
     searchMobileDiv.style.display = "block";
-    // searchMobileDiv.classList.remove("hidemobilesearch");
+    console.log(searchMobileDiv);
+    // searchMobileDiv.classList.add("hidemobilesearch");
 })
 
 document.addEventListener('click', checkClickOutside);
