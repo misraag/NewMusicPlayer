@@ -699,6 +699,7 @@ changedLibrary = currentLibraryKey;
 if(changedLibrary != initialLibrary) {
     console.log("changed library");
     myProgressBar.value = 0;
+    myProgressBarMobile.value = 0;
     initialLibrary = changedLibrary;
 } else {
     if(flagRepeat == true && audioElement.currentTime == audioElement.duration){
@@ -709,6 +710,7 @@ if(changedLibrary != initialLibrary) {
     }
     let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
     myProgressBar.value = progress;
+    myProgressBarMobile.value = progress;
 }
 
 time();
@@ -716,6 +718,11 @@ time();
     
 myProgressBar.addEventListener('change', ()=>{
     audioElement.currentTime = ((myProgressBar.value)*(audioElement.duration))/100;
+    time();
+})
+
+myProgressBarMobile.addEventListener('change', ()=>{
+    audioElement.currentTime = ((myProgressBarMobile.value)*(audioElement.duration))/100;
     time();
 })
 
