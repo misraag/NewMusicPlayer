@@ -1129,12 +1129,15 @@ i:hover {
     }
 
     .playingsongmobilediv i {
-        margin-left: 9px;
+        margin-left: 7px;
         height: 100%;
         align-items: center;
         /* justify-content: center; */
         display: flex;
         background: rgb(2, 26, 6, 0.7);
+        font-size: 0.8rem;
+        /* background-color: #14bbf3; */
+        padding-top: 4px;
     }
 
     #playingsongmobile {
@@ -1176,11 +1179,11 @@ i:hover {
     #playingsongmobile img {
     /* max-width: 100%; */
     max-height: 100%;
-    width: auto;
+    width: 65px;
     /* height: fit-content;
     width: fit-content; */
     /* display: block; */
-    padding: 8px;
+    padding: 7px;
     padding-left: 12px;
     /* margin-left: 20px; */
     background-color: #494747;
@@ -1193,7 +1196,8 @@ i:hover {
         background: rgb(2, 26, 6, 0.7);
         justify-content: center;
         align-items: center;
-        margin-left: 10px;
+        margin-left: 8px;
+        
     }
     
     #masterSongName {
