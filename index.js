@@ -725,8 +725,35 @@ myProgressBar.addEventListener('change', ()=>{
     time();
 })
 
+// progresss.addEventListener('click', (event) => {
+//     let length = 
+// })
+
+progresss.addEventListener("click", function (event) {
+    // Calculate the percentage width based on the click position
+    const clickX = event.clientX - progresss.getBoundingClientRect().left;
+    const progressBarWidth = progresss.clientWidth;
+    const percentage = (clickX / progressBarWidth) * 100;
+
+    // Update the width of the progress bar
+    myProgressBarMobile.style.width = percentage + "%";
+
+    // Update the aria-valuenow attribute
+    myProgressBarMobile.setAttribute("aria-valuenow", percentage);
+    audioElement.currentTime = (( percentage)*(audioElement.duration))/100;
+    time();
+});
+
+// let changedProgressBarMobile = myProgressBarMobile.getAttribute("aria-valuenow");
+
+// changedProgressBarMobile.addEventListener('change', ()=>{
+//     console.log("bagds")
+// })
+
+
 myProgressBarMobile.addEventListener('change', ()=>{
-    audioElement.currentTime = ((myProgressBarMobile.value)*(audioElement.duration))/100;
+    console.log("Hello changes")
+    audioElement.currentTime = (( myProgressBarMobile.getAttribute("aria-valuenow"))*(audioElement.duration))/100;
     time();
 })
 

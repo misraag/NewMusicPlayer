@@ -1137,7 +1137,7 @@ i:hover {
         align-items: center;
     }
 
-    .progresss {
+    #progresss {
         /* height: 12%; */
         /* height: auto; */
         display: flex;
