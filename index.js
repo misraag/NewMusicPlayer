@@ -699,7 +699,9 @@ changedLibrary = currentLibraryKey;
 if(changedLibrary != initialLibrary) {
     console.log("changed library");
     myProgressBar.value = 0;
-    myProgressBarMobile.value = 0;
+    // myProgressBarMobile.value = 0;
+    myProgressBarMobile.setAttribute("aria-valuenow", 0);
+    myProgressBarMobile.style.width = 0 + "%";
     initialLibrary = changedLibrary;
 } else {
     if(flagRepeat == true && audioElement.currentTime == audioElement.duration){
@@ -710,7 +712,9 @@ if(changedLibrary != initialLibrary) {
     }
     let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
     myProgressBar.value = progress;
-    myProgressBarMobile.value = progress;
+    // myProgressBarMobile.value = progress;
+    myProgressBarMobile.setAttribute("aria-valuenow", progress);
+    myProgressBarMobile.style.width = progress + "%";
 }
 
 time();
