@@ -192,7 +192,7 @@ function displaySongs (libraryKey) {
     var indexNo = 0;
     librarysongs.forEach((song) => {
         var cardDiv = document.createElement('div');
-        cardDiv.classList.add('col-lg-2', 'col-md-3', 'col-6',  'cards', 'h-100');
+        cardDiv.classList.add('col-lg-2', 'col-md-3', 'col-4',  'cards', 'h-100');
         var playCover = document.createElement('i');
         playCover.classList.add('fas', 'fa-3x', 'fa-play-circle', 'masterPlayCover', 'playVisible');
         playCover.id = indexNo;
