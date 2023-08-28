@@ -966,6 +966,7 @@ i:hover {
         /* border-bottom: 2px solid #1b95cf; */
         border-bottom: 3px solid rgb(42, 190, 42);
         border-radius: 0;
+        font-size: 0.5rem;
         /* border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px; */
     }
@@ -1004,7 +1005,7 @@ i:hover {
         background-color: #000;
         background-color: grey;
         height: 140px;
-        height: 80px;
+        height: 110px;
     }
 
 
