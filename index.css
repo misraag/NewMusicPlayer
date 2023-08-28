@@ -839,6 +839,10 @@ i:hover {
     display: none;
 }
 
+#playingsongmobilediv {
+    display: none;
+}
+
 /* ****************************** media query responsive ********************************* */
 
 
@@ -874,6 +878,7 @@ i:hover {
         /* height: 88vh; */
         /* height: 0%; */
         border-bottom: 0;
+        /* position: relative; */
     }
 
     .songs-section {
@@ -1119,25 +1124,16 @@ i:hover {
         height: 100%;
     }
 
-    .playingsongmobilediv {
+    #playingsongmobilediv {
         height: 9%;
         width: 100vw;
         background: rgb(2, 26, 6, 0.7);
         display: flex;
         flex-direction: column;
         /* position: relative; */
-    }
-
-    .playingsongmobilediv i {
-        margin-left: 7px;
-        height: 100%;
-        align-items: center;
-        /* justify-content: center; */
-        display: flex;
-        background: rgb(2, 26, 6, 0.7);
-        font-size: 0.8rem;
-        /* background-color: #14bbf3; */
-        padding-top: 4px;
+        /* position: absolute; */
+        position: absolute;
+        bottom: -100px;
     }
 
     #playingsongmobile {
@@ -1219,7 +1215,7 @@ i:hover {
         /* display: flex;
         justify-content: end; */
         right: 0;
-        margin-right: 2px;
+        margin-right: 10px;
         /* margin: 10px; */
         align-items: center;
         justify-content: center;
@@ -1227,35 +1223,26 @@ i:hover {
         /* height: 100%; */
     }
 
+    #mobileicon {
+        /* background-color: #14bbf3; */
+        font-size: 0.85rem;
+        margin: auto 5px;
+        margin-right: 17px;
+    }
+
     
 
-    .fa-play {
-        font-size: 1.6rem;
+
+    #masterPlayMobile {
+        font-size: 1.7rem;
         /* margin-right: 500px; */
-        /* margin-right: 20px; */
+        margin-right: 10px;
         /* display: flex; */
         background: rgb(2, 26, 6, 0.7);
-    }
-
-    #masterPlay {
-        font-size: 2rem;
-        /* margin-right: 500px; */
-        /* margin-right: 20px; */
-        /* display: flex; */
-        background: rgb(2, 26, 6, 0.7);
-        margin-top: 4px;
-    }
-
-    .footcovericon i {
-        background: rgb(2, 26, 6, 0.7);
-        margin: auto 2px;
-        font-size: 1rem;
-        height: 90%;
-        /* background-color: red; */
-        margin-top: 12px;
-        /* height: 100%; */
-        /* justify-content: center;
-        align-items: center;
-        display: flex; */
+        /* margin-top: 4px; */
+        padding: 0;
+        /* padding-top: 5px; */
+        display: flex;
+        /* background-color: #14bbf3; */
     }
 }

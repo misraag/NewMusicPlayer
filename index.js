@@ -4,6 +4,7 @@ let currentVolume;
 // let audioElement = new Audio('songs/1.mp3');
 let songItem = Array.from(document.getElementsByClassName('cards'));
 let masterPlay = document.getElementById('masterPlay');
+let masterPlayMobile = document.getElementById('masterPlayMobile');
 let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
 let masterSongName = document.getElementById('masterSongName');
 let coverSongName = document.getElementById('coversongname');
@@ -48,6 +49,7 @@ let searchMobileDiv = document.getElementById('mobile-firstsection');
 let searchMobile = document.getElementById('searchmobile');
 let searchBarMobile = document.getElementById('searchbarmobile');
 let searchMobileIcon = document.getElementById('searchbariconmobile');
+let playingMobileSongDiv = document.getElementById('playingsongmobilediv');
 
 const libraries = JSON.parse(localStorage.getItem('libraries')) || { 
     "Liked Songs": {
@@ -234,7 +236,9 @@ function initializeMusicPlayer() {
     songItem = Array.from(document.getElementsByClassName('cards'));
     masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
     songCard = Array.from(document.getElementsByClassName('cards'));
-
+    
+    masterPlayMobile.classList.remove('fa-pause');
+    masterPlayMobile.classList.add('fa-play');
     masterPlay.classList.remove('fa-pause-circle');
     masterPlay.classList.add('fa-play-circle');
 
@@ -252,8 +256,9 @@ masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime <=0){
         audioElement.volume = myVolumeBar.value / 100;
         audioElement.play();
-        masterPlay.classList.remove('fa-play-circle');
-        masterPlay.classList.add('fa-pause-circle');
+            masterPlay.classList.remove('fa-play-circle');
+            masterPlay.classList.add('fa-pause-circle');
+
         masterPlayCover[songIndex].classList.add("fa-pause-circle");
         masterPlayCover[songIndex].classList.remove("fa-play-circle");
         masterPlayCover[songIndex].classList.remove('playVisible');
@@ -265,6 +270,42 @@ masterPlay.addEventListener('click',()=>{
     }
     else{
         audioElement.pause();
+            masterPlay.classList.remove('fa-pause-circle');
+            masterPlay.classList.add('fa-play-circle');
+        masterPlay.classList.remove('fa-pause-circle');
+        masterPlay.classList.add('fa-play-circle');
+        masterPlayCover[songIndex].classList.add("fa-play-circle");
+        masterPlayCover[songIndex].classList.remove("fa-pause-circle");
+        masterPlayCover[songIndex].classList.add('playVisible');
+        masterPlayCover[songIndex].classList.remove('colorRed');
+    }
+})
+
+
+
+masterPlayMobile.addEventListener('click',()=>{
+    tempIndex = songIndex;
+    if(audioElement.paused || audioElement.currentTime <=0){
+        audioElement.volume = myVolumeBar.value / 100;
+        audioElement.play();
+            masterPlayMobile.classList.remove('fa-play');
+            masterPlayMobile.classList.add('fa-pause');
+       
+        
+        masterPlayCover[songIndex].classList.add("fa-pause-circle");
+        masterPlayCover[songIndex].classList.remove("fa-play-circle");
+        masterPlayCover[songIndex].classList.remove('playVisible');
+        masterPlayCover[songIndex].classList.add('colorRed');
+        masterSongName.innerText = library.songs[songIndex].songName;
+        coverSongName.innerText = library.songs[songIndex].songName;
+        footCoverImage.src = library.songs[songIndex].coverPath;
+        playingCoverImage.src = library.songs[songIndex].coverPath;
+    }
+    else{
+        audioElement.pause();
+            masterPlayMobile.classList.remove('fa-pause');
+            masterPlayMobile.classList.add('fa-play');
+
         masterPlay.classList.remove('fa-pause-circle');
         masterPlay.classList.add('fa-play-circle');
         masterPlayCover[songIndex].classList.add("fa-play-circle");
@@ -282,6 +323,9 @@ function initializePlayCover() {
             songIndex = parseInt(e.target.id);
 
             if(e.target.classList.contains("fa-play-circle")) { 
+                playingMobileSongDiv.style.position = 'relative';
+                playingMobileSongDiv.style.bottom = '0px';
+                playingMobileSongDiv.classList.remove('visuallyhidden');
                 if(tempIndex != songIndex) {
                     tempIndex = songIndex;
                     audioElement.src = library.songs[songIndex].filepath;
@@ -304,8 +348,15 @@ function initializePlayCover() {
                 e.target.classList.add("fa-pause-circle");
                 e.target.classList.remove('playVisible');
                 e.target.classList.add('colorRed');
-                masterPlay.classList.remove("fa-play-circle");
-                masterPlay.classList.add("fa-pause-circle");
+
+                    masterPlayMobile.classList.remove('fa-play');
+                    masterPlayMobile.classList.add('fa-pause');
+
+                    masterPlay.classList.remove('fa-play-circle');
+                    masterPlay.classList.add('fa-pause-circle');
+
+                // masterPlay.classList.remove("fa-play-circle");
+                // masterPlay.classList.add("fa-pause-circle");
                 masterSongName.innerText = library.songs[songIndex].songName;
                 coverSongName.innerText = library.songs[songIndex].songName;
                 footCoverImage.src = library.songs[songIndex].coverPath;
@@ -314,8 +365,15 @@ function initializePlayCover() {
                 e.target.classList.remove("fa-pause-circle");
                 audioElement.pause();
                 e.target.classList.add("fa-play-circle");
-                masterPlay.classList.remove("fa-pause-circle");
-                masterPlay.classList.add("fa-play-circle");
+  
+                    masterPlayMobile.classList.remove('fa-pause');
+                    masterPlayMobile.classList.add('fa-play');
+
+                    masterPlay.classList.remove('fa-pause-circle');
+                    masterPlay.classList.add('fa-play-circle');
+
+                // masterPlay.classList.remove("fa-pause-circle");
+                // masterPlay.classList.add("fa-play-circle");
                 e.target.classList.add('playVisible');
                 e.target.classList.remove('colorRed');
             }
@@ -342,8 +400,15 @@ playNext.addEventListener('click', ()=> {
         coverSongName.innerText = library.songs[songIndex].songName;
         footCoverImage.src = library.songs[songIndex].coverPath;
         playingCoverImage.src = library.songs[songIndex].coverPath;
-        masterPlay.classList.remove("fa-play-circle");
-        masterPlay.classList.add("fa-pause-circle");
+
+            masterPlayMobile.classList.remove('fa-play');
+            masterPlayMobile.classList.add('fa-pause');
+
+            masterPlay.classList.remove('fa-play-circle');
+            masterPlay.classList.add('fa-pause-circle');
+
+        // masterPlay.classList.remove("fa-play-circle");
+        // masterPlay.classList.add("fa-pause-circle");
         playingCoverImage.src = library.songs[songIndex].coverPath;
         audioElement.currentTime = 0;
         audioElement.play();
@@ -364,8 +429,15 @@ playPrev.addEventListener('click', ()=> {
     masterPlayCover[songIndex].classList.add("fa-pause-circle");
     masterPlayCover[songIndex].classList.remove('playVisible');
     masterPlayCover[songIndex].classList.add('colorRed');
-    masterPlay.classList.remove("fa-play-circle");
-    masterPlay.classList.add("fa-pause-circle");
+
+            masterPlayMobile.classList.remove('fa-play');
+            masterPlayMobile.classList.add('fa-pause');
+
+            masterPlay.classList.remove('fa-play-circle');
+            masterPlay.classList.add('fa-pause-circle');
+
+    // masterPlay.classList.remove("fa-play-circle");
+    // masterPlay.classList.add("fa-pause-circle");
     masterSongName.innerText = library.songs[songIndex].songName;
     coverSongName.innerText = library.songs[songIndex].songName;
     footCoverImage.src = library.songs[songIndex].coverPath;
