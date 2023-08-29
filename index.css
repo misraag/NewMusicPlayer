@@ -1127,28 +1127,15 @@ i:hover {
     }
 
     #myProgressBarMobile {
-        /* height: 100%; */
         height: 100%;
-        /* max-width: 100vw; */
-        /* accent-color: black; */
-        /* background-color: grey; */
         background-color: white;
-        /* color: black; */
-
-        /* background-color: #870d19; */
-        /* accent-color: white; */
     }
 
     #playingsongmobile img {
-    /* max-width: 100%; */
     max-height: 100%;
     width: 65px;
-    /* height: fit-content;
-    width: fit-content; */
-    /* display: block; */
     padding: 7px;
     padding-left: 12px;
-    /* margin-left: 20px; */
     background-color: #494747;
     background: rgb(2, 26, 6, 0.7);
     }
@@ -1168,30 +1155,20 @@ i:hover {
         background: rgb(2, 26, 6, 0.7);
         font-size: 1rem;
         font-family: 'Marcellus', serif;
-        /* font-family: 'Kalam', cursive;
-        font-family: 'Lobster', cursive;
-        font-family: 'Pacifico', cursive;
-        font-family: 'Great Vibes', cursive; */
         font-family: 'Ubuntu', cursive;
     }
 
     .footcovericon {
         background: rgb(2, 26, 6, 0.7);
-        /* background-color: red; */
         position: absolute;
-        /* display: flex;
-        justify-content: end; */
         right: 0;
         margin-right: 10px;
-        /* margin: 10px; */
         align-items: center;
         justify-content: center;
         display: flex;
-        /* height: 100%; */
     }
 
     #mobileicon {
-        /* background-color: #14bbf3; */
         background: rgb(2, 26, 6, 0.7);
         font-size: 0.85rem;
         margin: auto 5px;
@@ -1203,14 +1180,9 @@ i:hover {
 
     #masterPlayMobile {
         font-size: 1.7rem;
-        /* margin-right: 500px; */
         margin-right: 10px;
-        /* display: flex; */
         background: rgb(2, 26, 6, 0.7);
-        /* margin-top: 4px; */
         padding: 0;
-        /* padding-top: 5px; */
         display: flex;
-        /* background-color: #14bbf3; */
     }
 }
