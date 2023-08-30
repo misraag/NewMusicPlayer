@@ -856,7 +856,7 @@ i:hover {
     }
 
     .body {
-        height: 93vh;
+        height: 92vh;
         /* width: 90vw; */
         background-color: white;
     }
@@ -919,9 +919,11 @@ i:hover {
     }
 
     .mobilefooter {
-        height: 7vh;
+        height: 8vh;
         display: flex;
         justify-content: space-around;
+        /* justify-content: center; */
+        text-align: center;
         align-items: center;
         background-color: rgb(17, 17, 17);
         /* background-color: rgb(42, 190, 42); */
@@ -931,6 +933,10 @@ i:hover {
 
     .mobilefooter div {
         background-color: rgb(17, 17, 17);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /* display: flex; */
         /* background-color: rgb(42, 190, 42); */
     }
 
@@ -938,6 +944,7 @@ i:hover {
         font-size: 20px;
         background-color: rgb(17, 17, 17);
         height: 100%;
+        color: grey;
         /* background-color:  */
         /* background-color: rgb(42, 190, 42); */
         /* color: #000; */
@@ -969,11 +976,6 @@ i:hover {
         font-size: 0.5rem;
         /* border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px; */
-    }
-
-    .col-6 {
-        /* margin: auto 1px; */
-        /* padding: auto 1px; */
     }
 
 
@@ -1184,5 +1186,28 @@ i:hover {
         background: rgb(2, 26, 6, 0.7);
         padding: 0;
         display: flex;
+    }
+
+    .mobilefooter span {
+        font-size: 0.7rem;
+        background-color: rgb(17, 17, 17);
+        margin-top: 5px;
+        color: rgb(219, 196, 196);
+        font-family: 'Ubuntu', cursive;
+    }
+
+    #homeButton {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #searchbarmobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #libraryname {
+        display: flex;
+        flex-direction: column;
     }
 }
