@@ -1103,6 +1103,7 @@ i:hover {
         /* position: absolute; */
         position: absolute;
         bottom: -100px;
+        /* display: none; */
     }
 
     #playingsongmobile {
@@ -1211,3 +1212,4 @@ i:hover {
         flex-direction: column;
     }
 }
+
