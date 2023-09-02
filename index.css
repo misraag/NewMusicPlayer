@@ -55,7 +55,6 @@ i:hover {
     display: none;
     flex-direction: column;
     background-color: rgb(17, 16, 16);
-    border-bottom: 3px solid #870d19;
     border-bottom: 3px solid #1b95cf;
     border-bottom: 3px solid white;
     width: 100vw;
@@ -848,7 +847,6 @@ i:hover {
 
 @media only screen and (max-width: 600px) {
 
-    /* html, body { height: 100% } */
 
     .header {
         height: 0;
@@ -857,42 +855,26 @@ i:hover {
 
     .body {
         height: 92vh;
-        /* width: 90vw; */
         background-color: white;
     }
 
     .first-section {
-                /* visibility: hidden;
-        width: 0; */
         display: none;
     }
 
     .songs {
-        /* width: 100vw; */
         width: 99%;
-        /* background-color: green; */
-        /* background-color: white; */
-        /* background-color: black; */
-        /* background-color: #1b95cf; */
         margin: 0;
-        /* height: 88vh; */
-        /* height: 0%; */
         border-bottom: 0;
-        /* position: relative; */
     }
 
     .songs-section {
         background-color: white;
         background-color: black;
-        /* width: 100%; */
         width: 100%;
-        /* padding: 30%; */
         border-right: 5px solid black;
         justify-content: flex-end;
-        /* display: flex; */
         height: 90%;
-        /* background-color: green; */
-        /* padding: 0; */
     }
 
     .name {
