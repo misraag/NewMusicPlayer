@@ -885,15 +885,11 @@ i:hover {
     }
 
     .now-playing {
-        /* visibility: hidden; */
         display: none;
-        /* width: 0; */
     }
 
     .footer {
         height: 16vh;
-        /* width: 100vw; */
-        /* justify-content: flex-start; */
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -904,13 +900,9 @@ i:hover {
         height: 8vh;
         display: flex;
         justify-content: space-around;
-        /* justify-content: center; */
         text-align: center;
         align-items: center;
         background-color: rgb(17, 17, 17);
-        /* background-color: rgb(42, 190, 42); */
-        /* background-color: rgb(214, 77, 35); */
-    
     }
 
     .mobilefooter div {
@@ -918,8 +910,6 @@ i:hover {
         justify-content: center;
         align-items: center;
         text-align: center;
-        /* display: flex; */
-        /* background-color: rgb(42, 190, 42); */
     }
 
     .mobilefooter i {
