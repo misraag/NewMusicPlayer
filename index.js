@@ -335,13 +335,6 @@ function initializePlayCover() {
                 }
                 audioElement.play();
                 currentVolume = audioElement.volume;
-
-
-                // console.log("Jai " + e.target.parentElement.classList)
-                // console.log(e.target.parentElement.getElementsByClassName('card-img-top')[0]);
-                // var parentElement = e.target.parentElement.classList;
-                // e.target.parentElement.getElementsByClassName('card-img-top')[0].style.display = 'block';
-                // parentElement.getElementsByClassName('card-img-top')[0].style.display = 'block';
                
                
                 e.target.classList.remove("fa-play-circle");
@@ -355,8 +348,7 @@ function initializePlayCover() {
                     masterPlay.classList.remove('fa-play-circle');
                     masterPlay.classList.add('fa-pause-circle');
 
-                // masterPlay.classList.remove("fa-play-circle");
-                // masterPlay.classList.add("fa-pause-circle");
+
                 masterSongName.innerText = library.songs[songIndex].songName;
                 coverSongName.innerText = library.songs[songIndex].songName;
                 footCoverImage.src = library.songs[songIndex].coverPath;
@@ -372,8 +364,7 @@ function initializePlayCover() {
                     masterPlay.classList.remove('fa-pause-circle');
                     masterPlay.classList.add('fa-play-circle');
 
-                // masterPlay.classList.remove("fa-pause-circle");
-                // masterPlay.classList.add("fa-play-circle");
+
                 e.target.classList.add('playVisible');
                 e.target.classList.remove('colorRed');
             }
