@@ -398,8 +398,6 @@ playNext.addEventListener('click', ()=> {
             masterPlay.classList.remove('fa-play-circle');
             masterPlay.classList.add('fa-pause-circle');
 
-        // masterPlay.classList.remove("fa-play-circle");
-        // masterPlay.classList.add("fa-pause-circle");
         playingCoverImage.src = library.songs[songIndex].coverPath;
         audioElement.currentTime = 0;
         audioElement.play();
@@ -427,8 +425,6 @@ playPrev.addEventListener('click', ()=> {
             masterPlay.classList.remove('fa-play-circle');
             masterPlay.classList.add('fa-pause-circle');
 
-    // masterPlay.classList.remove("fa-play-circle");
-    // masterPlay.classList.add("fa-pause-circle");
     masterSongName.innerText = library.songs[songIndex].songName;
     coverSongName.innerText = library.songs[songIndex].songName;
     footCoverImage.src = library.songs[songIndex].coverPath;
@@ -525,8 +521,7 @@ booksicon.forEach((bookicon) => {
     bookicon.addEventListener('click', () =>{
         console.log(libraries[currentLibraryKey].songs[songIndex]);
         libraryListPopup();
-        // addToLibrary("new", songIndex);
-        // allBooksRed();
+
     })
 })
 
@@ -590,8 +585,7 @@ function addtoliked(songIndex) {
             }
         }));
     }
-    // saveLibraries();
-    // saveLibrarySongs("Liked Songs");
+
 }
 
 function addToLibrary(libraryName, songIndex) {
@@ -643,7 +637,7 @@ function checkclickOutsideLibrary(event) {
 }
 
 function switchLibrary (libraryKey) {
-    // audioElement.pause();
+
     currentLibraryKey = libraryKey;
     displaySongs(currentLibraryKey);
 }
@@ -656,7 +650,7 @@ function initializeDeleteButtons() {
             displayLibraryList();
         })
     })
-    // displayLibraryList();
+
 }
 
 function initializePlaylistLibrary() {
@@ -762,7 +756,7 @@ changedLibrary = currentLibraryKey;
 if(changedLibrary != initialLibrary) {
     console.log("changed library");
     myProgressBar.value = 0;
-    // myProgressBarMobile.value = 0;
+
     myProgressBarMobile.setAttribute("aria-valuenow", 0);
     myProgressBarMobile.style.width = 0 + "%";
     initialLibrary = changedLibrary;
@@ -775,7 +769,7 @@ if(changedLibrary != initialLibrary) {
     }
     let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
     myProgressBar.value = progress;
-    // myProgressBarMobile.value = progress;
+
     myProgressBarMobile.setAttribute("aria-valuenow", progress);
     myProgressBarMobile.style.width = progress + "%";
 }
@@ -788,9 +782,6 @@ myProgressBar.addEventListener('change', ()=>{
     time();
 })
 
-// progresss.addEventListener('click', (event) => {
-//     let length = 
-// })
 
 progresss.addEventListener("click", function (event) {
     // Calculate the percentage width based on the click position
@@ -807,11 +798,7 @@ progresss.addEventListener("click", function (event) {
     time();
 });
 
-// let changedProgressBarMobile = myProgressBarMobile.getAttribute("aria-valuenow");
 
-// changedProgressBarMobile.addEventListener('change', ()=>{
-//     console.log("bagds")
-// })
 
 
 myProgressBarMobile.addEventListener('change', ()=>{
@@ -878,13 +865,12 @@ function checkClickOutsideMobile(event) {
 
     if ((!searchMobileDiv.contains(event.target) && !searchBarMobile.contains(event.target))  && searchMobile.value == "") {
         console.log('clicked outside  of mobile seach icon');
-        // mySpan.classList.remove("hidesearchspan");
-        // document.getElementById("searchbaricon").classList.remove("searchbariconright");
+
         searchMobileIcon.classList.remove("button-clicked-mobile");
-        // document.getElementById("search").classList.add("hidesearchbar");
+
         searchMobileDiv.classList.add('visuallyhidden');    
         searchMobileDiv.style.display = "none";
-        // searchMobileDiv.classList.add("hidesearchbar");
+
     }
 }
 
@@ -897,16 +883,15 @@ searchBar.addEventListener("click", () =>{
 
 searchMobileIcon.addEventListener("click", () =>{
     console.log("clicked on mobile seach icon");
-    // mySpan.classList.add("hidesearchspan");
-    // document.getElementById("searchbaricon").classList.add("searchbariconright");
+
     searchMobileIcon.classList.add("button-clicked-mobile");
-    // document.getElementById("search").classList.remove("hidesearchbar");
+
     setTimeout(function () {
         searchMobileDiv.classList.remove('visuallyhidden');
       }, 100);
     searchMobileDiv.style.display = "block";
     console.log(searchMobileDiv);
-    // searchMobileDiv.classList.add("hidemobilesearch");
+
 })
 
 document.addEventListener('click', checkClickOutside);
