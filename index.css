@@ -917,10 +917,6 @@ i:hover {
         background-color: rgb(17, 17, 17);
         height: 100%;
         color: grey;
-        /* background-color:  */
-        /* background-color: rgb(42, 190, 42); */
-        /* color: #000; */
-        /* cursor: pointer; */
     }
 
     .footersong {
@@ -931,33 +927,21 @@ i:hover {
         background-color: white;
         background-color: green;
         background-color: black;
-        /* background-color: #1b95cf; */
-        /* border-radius: 20px;
-        border: 1px solid white; */
-        /* margin-right: 1px; */
-        /* margin-top: 30px; */
         margin: 14px auto;
-        /* border-top-left-radius: 5000px; */
-        /* background-color: rgb(11, 11, 11); */
     }
 
     .duration {
-        /* border-bottom: 2px solid #1b95cf; */
         border-bottom: 3px solid rgb(42, 190, 42);
         border-radius: 0;
         font-size: 0.5rem;
-        /* border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px; */
     }
 
 
     .row {
         padding-left: 0%;
         padding-right: 0%;
-        /* margin-right: 2px; */
         background-color: white;
         background-color: #000;
-        /* background-color: rgb(11, 11, 11); */
     }
 
     .volumebar {
