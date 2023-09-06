@@ -183,7 +183,6 @@ librariespopups.forEach((element) => {
 function displaySongs (libraryKey) {
     saveLibraries();
     document.getElementById('rowdiv').innerHTML = "";
-    // library = libraries[libraryKey];
     console.log(JSON.parse(localStorage.getItem("libraries")));
     library = JSON.parse(localStorage.getItem("libraries"))[libraryKey];
     console.log(libraryKey);
@@ -226,7 +225,7 @@ function initializeMusicPlayer() {
     tempIndex = -1;
     audioElement.pause();
     myProgressBar.value = 0;
-    // audioElement.duration = 0;
+
     if(JSON.parse(localStorage.getItem("libraries"))[currentLibraryKey].songs[0] != null) {
         audioElement.src = JSON.parse(localStorage.getItem("libraries"))[currentLibraryKey].songs[0].filepath;
     } else {
