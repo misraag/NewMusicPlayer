@@ -1,7 +1,6 @@
 let songIndex = 0;
 let tempIndex = -1;
 let currentVolume;
-// let audioElement = new Audio('songs/1.mp3');
 let songItem = Array.from(document.getElementsByClassName('cards'));
 let masterPlay = document.getElementById('masterPlay');
 let masterPlayMobile = document.getElementById('masterPlayMobile');
