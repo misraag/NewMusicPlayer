@@ -432,6 +432,7 @@ playPrev.addEventListener('click', ()=> {
     currentVolume = audioElement.volume;   
 })
 
+
 /***********************************END OF CONTROL SECTION******************************/ 
 
 /*******************DOM FUNCTIONALITIES CLICK EVENTS************************/ 
