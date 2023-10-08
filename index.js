@@ -433,6 +433,7 @@ playPrev.addEventListener('click', ()=> {
 })
 
 
+
 /***********************************END OF CONTROL SECTION******************************/ 
 
 /*******************DOM FUNCTIONALITIES CLICK EVENTS************************/ 
