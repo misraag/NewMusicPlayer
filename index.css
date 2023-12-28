@@ -10,6 +10,7 @@
 
 i:hover {
     color: darkblue;
+    color: #1b95cf;
 }
 
 ::-webkit-scrollbar {
@@ -43,6 +44,7 @@ i:hover {
     display: flex;
     flex-direction: column;
     background-color: rgb(17, 16, 16);
+    background-color: black;
     border-bottom: 3px solid #870d19;
     border-bottom: 3px solid #1b95cf;
     border-bottom: 3px solid white;
@@ -72,8 +74,8 @@ i:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: 'Kalam', cursive;
-    font-size: 1.3rem;
+    /* font-family: 'Kalam', cursive; */
+    font-size: 1.1rem;
 }
 
 .headingmobile {
@@ -95,10 +97,11 @@ i:hover {
 #navbar {
     display: flex;
     flex-direction: column;
-    height: 18%;
+    height: 13%;
     color: white;
     border-radius: 7px;
     margin-top: 5%;
+ 
 }
 
 .navbar-button {
@@ -107,18 +110,23 @@ i:hover {
     align-items: center;
     cursor: pointer;
     color: white;
+    background-color: rgb(29, 33, 33);
+    
     height: 50%;
 }
 
 .navbar-button span {
     font-family: 'Marcellus', serif;
     font-weight: lighter;
+    /* background-color: rgb(29, 33, 33);
+    background-color: rgb(34, 32, 32); */
+    font-size: 0.9rem;
 }
 
-#homeButton {
-    border-top-right-radius: 7px;
-}
 
+.navBarSpan {
+    background-color: rgb(34, 32, 32);
+}
 
 #searchbar {
     border-bottom-right-radius: 10px;
@@ -138,6 +146,14 @@ i:hover {
 .button-clicked {
     background-color: white;
     color: #1b95cf;
+}
+
+.button-clickedhome {
+    margin: 5%;
+    margin-right: 5%;
+    background-color: white;
+    color: #1b95cf;
+    font-size: 0.9rem;
 }
 
 .hidesearchbar {
@@ -184,6 +200,8 @@ i:hover {
 .iconspacing {
     margin: 5%;
     margin-right: 5%;
+    background-color: rgb(34, 32, 32);
+    font-size: 0.9rem;
 }
 
 .subheader {
@@ -209,6 +227,10 @@ i:hover {
     position: relative;
 }
 
+#createPlaylist:hover {
+    color: white;
+}
+
 .iconright {
     position: absolute;
     right: 0;
@@ -227,12 +249,15 @@ i:hover {
     overflow-y: auto;
     height: 57%;
     background-color: rgb(17, 16, 16);
+    background-color: black;
 }
 
 .library-div {
     display: flex;
     width: 100%;
     background-color: rgb(56, 55, 55);
+    background-color: black;
+    background-color: rgb(34, 32, 32);
     margin: 1% auto;
     border-radius: 5px;
     cursor: pointer;
@@ -252,6 +277,7 @@ i:hover {
     font-family: 'Kalam', cursive;
     transition: 0.15s;
     font-size: 1.05rem;
+    
 }
 
 .library-div:hover i{
@@ -260,6 +286,7 @@ i:hover {
 
 .library-div i:hover {
     color: darkblue;
+    color: #1b95cf;
 }
 
 .liked {
@@ -267,8 +294,9 @@ i:hover {
     background-color: transparent;
     font-size: 0.9rem;
     padding-left: 5%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 0.85rem;
 }
 
 .fa-ellipsis {
@@ -297,6 +325,8 @@ i:hover {
 
 .name {
     background-color: #fff;
+    background-color: rgb(34, 32, 32);
+    background-color: grey;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -306,6 +336,7 @@ i:hover {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; 
     color: #1b95cf;  
+    color: white;
     font-weight: bolder;
     font-family: 'Marcellus', serif;
 }
@@ -374,17 +405,21 @@ i:hover {
 
 .colorDarkblue {
     color: darkblue;
+    color: #1b95cf;
 }
 
 .cardimg-top {
     padding: 2px;
     width: 100%;
     background-color: rgb(13, 13, 13);
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    /* border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px); */
+    /* border-top-right-radius: 20px;
+    border-top-left-radius: 20px; */
     background-color: white;
+    background-color: rgb(34, 32, 32);
+    padding: 7px;
+    padding-top: 12px;
 }
 
 .song-info {
@@ -395,21 +430,24 @@ i:hover {
     padding: 5%;
     font-weight: bolder;
     font-family: 'Marcellus', serif;
-    font-size: 15px;
+    font-size: 13px;
+    background-color: rgb(34, 32, 32);
 }
 
 .duration {
     padding: 3%;
-    font-size: 0.70rem;
+    font-size: 0.60rem;
     background-color: rgba(255, 255, 255, 0.892);
+    background-color: rgb(34, 32, 32);
     color: black;
+    color: white;
     font-weight: 501;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    /* border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px; */
     border-bottom: 4px solid #1b95cf;
     font-family: 'Preahvihear', sans-serif;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    /* border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px; */
 }
 
 /* *****************************************************************THIRD SECTION**************************************************** */
@@ -425,6 +463,8 @@ i:hover {
     z-index: 3;
     border-bottom: 3px solid white;
     background-color: rgb(17, 16, 16);
+    background-color: black;
+    /* background-color:#1b95cf; */
     border-left: 1px solid black;
 }
 
@@ -437,8 +477,8 @@ i:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: 'Kalam', cursive;
-    font-size: 1.3rem;
+    /* font-family: 'Kalam', cursive; */
+    font-size: 1.1rem;
 }
 
 .playing-song-display {
@@ -448,6 +488,7 @@ i:hover {
     width: 98%;
     height: 55%; 
     background-color: rgb(17, 16, 16);
+    background-color: black;
     margin-top: 10%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -456,7 +497,12 @@ i:hover {
 
 .playing-song-display img {
     align-items: center;
-    height: 100%
+    height: 100%;
+    padding: 5%;
+    padding-top: 8%;
+    background-color: #0f0e0e;
+    background-color: grey;
+    
 }
 
 .songdetails {
@@ -467,18 +513,21 @@ i:hover {
     flex-direction: row;
     padding: 5%;
     background-color: rgb(17, 16, 16);
+    background-color: grey;
 }
 
 .covermusicname {
     background-color: rgb(17, 16, 16);
+    background-color: grey;
 }
 
 
 #coversongname {
     font-family: 'Marcellus', serif;
-    font-size: 22px;
+    font-size: 1.1rem;
     font-weight: bolder;
     background-color: rgb(17, 16, 16);
+    background-color: grey;
 }
 
 .covericon{
@@ -487,12 +536,16 @@ i:hover {
     right: 0;
     margin: auto 5%;
     background-color: rgb(17, 16, 16);
+    background-color: grey;
+    
 }
 
 .covericon i {
     background-color: rgb(17, 16, 16);
+    background-color: grey;
     margin: 7px;
     cursor: pointer;
+    font-size: 0.9rem;
 }
 
 
@@ -510,6 +563,12 @@ i:hover {
     align-items: center;
     flex-direction: column; 
     background-color: #1b95cf;
+    /* background-color: rgb(34, 32, 32); */
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
+    /* background-color: rgb(16, 16, 17) */
+    ;
+    /* background-color: white;     */
 }
 
 .footersong {
@@ -521,6 +580,9 @@ i:hover {
     margin: auto 1%;
     height: 90%;
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
+
 }
 
 .footersong img {
@@ -533,11 +595,15 @@ i:hover {
 .footersongname {
     margin: 5px;
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
 }
 
 #masterSongName {
     font-size: 0.8rem;
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
 }
 
 .footcovericon {
@@ -545,6 +611,8 @@ i:hover {
     font-size: 0.8rem;
     cursor: pointer;
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
 }
 
 .controls {
@@ -555,6 +623,8 @@ i:hover {
     align-items: center;
     margin-bottom: 0.3%;
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
 }
 
 .controls .fas {
@@ -562,6 +632,8 @@ i:hover {
     margin: auto 9px;
     font-size: 1.6rem;
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
 }
 
 .controls .smallicon {
@@ -580,10 +652,14 @@ i:hover {
     flex-direction: row;
     align-items: center;
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
 }
 
 .volumebar i{
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
     font-size: 1rem;
 }
 
@@ -608,6 +684,7 @@ i:hover {
 
 .volume-icon:hover {
     color: darkblue;
+    color: #1b95cf;
 }
 
 .timebar {
@@ -617,6 +694,8 @@ i:hover {
     width: 45vw;
     bottom: 0;
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
 }
 
 #myProgressBar{
@@ -636,6 +715,8 @@ i:hover {
     color: rgb(246, 231, 231);
     font-family: 'Preahvihear', sans-serif;
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
 }
 
 #timerend {
@@ -645,6 +726,8 @@ i:hover {
     color: rgb(246, 231, 231);
     font-family: 'Preahvihear', sans-serif;
     background-color: #1b95cf;
+    background-color: #0f0e0e;
+    background-color: rgb(29, 33, 33);
 }
 
 #masterPlay {

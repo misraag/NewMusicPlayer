@@ -684,7 +684,8 @@ function removeAllClickedPlaylist() {
         })
     homeButton.classList.remove('button-clicked');
     document.getElementById('homeButtonName').classList.remove('button-clicked');
-    document.getElementById('homeIcon').classList.remove('button-clicked');
+    document.getElementById('homeIcon').classList.remove('button-clickedhome');
+    document.getElementById('homeIcon').classList.add('iconspacing');
 } 
 
 function getDuration(src) {
@@ -856,7 +857,8 @@ function checkClickOutside(event) {
     if (!searchBar.contains(event.target) && searchfilter.value == "") {
         mySpan.classList.remove("hidesearchspan");
         document.getElementById("searchbaricon").classList.remove("searchbariconright");
-        document.getElementById("searchbaricon").classList.remove("button-clicked");
+        document.getElementById("searchbaricon").classList.remove("button-clickedhome");
+        document.getElementById('searchbaricon').classList.add('iconspacing');
         document.getElementById("search").classList.add("hidesearchbar");
     }
 }
@@ -877,7 +879,9 @@ function checkClickOutsideMobile(event) {
 searchBar.addEventListener("click", () =>{
     mySpan.classList.add("hidesearchspan");
     document.getElementById("searchbaricon").classList.add("searchbariconright");
-    document.getElementById("searchbaricon").classList.add("button-clicked");
+    document.getElementById("searchbaricon").classList.add("button-clickedhome");
+    document.getElementById('searchbaricon').classList.remove('iconspacing');
+    // document.getElementById('homeIcon').classList.add('button-clickedhome');
     document.getElementById("search").classList.remove("hidesearchbar");
 })
 
@@ -929,7 +933,8 @@ homeButton.addEventListener('click', () => {
     removeAllClickedPlaylist();
     homeButton.classList.add('button-clicked');
     document.getElementById('homeButtonName').classList.add('button-clicked');
-    document.getElementById('homeIcon').classList.add('button-clicked');
+    document.getElementById('homeIcon').classList.remove('iconspacing');
+    document.getElementById('homeIcon').classList.add('button-clickedhome');
     switchLibrary("Home");
 })
 
