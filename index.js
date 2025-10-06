@@ -8,6 +8,7 @@ let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCove
 let masterSongName = document.getElementById('masterSongName');
 let coverSongName = document.getElementById('coversongname');
 let footCoverImage = document.getElementById('footercoverimg');
+let footCoverImageMobile = document.getElementById('footercoverimgmbl');
 let playingCoverImage = document.getElementById('playing-cover-img');
 let timerStart = document.getElementById('timerstart');
 let timerEnd = document.getElementById('timerend');
@@ -264,6 +265,7 @@ masterPlay.addEventListener('click',()=>{
         masterSongName.innerText = library.songs[songIndex].songName;
         coverSongName.innerText = library.songs[songIndex].songName;
         footCoverImage.src = library.songs[songIndex].coverPath;
+        footCoverImageMobile.src = library.songs[songIndex].coverPath;
         playingCoverImage.src = library.songs[songIndex].coverPath;
     }
     else{
@@ -297,6 +299,7 @@ masterPlayMobile.addEventListener('click',()=>{
         masterSongName.innerText = library.songs[songIndex].songName;
         coverSongName.innerText = library.songs[songIndex].songName;
         footCoverImage.src = library.songs[songIndex].coverPath;
+        footCoverImageMobile.src = library.songs[songIndex].coverPath;
         playingCoverImage.src = library.songs[songIndex].coverPath;
     }
     else{
@@ -350,6 +353,7 @@ function initializePlayCover() {
                 masterSongName.innerText = library.songs[songIndex].songName;
                 coverSongName.innerText = library.songs[songIndex].songName;
                 footCoverImage.src = library.songs[songIndex].coverPath;
+                footCoverImageMobile.src = library.songs[songIndex].coverPath;
                 playingCoverImage.src = library.songs[songIndex].coverPath;
             } else {
                 e.target.classList.remove("fa-pause-circle");
@@ -388,6 +392,7 @@ playNext.addEventListener('click', ()=> {
         masterSongName.innerText = library.songs[songIndex].songName;
         coverSongName.innerText = library.songs[songIndex].songName;
         footCoverImage.src = library.songs[songIndex].coverPath;
+        footCoverImageMobile.src = library.songs[songIndex].coverPath;
         playingCoverImage.src = library.songs[songIndex].coverPath;
 
             masterPlayMobile.classList.remove('fa-play');
@@ -426,6 +431,7 @@ playPrev.addEventListener('click', ()=> {
     masterSongName.innerText = library.songs[songIndex].songName;
     coverSongName.innerText = library.songs[songIndex].songName;
     footCoverImage.src = library.songs[songIndex].coverPath;
+    footCoverImageMobile.src = library.songs[songIndex].coverPath;
     playingCoverImage.src = library.songs[songIndex].coverPath;
     audioElement.currentTime = 0;
     audioElement.play();
