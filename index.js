@@ -6,6 +6,7 @@ let masterPlay = document.getElementById('masterPlay');
 let masterPlayMobile = document.getElementById('masterPlayMobile');
 let masterPlayCover = Array.from(document.getElementsByClassName('masterPlayCover'));
 let masterSongName = document.getElementById('masterSongName');
+let masterSongNameMobile = document.getElementById('masterSongNameMbl');
 let coverSongName = document.getElementById('coversongname');
 let footCoverImage = document.getElementById('footercoverimg');
 let footCoverImageMobile = document.getElementById('footercoverimgmbl');
@@ -263,6 +264,7 @@ masterPlay.addEventListener('click',()=>{
         masterPlayCover[songIndex].classList.remove('playVisible');
         masterPlayCover[songIndex].classList.add('colorRed');
         masterSongName.innerText = library.songs[songIndex].songName;
+        masterSongNameMobile.innerText = library.songs[songIndex].songName;
         coverSongName.innerText = library.songs[songIndex].songName;
         footCoverImage.src = library.songs[songIndex].coverPath;
         footCoverImageMobile.src = library.songs[songIndex].coverPath;
@@ -297,6 +299,7 @@ masterPlayMobile.addEventListener('click',()=>{
         masterPlayCover[songIndex].classList.remove('playVisible');
         masterPlayCover[songIndex].classList.add('colorRed');
         masterSongName.innerText = library.songs[songIndex].songName;
+        masterSongNameMobile.innerText = library.songs[songIndex].songName;
         coverSongName.innerText = library.songs[songIndex].songName;
         footCoverImage.src = library.songs[songIndex].coverPath;
         footCoverImageMobile.src = library.songs[songIndex].coverPath;
@@ -351,6 +354,7 @@ function initializePlayCover() {
 
 
                 masterSongName.innerText = library.songs[songIndex].songName;
+                masterSongNameMobile.innerText = library.songs[songIndex].songName;
                 coverSongName.innerText = library.songs[songIndex].songName;
                 footCoverImage.src = library.songs[songIndex].coverPath;
                 footCoverImageMobile.src = library.songs[songIndex].coverPath;
@@ -390,6 +394,7 @@ playNext.addEventListener('click', ()=> {
         masterPlayCover[songIndex].classList.remove('playVisible');
         masterPlayCover[songIndex].classList.add('colorRed');
         masterSongName.innerText = library.songs[songIndex].songName;
+        masterSongNameMobile.innerText = library.songs[songIndex].songName;
         coverSongName.innerText = library.songs[songIndex].songName;
         footCoverImage.src = library.songs[songIndex].coverPath;
         footCoverImageMobile.src = library.songs[songIndex].coverPath;
@@ -429,6 +434,7 @@ playPrev.addEventListener('click', ()=> {
             masterPlay.classList.add('fa-pause-circle');
 
     masterSongName.innerText = library.songs[songIndex].songName;
+    masterSongNameMobile.innerText = library.songs[songIndex].songName;
     coverSongName.innerText = library.songs[songIndex].songName;
     footCoverImage.src = library.songs[songIndex].coverPath;
     footCoverImageMobile.src = library.songs[songIndex].coverPath;
